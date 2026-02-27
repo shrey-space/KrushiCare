@@ -1,4 +1,6 @@
-/* Reset */
+/* ===============================
+   RESET
+================================ */
 * {
   margin: 0;
   padding: 0;
@@ -6,77 +8,212 @@
   font-family: Arial, sans-serif;
 }
 
-/* Body */
+/* ===============================
+   BODY (FIXED)
+================================ */
 body {
   min-height: 100vh;
   overflow-x: hidden;
   color: white;
 }
 
-/* 🔥 Background Video */
+/* ===============================
+   BACKGROUND VIDEO
+================================ */
 .bg-video {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  object-fit: cover;   /* VERY IMPORTANT */
+  object-fit: cover;
   z-index: -2;
 }
 
-/* Dark overlay for readability */
+/* Dark overlay */
 .video-overlay {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.45);
+  background: rgba(0, 0, 0, 0.40);   /* lighter → video more visible */
   z-index: -1;
 }
 
-/* Main Content */
-/* Content positioning (no video interference) */
-.content {
+/* ===============================
+   WEATHER BAR
+================================ */
+.weather-bar {
   position: relative;
-  top: -60px;   /* ⬆️ moves content upward */
+  margin: 12px auto 0;
+  width: 92%;
+  max-width: 420px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 14px;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(6px);
+  color: white;
+  z-index: 5;
+}
+
+.weather-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-left .material-icons {
+  font-size: 30px;
+}
+
+.temp {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.condition {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.weather-right {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.8rem;
+}
+
+/* ===============================
+   TITLE
+================================ */
+.content {
   text-align: center;
-  margin-bottom: 120px;
-  z-index: 2;
+  margin-top: 18px;
+  padding: 0 16px;
+  z-index: 4;
 }
 
-
-
-/* App Name */
 .app-name {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
-  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.65); /* readable on video */
+  margin-bottom: 6px;
+  text-shadow: 0 3px 14px rgba(0, 0, 0, 0.65);
 }
 
-/* Color combo */
 .app-name .green {
-  color: rgba(129, 199, 132, 0.95);   /* soft green */
+  color: rgba(129, 199, 132, 0.95);
 }
 
 .app-name .gold {
-  color: rgba(255, 213, 79, 0.95);    /* warm golden */
+  color: rgba(255, 213, 79, 0.95);
 }
 
-/* Tagline */
 .tagline {
-  font-size: 1rem;
-  color: rgba(255, 255, 255, 0.85);   /* transparent white */
-  letter-spacing: 0.5px;
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.85);
   max-width: 320px;
   margin: auto;
   text-shadow: 0 2px 10px rgba(0,0,0,0.6);
 }
 
+/* ===============================
+   HOME CARDS (GLASS + VIDEO VISIBLE)
+================================ */
+.home-cards {
+  margin-top: 12px;
+  padding: 0 12px 95px;
+  max-height: 56vh;              /* prevents video blocking */
+  overflow-y: auto;
+}
 
-/* Bottom Menu */
+/* Grid */
+.home-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* ===============================
+   CARD BASE (GLASS STYLE)
+================================ */
+.home-card {
+  background: rgba(255, 255, 255, 0.10);  /* transparent */
+  backdrop-filter: blur(10px);
+  border-radius: 14px;
+  padding: 12px;
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.20);
+}
+
+/* ===============================
+   HERO MARKET CARD
+================================ */
+.home-card.hero {
+  background: linear-gradient(
+    135deg,
+    rgba(46, 125, 50, 0.75),
+    rgba(104, 159, 56, 0.75)
+  );
+}
+
+.home-card.hero .price {
+  font-size: 21px;
+  font-weight: 700;
+}
+
+.home-card.hero .price span {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.home-card.hero .crop {
+  font-size: 12px;
+}
+
+/* ===============================
+   SIDE ROW
+================================ */
+.home-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+}
+
+/* ===============================
+   SMART ADVICE
+================================ */
+.home-card.advice {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 235, 59, 0.85),
+    rgba(255, 193, 7, 0.85)
+  );
+  color: #2e2e2e;
+  font-weight: 600;
+  font-size: 12.5px;
+}
+
+/* ===============================
+   TEXT
+================================ */
+.home-card h4 {
+  font-size: 13px;
+  margin-bottom: 4px;
+}
+
+.home-card p {
+  font-size: 12px;
+  margin: 3px 0;
+}
+
+/* ===============================
+   BOTTOM MENU
+================================ */
 .bottom-menu {
   position: fixed;
   bottom: 12px;
@@ -92,7 +229,6 @@ body {
   z-index: 10;
 }
 
-/* Menu Item */
 .menu-item {
   text-decoration: none;
   color: #777;
@@ -102,13 +238,11 @@ body {
   font-size: 12px;
 }
 
-/* Icon */
 .menu-item .material-icons {
   font-size: 26px;
   margin-bottom: 4px;
 }
 
-/* Active */
 .menu-item.active {
   color: #2e7d32;
   font-weight: bold;
@@ -120,117 +254,12 @@ body {
   border-radius: 50%;
 }
 
-/* 📱 OPPO / Tall screens */
-@media (min-height: 750px) {
-  .content {
-    padding-top: 14vh;
-  }
-}
-
-/* 🌦 Weather Bar */
-.weather-bar {
-  position: relative;
-  margin: 12px auto 0;
-  width: 92%;
-  max-width: 420px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 14px;
-  border-radius: 14px;
-
-  background: rgba(255, 255, 255, 0.18); /* transparent */
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-
-  color: white;
-  z-index: 2;
-}
-
-/* Left (icon + temp) */
-.weather-left {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.weather-left .material-icons {
-  font-size: 32px;
-}
-
-.temp {
-  font-size: 1.4rem;
-  font-weight: bold;
-  line-height: 1;
-}
-
-.condition {
-  font-size: 0.8rem;
-  opacity: 0.85;
-}
-
-/* Right (location) */
-.weather-right {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.8rem;
-  opacity: 0.9;
-}
-
-/* Small screens */
-@media (max-width: 360px) {
-  .temp {
-    font-size: 1.2rem;
-  }
-}
-
-
-/* Maharashtra border container */
-.mh-border {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin-top: 12px;
-  z-index: 1;
-}
-
-/* SVG size */
-.mh-svg {
-  width: 75%;
-  max-width: 300px;
-  height: auto;
-}
-
-/* Border path */
-.mh-path {
-  fill: none;
-  stroke: rgba(129, 199, 132, 0.9); /* soft green */
-  stroke-width: 3;
-  stroke-linejoin: round;
-
-  stroke-dasharray: 1600;
-  stroke-dashoffset: 1600;
-
-  animation:
-    drawBorder 2.8s ease forwards,
-    pulseGlow 3.5s ease-in-out infinite;
-}
-
-/* Draw animation */
-@keyframes drawBorder {
-  to {
-    stroke-dashoffset: 0;
-  }
-}
-
-/* Soft glow */
-@keyframes pulseGlow {
-  0%, 100% {
-    stroke: rgba(129, 199, 132, 0.9);
-  }
-  50% {
-    stroke: rgba(102, 187, 106, 1);
+/* ===============================
+   RESPONSIVE
+================================ */
+@media (min-width: 600px) {
+  .home-cards {
+    max-width: 420px;
+    margin: auto;
   }
 }

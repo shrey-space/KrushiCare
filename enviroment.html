@@ -1,0 +1,114 @@
+<head>
+    <link rel="stylesheet" href="enviroment.css">
+</head>
+
+<div class="env-page">
+
+  <!-- Current Weather -->
+  <div class="env-card">
+    <h3>🌦 Current Weather</h3>
+    <p><b>Temperature:</b> <span id="envTemp">--°C</span></p>
+    <p><b>Condition:</b> <span id="envCondition">Loading...</span></p>
+    <p><b>Humidity:</b> <span id="envHumidity">--%</span></p>
+    <p><b>Wind:</b> <span id="envWind">-- km/h</span></p>
+  </div>
+
+  <!-- Farming Alert -->
+  <div class="env-card alert" id="envAlert">
+    <h3>🚨 Farming Alert</h3>
+    <p>Checking conditions...</p>
+  </div>
+
+  <!-- Irrigation Advice -->
+  <div class="env-card">
+    <h3>💧 Irrigation Advice</h3>
+    <p id="irrigationAdvice">Analyzing weather...</p>
+  </div>
+
+  <!-- Pest Risk -->
+  <div class="env-card">
+    <h3>🐛 Pest Risk Level</h3>
+    <p id="pestRisk">Calculating...</p>
+  </div>
+
+</div>
+
+<script>
+const WEATHER_API_KEY = "YOUR_OPENWEATHER_KEY";
+
+function loadEnvironmentWeather(lat, lon) {
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${WEATHER_API_KEY}`)
+    .then(res => res.json())
+    .then(data => {
+
+      const temp = data.main.temp;
+      const humidity = data.main.humidity;
+      const wind = data.wind.speed;
+      const condition = data.weather[0].main;
+
+      document.getElementById("envTemp").innerText = temp + "°C";
+      document.getElementById("envCondition").innerText = condition;
+      document.getElementById("envHumidity").innerText = humidity + "%";
+      document.getElementById("envWind").innerText = wind + " km/h";
+
+      generateEnvironmentAdvice(temp, humidity, condition);
+
+    })
+    .catch(() => {
+      document.getElementById("envCondition").innerText = "Weather unavailable";
+    });
+}
+
+function generateEnvironmentAdvice(temp, humidity, condition) {
+
+  // Farming Alert
+  let alertText = "Weather conditions are stable.";
+
+  if (condition.includes("Rain")) {
+    alertText = "Heavy rain expected. Avoid spraying pesticides.";
+  } else if (temp > 35) {
+    alertText = "High temperature. Protect crops from heat stress.";
+  } else if (temp < 15) {
+    alertText = "Low temperature. Risk of cold damage.";
+  }
+
+  document.getElementById("envAlert").innerHTML = `
+    <h3>🚨 Farming Alert</h3>
+    <p>${alertText}</p>
+  `;
+
+  // Irrigation Advice
+  let irrigationText = "Normal irrigation schedule.";
+
+  if (temp > 32 && humidity < 50) {
+    irrigationText = "Increase irrigation frequency.";
+  } else if (condition.includes("Rain")) {
+    irrigationText = "Reduce irrigation due to rainfall.";
+  }
+
+  document.getElementById("irrigationAdvice").innerText = irrigationText;
+
+  // Pest Risk Logic
+  let pest = "Low";
+
+  if (humidity > 70 && temp > 25) {
+    pest = "High (Fungal disease risk)";
+  } else if (humidity > 60) {
+    pest = "Moderate";
+  }
+
+  document.getElementById("pestRisk").innerText = pest;
+}
+
+// Auto load using GPS
+if ("geolocation" in navigator) {
+  navigator.geolocation.getCurrentPosition(
+    pos => {
+      loadEnvironmentWeather(pos.coords.latitude, pos.coords.longitude);
+    },
+    () => {
+      document.getElementById("envCondition").innerText = "Location denied";
+    }
+  );
+}
+</script>

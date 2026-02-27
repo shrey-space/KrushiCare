@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="setting.css">
+
+<div class="set-page">
+
+  <!-- Language -->
+  <div class="set-card">
+    <h3>🌐 Language</h3>
+    <select id="languageSelect" onchange="saveSettings()">
+      <option value="en">English</option>
+      <option value="mr">Marathi</option>
+      <option value="hi">Hindi</option>
+    </select>
+  </div>
+
+  <!-- Notifications -->
+  <div class="set-card">
+    <h3>🔔 Alerts & Notifications</h3>
+
+    <label>
+      <input type="checkbox" id="rainAlert" onchange="saveSettings()">
+      Rain Alert
+    </label>
+
+    <label>
+      <input type="checkbox" id="priceAlert" onchange="saveSettings()">
+      Price Change Alert
+    </label>
+
+    <label>
+      <input type="checkbox" id="pestAlert" onchange="saveSettings()">
+      Pest Risk Alert
+    </label>
+  </div>
+
+  <!-- Units -->
+  <div class="set-card">
+    <h3>📏 Units</h3>
+    <select id="unitSelect" onchange="saveSettings()">
+      <option value="acre">Acre</option>
+      <option value="hectare">Hectare</option>
+    </select>
+  </div>
+
+  <!-- Theme -->
+  <div class="set-card">
+    <h3>🎨 Theme</h3>
+    <select id="themeSelect" onchange="applyTheme(); saveSettings();">
+      <option value="dark">Dark</option>
+      <option value="light">Light</option>
+    </select>
+  </div>
+
+  <!-- Data Reset -->
+  <div class="set-card danger">
+    <h3>🗑 Reset Data</h3>
+    <button onclick="resetApp()">Clear Profile & Data</button>
+  </div>
+
+</div>
+
+<script>
+/* Load saved settings */
+function loadSettings() {
+  const settings = JSON.parse(localStorage.getItem("appSettings")) || {};
+
+  document.getElementById("languageSelect").value = settings.language || "en";
+  document.getElementById("rainAlert").checked = settings.rainAlert || false;
+  document.getElementById("priceAlert").checked = settings.priceAlert || false;
+  document.getElementById("pestAlert").checked = settings.pestAlert || false;
+  document.getElementById("unitSelect").value = settings.unit || "acre";
+  document.getElementById("themeSelect").value = settings.theme || "dark";
+
+  applyTheme();
+}
+
+/* Save settings */
+function saveSettings() {
+  const settings = {
+    language: document.getElementById("languageSelect").value,
+    rainAlert: document.getElementById("rainAlert").checked,
+    priceAlert: document.getElementById("priceAlert").checked,
+    pestAlert: document.getElementById("pestAlert").checked,
+    unit: document.getElementById("unitSelect").value,
+    theme: document.getElementById("themeSelect").value
+  };
+
+  localStorage.setItem("appSettings", JSON.stringify(settings));
+}
+
+/* Apply theme */
+function applyTheme() {
+  const theme = document.getElementById("themeSelect").value;
+
+  if (theme === "light") {
+    document.body.style.background = "#f5f5f5";
+    document.body.style.color = "#222";
+  } else {
+    document.body.style.background = "#111";
+    document.body.style.color = "white";
+  }
+}
+
+/* Reset app data */
+function resetApp() {
+  if (confirm("Are you sure? This will delete all data.")) {
+    localStorage.clear();
+    alert("App data cleared!");
+    location.reload();
+  }
+}
+
+window.addEventListener("load", loadSettings);
+</script>

@@ -1,0 +1,95 @@
+<head>
+    <link rel="stylesheet" href="economy.css">
+</head>
+<div class="eco-page">
+
+  <!-- Market Price -->
+  <div class="eco-card">
+    <h3>💰 Current Market Price</h3>
+    <p><b>Crop:</b> <span id="ecoCrop">Loading...</span></p>
+    <p><b>Price:</b> ₹<span id="ecoPrice">0</span> / quintal</p>
+    <p><b>Mandi:</b> <span id="ecoMandi">--</span></p>
+  </div>
+
+  <!-- Price Trend -->
+  <div class="eco-card">
+    <h3>📈 Price Trend</h3>
+    <p id="priceTrend">Analyzing trend...</p>
+  </div>
+
+  <!-- Sell Advice -->
+  <div class="eco-card highlight" id="sellAdvice">
+    <h3>📊 Sell Decision</h3>
+    <p>Calculating best action...</p>
+  </div>
+
+  <!-- Cost Impact -->
+  <div class="eco-card">
+    <h3>⛽ Cost Impact</h3>
+    <p id="costImpact">Checking economic factors...</p>
+  </div>
+
+  <!-- Profit Estimate -->
+  <div class="eco-card">
+    <h3>📦 Profit Estimate</h3>
+    <p id="profitEstimate">Enter farm data to calculate...</p>
+  </div>
+
+</div>
+
+<script>
+/* Fetch market data from your backend */
+fetch("http://localhost:3000/market")
+  .then(res => res.json())
+  .then(data => {
+
+    document.getElementById("ecoCrop").innerText = data.crop;
+    document.getElementById("ecoPrice").innerText = data.price;
+    document.getElementById("ecoMandi").innerText = "Local Mandi";
+
+    analyzeEconomy(data.price, data.yesterday);
+
+  });
+
+function analyzeEconomy(price, yesterday) {
+
+  const change = price - yesterday;
+
+  // Trend
+  let trendText = "Stable";
+  if (change > 30) trendText = "📈 Rising";
+  else if (change < -30) trendText = "📉 Falling";
+
+  document.getElementById("priceTrend").innerText = trendText;
+
+  // Sell Advice
+  let advice = "Market stable. Sell based on need.";
+
+  if (trendText.includes("Rising")) {
+    advice = "Prices rising. Consider waiting for better profit.";
+  } 
+  else if (trendText.includes("Falling")) {
+    advice = "Prices dropping. Consider selling soon.";
+  }
+
+  document.getElementById("sellAdvice").innerHTML = `
+    <h3>📊 Sell Decision</h3>
+    <p>${advice}</p>
+  `;
+
+  // Cost impact (demo logic)
+  let cost = "Transport cost stable.";
+  if (Math.random() > 0.5) {
+    cost = "Fuel prices increased. Transport cost may rise.";
+  }
+  document.getElementById("costImpact").innerText = cost;
+
+  // Profit Estimate (simple)
+  const farmSize = JSON.parse(localStorage.getItem("farmerProfile"))?.farmSize || 1;
+  const estimatedYield = farmSize * 80;   // quintals approx
+  const profit = estimatedYield * price;
+
+  document.getElementById("profitEstimate").innerText =
+    `Estimated revenue: ₹${profit.toLocaleString()}`;
+}
+</script>

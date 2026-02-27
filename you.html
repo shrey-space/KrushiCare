@@ -1,0 +1,104 @@
+<head>
+    <link rel="stylesheet" href="you.css">
+</head>
+
+<div class="you-page">
+
+  <!-- Profile Card -->
+  <div class="you-card">
+    <h3>👤 Farmer Profile</h3>
+
+    <label>Name</label>
+    <input type="text" id="farmerName" placeholder="Enter your name">
+
+    <label>District</label>
+    <input type="text" id="district" placeholder="e.g. Kolhapur">
+
+    <label>Farm Size (acres)</label>
+    <input type="number" id="farmSize" placeholder="e.g. 3">
+  </div>
+
+  <!-- Crop Selection -->
+  <div class="you-card">
+    <h3>🌱 Crop Selection</h3>
+
+    <select id="cropSelect">
+      <option value="Onion">Onion</option>
+      <option value="Tomato">Tomato</option>
+      <option value="Rice">Rice</option>
+      <option value="Wheat">Wheat</option>
+      <option value="Soybean">Soybean</option>
+    </select>
+  </div>
+
+  <!-- Irrigation -->
+  <div class="you-card">
+    <h3>🚜 Irrigation Type</h3>
+
+    <select id="irrigation">
+      <option>Rain-fed</option>
+      <option>Borewell</option>
+      <option>Canal</option>
+    </select>
+  </div>
+
+  <!-- Risk Preference -->
+  <div class="you-card">
+    <h3>📊 Selling Preference</h3>
+
+    <label><input type="radio" name="risk" value="Sell"> Sell Immediately</label>
+    <label><input type="radio" name="risk" value="Wait"> Wait for Higher Price</label>
+    <label><input type="radio" name="risk" value="Balanced" checked> Balanced</label>
+  </div>
+
+  <!-- Save Button -->
+  <button class="save-btn" onclick="saveProfile()">Save Profile</button>
+
+  <!-- Summary -->
+  <div class="you-card summary" id="profileSummary">
+    <h3>📦 Farm Summary</h3>
+    <p>No data saved yet</p>
+  </div>
+
+</div>
+<script>
+    function saveProfile() {
+  const name = document.getElementById("farmerName").value;
+  const district = document.getElementById("district").value;
+  const farmSize = document.getElementById("farmSize").value;
+  const crop = document.getElementById("cropSelect").value;
+  const irrigation = document.getElementById("irrigation").value;
+  const risk = document.querySelector('input[name="risk"]:checked').value;
+
+  const profile = {
+    name,
+    district,
+    farmSize,
+    crop,
+    irrigation,
+    risk
+  };
+
+  localStorage.setItem("farmerProfile", JSON.stringify(profile));
+
+  showProfile();
+}
+
+function showProfile() {
+  const data = JSON.parse(localStorage.getItem("farmerProfile"));
+
+  if (!data) return;
+
+  document.getElementById("profileSummary").innerHTML = `
+    <h3>📦 Farm Summary</h3>
+    <p><b>Name:</b> ${data.name}</p>
+    <p><b>District:</b> ${data.district}</p>
+    <p><b>Crop:</b> ${data.crop}</p>
+    <p><b>Farm Size:</b> ${data.farmSize} acres</p>
+    <p><b>Irrigation:</b> ${data.irrigation}</p>
+    <p><b>Preference:</b> ${data.risk}</p>
+  `;
+}
+
+window.addEventListener("load", showProfile);
+</script>

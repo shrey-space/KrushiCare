@@ -1,0 +1,48 @@
+.set-page {
+  width: 100%;
+  min-height: 100vh;
+  padding: 20px 18px 120px;
+  overflow-y: auto;
+  color: white;
+}
+
+.set-card {
+  background: rgba(255,255,255,0.14);
+  backdrop-filter: blur(12px);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+}
+
+.set-card h3 {
+  font-size: 19px;
+  margin-bottom: 12px;
+}
+
+.set-card select,
+.set-card button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border-radius: 10px;
+  border: none;
+  font-size: 15px;
+}
+
+.set-card input[type="checkbox"] {
+  transform: scale(1.2);
+  margin-right: 8px;
+}
+
+.set-card label {
+  display: block;
+  margin: 8px 0;
+  font-size: 15px;
+}
+
+/* Danger section */
+.set-card.danger {
+  background: linear-gradient(135deg, #ef5350, #d32f2f);
+  color: white;
+}

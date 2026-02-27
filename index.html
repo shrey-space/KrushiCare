@@ -46,17 +46,12 @@
   </h1>
   <p class="tagline">Helping Maharashtra Farmers with Smart Decisions</p>
 </main>
+<!-- Home Info Cards -->
+<section class="home-cards" id="homeCards">
+  <!-- Cards will be injected by JS -->
+</section>
 
-<div class="mh-border">
-  <svg viewBox="0 0 800 800" class="mh-svg">
-    <!-- Accurate Maharashtra outline (simplified but correct shape) -->
-    <path class="mh-path"
-      d="M140 180 L260 140 L380 150 L480 140 L610 180
-         L660 280 L620 360 L650 450 L560 520
-         L470 600 L360 620 L260 580 L210 500
-         L170 420 L130 340 L150 260 Z" />
-  </svg>
-</div>
+
 
   <!-- Bottom Menu Bar -->
   <nav class="bottom-menu">
@@ -65,22 +60,22 @@
       <small>Home</small>
     </a>
 
-    <a href="#" class="menu-item">
+   <a href="./you.html" class="menu-item">
       <span class="material-icons">person</span>
       <small>You</small>
     </a>
 
-    <a href="#" class="menu-item">
+    <a href="./enviroment.html" class="menu-item">
       <span class="material-icons">eco</span>
       <small>Environment</small>
     </a>
 
-    <a href="#" class="menu-item">
+    <a href="./economy.html" class="menu-item">
       <span class="material-icons">currency_rupee</span>
       <small>Economy</small>
     </a>
 
-    <a href="#" class="menu-item">
+    <a href="./setting.html" class="menu-item">
       <span class="material-icons">settings</span>
       <small>Setting</small>
     </a>
@@ -101,27 +96,31 @@
     
   </script>
   <script>
-  const API_KEY = "YOUR_API_KEY_HERE";
+  const API_KEY = "7890d18ea0eb73d0fd252f2c8a90322a";
 
   function fetchWeather(lat, lon) {
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`
-    )
-      .then(res => res.json())
-      .then(data => {
-        document.getElementById("temperature").innerText =
-          Math.round(data.main.temp) + "°C";
+  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`)
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("API request failed");
+      }
+      return res.json();
+    })
+    .then(data => {
+      document.getElementById("temperature").innerText =
+        Math.round(data.main.temp) + "°C";
 
-        document.getElementById("condition").innerText =
-          data.weather[0].main;
+      document.getElementById("condition").innerText =
+        data.weather[0].main;
 
-        document.getElementById("location").innerText =
-          data.name;
-      })
-      .catch(() => {
-        document.getElementById("condition").innerText = "Weather unavailable";
-      });
-  }
+      document.getElementById("location").innerText =
+        data.name;
+    })
+    .catch(err => {
+      console.log("Weather Error:", err);
+      document.getElementById("condition").innerText = "Weather unavailable";
+    });
+}
 
   // Get user location
   if ("geolocation" in navigator) {
@@ -136,6 +135,178 @@
   } else {
     document.getElementById("condition").innerText = "No GPS support";
   }
+</script>
+
+
+<script>
+
+/* ===============================
+   MARKET SNAPSHOT MODULE
+================================ */
+
+let marketData = {
+  crop: "Loading...",
+  todayPrice: 0,
+  yesterdayPrice: 0,
+  unit: "₹/quintal"
+};
+
+/* Fetch market data from backend */
+function fetchMarketData() {
+  fetch("http://localhost:3000/market")
+    .then(res => {
+      if (!res.ok) {
+        throw new Error("Backend not responding");
+      }
+      return res.json();
+    })
+    .then(data => {
+      marketData.crop = data.crop;
+      marketData.todayPrice = data.price;
+      marketData.yesterdayPrice = data.yesterday;
+
+      loadHomeModule();   // refresh UI after data arrives
+    })
+    .catch(err => {
+      console.log("Market error:", err);
+    });
+}
+
+/* Render Market Snapshot */
+function loadMarketSnapshot() {
+  const change = marketData.todayPrice - marketData.yesterdayPrice;
+
+  let trend = "";
+  if (change > 0) {
+    trend = "▲ Rising";
+  } else if (change < 0) {
+    trend = "▼ Falling";
+  } else {
+    trend = "● Stable";
+  }
+
+  return `
+    <h4>Market Snapshot</h4>
+    <p class="price">${marketData.todayPrice} <span>${marketData.unit}</span></p>
+    <p class="crop">${marketData.crop}</p>
+    <p class="trend">${trend}</p>
+  `;
+}
+
+</script>
+
+<script>
+/* ===============================
+   ENVIRONMENT ALERT MODULE
+================================ */
+
+function getEnvironmentAlert(temp, condition) {
+  if (condition.includes("Rain")) {
+    return "🌧 Heavy rain expected. Avoid pesticide spraying.";
+  }
+  if (temp > 35) {
+    return "🔥 High temperature. Increase irrigation.";
+  }
+  return "🌱 Weather is suitable for farming activities.";
+}
+
+function loadEnvironmentAlert() {
+  const temp = document.getElementById("temperature").innerText.replace("°C", "");
+  const condition = document.getElementById("condition").innerText;
+
+  return `
+    <div class="card">
+      <h3>Environment Alert</h3>
+      <p>${getEnvironmentAlert(Number(temp), condition)}</p>
+    </div>
+  `;
+}
+</script>
+
+<script>
+/* ===============================
+   ECONOMIC IMPACT MODULE
+================================ */
+
+const worldImpact = {
+  title: "Fuel Prices Increased",
+  impact: "Transport cost may increase. Selling locally is advised."
+};
+
+function loadEconomicImpact() {
+  return `
+    <div class="card">
+      <h3>Economy & World Impact</h3>
+      <p><strong>${worldImpact.title}</strong></p>
+      <p>${worldImpact.impact}</p>
+    </div>
+  `;
+}
+</script>
+
+
+<script>
+/* ===============================
+   SMART ADVICE MODULE
+================================ */
+
+function generateSmartAdvice() {
+  const condition = document.getElementById("condition").innerText;
+
+  if (condition.includes("Rain")) {
+    return "⏳ Delay harvesting by 2–3 days due to rain.";
+  }
+  return "✅ Good time for harvesting and selling crops.";
+}
+
+function loadSmartAdvice() {
+  return `
+    <div class="card highlight">
+      <h3>Today’s Smart Advice</h3>
+      <p>${generateSmartAdvice()}</p>
+    </div>
+  `;
+}
+</script>
+
+<script>
+/* ===============================
+   HOME MODULE CONTROLLER
+================================ */
+
+function loadHomeModule() {
+  const homeCards = document.getElementById("homeCards");
+
+  homeCards.innerHTML = `
+    <div class="home-grid">
+
+      <div class="home-card hero">
+        ${loadMarketSnapshot()}
+      </div>
+
+      <div class="home-row">
+        <div class="home-card">
+          ${loadEnvironmentAlert()}
+        </div>
+
+        <div class="home-card">
+          ${loadEconomicImpact()}
+        </div>
+      </div>
+
+      <div class="home-card advice">
+        ${loadSmartAdvice()}
+      </div>
+
+    </div>
+  `;
+}
+
+window.addEventListener("load", () => {
+  fetchMarketData();
+});
+
+
 </script>
 
 </body>
