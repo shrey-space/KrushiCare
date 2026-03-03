@@ -1,13 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <link rel="stylesheet" href="you.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KrushiCare - You</title>
+  <link rel="stylesheet" href="you.css">
 </head>
+
+<body>
 
 <div class="you-page">
 
+  <h2 class="page-title">👤 Farmer Profile</h2>
+
   <!-- Profile Card -->
   <div class="you-card">
-    <h3>👤 Farmer Profile</h3>
-
     <label>Name</label>
     <input type="text" id="farmerName" placeholder="Enter your name">
 
@@ -18,10 +25,9 @@
     <input type="number" id="farmSize" placeholder="e.g. 3">
   </div>
 
-  <!-- Crop Selection -->
+  <!-- Crop -->
   <div class="you-card">
     <h3>🌱 Crop Selection</h3>
-
     <select id="cropSelect">
       <option value="Onion">Onion</option>
       <option value="Tomato">Tomato</option>
@@ -34,7 +40,6 @@
   <!-- Irrigation -->
   <div class="you-card">
     <h3>🚜 Irrigation Type</h3>
-
     <select id="irrigation">
       <option>Rain-fed</option>
       <option>Borewell</option>
@@ -42,16 +47,15 @@
     </select>
   </div>
 
-  <!-- Risk Preference -->
+  <!-- Risk -->
   <div class="you-card">
     <h3>📊 Selling Preference</h3>
-
     <label><input type="radio" name="risk" value="Sell"> Sell Immediately</label>
     <label><input type="radio" name="risk" value="Wait"> Wait for Higher Price</label>
     <label><input type="radio" name="risk" value="Balanced" checked> Balanced</label>
   </div>
 
-  <!-- Save Button -->
+  <!-- Save -->
   <button class="save-btn" onclick="saveProfile()">Save Profile</button>
 
   <!-- Summary -->
@@ -61,8 +65,9 @@
   </div>
 
 </div>
+
 <script>
-    function saveProfile() {
+function saveProfile() {
   const name = document.getElementById("farmerName").value;
   const district = document.getElementById("district").value;
   const farmSize = document.getElementById("farmSize").value;
@@ -70,23 +75,13 @@
   const irrigation = document.getElementById("irrigation").value;
   const risk = document.querySelector('input[name="risk"]:checked').value;
 
-  const profile = {
-    name,
-    district,
-    farmSize,
-    crop,
-    irrigation,
-    risk
-  };
-
+  const profile = { name, district, farmSize, crop, irrigation, risk };
   localStorage.setItem("farmerProfile", JSON.stringify(profile));
-
   showProfile();
 }
 
 function showProfile() {
   const data = JSON.parse(localStorage.getItem("farmerProfile"));
-
   if (!data) return;
 
   document.getElementById("profileSummary").innerHTML = `
@@ -102,3 +97,6 @@ function showProfile() {
 
 window.addEventListener("load", showProfile);
 </script>
+
+</body>
+</html>

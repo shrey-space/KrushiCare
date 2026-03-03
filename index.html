@@ -153,7 +153,7 @@ let marketData = {
 
 /* Fetch market data from backend */
 function fetchMarketData() {
-  fetch("http://localhost:3000/market")
+  fetch("/api/market")
     .then(res => {
       if (!res.ok) {
         throw new Error("Backend not responding");
