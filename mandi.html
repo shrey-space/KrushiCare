@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mandi Prices</title>
+
+<link rel="stylesheet" href="mandi.css">
+
+</head>
+
+<body>
+
+<div class="mandi-container">
+
+<h2>📊 Maharashtra Mandi Prices</h2>
+
+<div id="mandiList"></div>
+
+</div>
+
+<script>
+
+const mandiData =
+JSON.parse(localStorage.getItem("mandiData")) || []
+
+const container =
+document.getElementById("mandiList")
+
+mandiData.forEach(item=>{
+
+const card = document.createElement("div")
+
+card.className="mandi-card"
+
+card.innerHTML = `
+
+<h3>${item.market}</h3>
+
+<p><b>Crop:</b> ${item.commodity}</p>
+
+<p><b>District:</b> ${item.district}</p>
+
+<p><b>Price:</b> ₹${item.modal_price} / quintal</p>
+
+`
+
+container.appendChild(card)
+
+})
+
+</script>
+
+</body>
+</html>

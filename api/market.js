@@ -2,13 +2,16 @@ const axios = require("axios");
 
 module.exports = async (req, res) => {
   try {
-    const API_KEY = process.env.DATA_API_KEY;
 
-    const url = `https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=${API_KEY}&format=json&limit=500`;
+    const API_KEY = "579b464db66ec23bdd00000156c8041690bd45956332eabf01fe61eb";
+
+    const url =
+      `https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=${API_KEY}&format=json&limit=500`;
 
     const response = await axios.get(url);
     const records = response.data.records;
 
+    // Find onion data in Maharashtra
     const onion = records.find(r => {
       const commodity = (r.commodity || "").toLowerCase();
       const state = (r.state || "").toLowerCase();
@@ -34,6 +37,11 @@ module.exports = async (req, res) => {
     });
 
   } catch (err) {
-    res.status(500).json({ error: "Failed to fetch market data" });
+
+    console.error(err);
+
+    res.status(500).json({
+      error: "Failed to fetch market data"
+    });
   }
 };

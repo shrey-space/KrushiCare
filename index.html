@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+
+
+if(!localStorage.getItem("onboardingDone")){
+  window.location.href="onboarding.html";
+}
+</script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KrushiCare</title>
@@ -16,43 +23,43 @@
 </head>
 <body>
 
-  <!-- 🔥 Background Video -->
+  <!--  Background Video -->
   <video class="bg-video" autoplay muted loop playsinline>
     <source src="videos/farming.mp4" type="video/mp4">
   </video>
 
-  <!-- Dark Overlay (for text readability) -->
+  <!-- Dark Overlay -->
   <div class="video-overlay"></div>
+
   <!-- 🌦 Weather Bar -->
-<div class="weather-bar">
-  <div class="weather-left">
-    <span class="material-icons">cloud</span>
-    <div>
-      <p class="temp" id="temperature">--°C</p>
-      <p class="condition" id="condition">Loading...</p>
+  <div class="weather-bar">
+    <div class="weather-left">
+      <span class="material-icons">cloud</span>
+      <div>
+        <p class="temp" id="temperature">--°C</p>
+        <p class="condition" id="condition">Loading...</p>
+      </div>
+    </div>
+
+    <div class="weather-right">
+      <span class="material-icons">location_on</span>
+      <p id="location">Detecting...</p>
     </div>
   </div>
 
-  <div class="weather-right">
-    <span class="material-icons">location_on</span>
-    <p id="location">Detecting...</p>
-  </div>
-</div>
-
   <!-- Main Content -->
- <main class="content">
-  <h1 class="app-name">
-    <span class="green">Krushi</span><span class="gold">Care</span>
-  </h1>
-  <p class="tagline">Helping Maharashtra Farmers with Smart Decisions</p>
-</main>
-<!-- Home Info Cards -->
-<section class="home-cards" id="homeCards">
-  <!-- Cards will be injected by JS -->
-</section>
+  <main class="content">
+    <h1 class="app-name">
+      <span class="green">Krushi</span><span class="gold">Care</span>
+    </h1>
+    <p class="tagline">Helping Maharashtra Farmers with Smart Decisions</p>
+  </main>
 
-
-
+  <!-- Home Info Cards -->
+   
+  <section class="home-cards" id="homeCards"></section>
+  <!-- Smart Advice Bottom Card -->
+ <div id="smartAdviceContainer" class="bottom-advice"></div>
   <!-- Bottom Menu Bar -->
   <nav class="bottom-menu">
     <a href="#" class="menu-item active">
@@ -60,7 +67,7 @@
       <small>Home</small>
     </a>
 
-   <a href="./you.html" class="menu-item">
+    <a href="./you.html" class="menu-item">
       <span class="material-icons">person</span>
       <small>You</small>
     </a>
@@ -82,170 +89,58 @@
   </nav>
 
   <!-- Service Worker -->
- 
-    <script>
-  if ('serviceWorker' in navigator) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/service-worker.js')
-        .then(reg => console.log('Service Worker registered', reg))
-        .catch(err => console.log('Service Worker failed', err));
-    });
-  }
-</script>
-
-    
-  </script>
   <script>
-  const API_KEY = "7890d18ea0eb73d0fd252f2c8a90322a";
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js')
+          .then(reg => console.log('Service Worker registered', reg))
+          .catch(err => console.log('Service Worker failed', err));
+      });
+    }
+  </script>
 
-  function fetchWeather(lat, lon) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`)
-    .then(res => {
-      if (!res.ok) {
-        throw new Error("API request failed");
-      }
-      return res.json();
-    })
-    .then(data => {
-      document.getElementById("temperature").innerText =
-        Math.round(data.main.temp) + "°C";
+  <!-- Weather Script -->
+  <script>
+    const API_KEY = "7890d18ea0eb73d0fd252f2c8a90322a";
 
-      document.getElementById("condition").innerText =
-        data.weather[0].main;
+    function fetchWeather(lat, lon) {
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`)
+        .then(res => {
+          if (!res.ok) throw new Error("API request failed");
+          return res.json();
+        })
+        .then(data => {
+          document.getElementById("temperature").innerText =
+            Math.round(data.main.temp) + "°C";
 
-      document.getElementById("location").innerText =
-        data.name;
-    })
-    .catch(err => {
-      console.log("Weather Error:", err);
-      document.getElementById("condition").innerText = "Weather unavailable";
-    });
-}
+          document.getElementById("condition").innerText =
+            data.weather[0].main;
 
-  // Get user location
-  if ("geolocation" in navigator) {
-    navigator.geolocation.getCurrentPosition(
-      pos => {
-        fetchWeather(pos.coords.latitude, pos.coords.longitude);
-      },
-      () => {
-        document.getElementById("condition").innerText = "Location denied";
-      }
-    );
-  } else {
-    document.getElementById("condition").innerText = "No GPS support";
-  }
-</script>
+          document.getElementById("location").innerText =
+            data.name;
+        })
+        .catch(err => {
+          console.log("Weather Error:", err);
+          document.getElementById("condition").innerText = "Weather unavailable";
+        });
+    }
 
+    if ("geolocation" in navigator) {
+      navigator.geolocation.getCurrentPosition(
+        pos => {
+          fetchWeather(pos.coords.latitude, pos.coords.longitude);
+        },
+        () => {
+          document.getElementById("condition").innerText = "Location denied";
+        }
+      );
+    } else {
+      document.getElementById("condition").innerText = "No GPS support";
+    }
+  </script>
 
-<script>
-
-/* ===============================
-   MARKET SNAPSHOT MODULE
-================================ */
-
-let marketData = {
-  crop: "Loading...",
-  todayPrice: 0,
-  yesterdayPrice: 0,
-  unit: "₹/quintal"
-};
-
-/* Fetch market data from backend */
-function fetchMarketData() {
-  fetch("/api/market")
-    .then(res => {
-      if (!res.ok) {
-        throw new Error("Backend not responding");
-      }
-      return res.json();
-    })
-    .then(data => {
-      marketData.crop = data.crop;
-      marketData.todayPrice = data.price;
-      marketData.yesterdayPrice = data.yesterday;
-
-      loadHomeModule();   // refresh UI after data arrives
-    })
-    .catch(err => {
-      console.log("Market error:", err);
-    });
-}
-
-/* Render Market Snapshot */
-function loadMarketSnapshot() {
-  const change = marketData.todayPrice - marketData.yesterdayPrice;
-
-  let trend = "";
-  if (change > 0) {
-    trend = "▲ Rising";
-  } else if (change < 0) {
-    trend = "▼ Falling";
-  } else {
-    trend = "● Stable";
-  }
-
-  return `
-    <h4>Market Snapshot</h4>
-    <p class="price">${marketData.todayPrice} <span>${marketData.unit}</span></p>
-    <p class="crop">${marketData.crop}</p>
-    <p class="trend">${trend}</p>
-  `;
-}
-
-</script>
-
-<script>
-/* ===============================
-   ENVIRONMENT ALERT MODULE
-================================ */
-
-function getEnvironmentAlert(temp, condition) {
-  if (condition.includes("Rain")) {
-    return "🌧 Heavy rain expected. Avoid pesticide spraying.";
-  }
-  if (temp > 35) {
-    return "🔥 High temperature. Increase irrigation.";
-  }
-  return "🌱 Weather is suitable for farming activities.";
-}
-
-function loadEnvironmentAlert() {
-  const temp = document.getElementById("temperature").innerText.replace("°C", "");
-  const condition = document.getElementById("condition").innerText;
-
-  return `
-    <div class="card">
-      <h3>Environment Alert</h3>
-      <p>${getEnvironmentAlert(Number(temp), condition)}</p>
-    </div>
-  `;
-}
-</script>
-
-<script>
-/* ===============================
-   ECONOMIC IMPACT MODULE
-================================ */
-
-const worldImpact = {
-  title: "Fuel Prices Increased",
-  impact: "Transport cost may increase. Selling locally is advised."
-};
-
-function loadEconomicImpact() {
-  return `
-    <div class="card">
-      <h3>Economy & World Impact</h3>
-      <p><strong>${worldImpact.title}</strong></p>
-      <p>${worldImpact.impact}</p>
-    </div>
-  `;
-}
-</script>
-
-
-<script>
+  <!-- SMART ADVICE ONLY -->
+  <script>
 /* ===============================
    SMART ADVICE MODULE
 ================================ */
@@ -260,54 +155,19 @@ function generateSmartAdvice() {
 }
 
 function loadSmartAdvice() {
-  return `
-    <div class="card highlight">
+  const container = document.getElementById("smartAdviceContainer");
+
+  container.innerHTML = `
+    <div class="bottom-advice-card">
       <h3>Today’s Smart Advice</h3>
       <p>${generateSmartAdvice()}</p>
     </div>
   `;
 }
-</script>
-
-<script>
-/* ===============================
-   HOME MODULE CONTROLLER
-================================ */
-
-function loadHomeModule() {
-  const homeCards = document.getElementById("homeCards");
-
-  homeCards.innerHTML = `
-    <div class="home-grid">
-
-      <div class="home-card hero">
-        ${loadMarketSnapshot()}
-      </div>
-
-      <div class="home-row">
-        <div class="home-card">
-          ${loadEnvironmentAlert()}
-        </div>
-
-        <div class="home-card">
-          ${loadEconomicImpact()}
-        </div>
-      </div>
-
-      <div class="home-card advice">
-        ${loadSmartAdvice()}
-      </div>
-
-    </div>
-  `;
-}
 
 window.addEventListener("load", () => {
-  fetchMarketData();
+  loadSmartAdvice();
 });
-
-
 </script>
-
 </body>
 </html>

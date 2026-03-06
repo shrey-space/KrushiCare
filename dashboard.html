@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KrushiCare Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<link rel="stylesheet" href="dashboard.css">
+
+</head>
+
+<body>
+
+<div class="dashboard">
+
+<!-- HEADER -->
+
+<div class="header">
+<h1>👨‍🌾 Farmer Dashboard</h1>
+</div>
+
+
+<!-- PROFILE SECTION -->
+
+<div class="section">
+
+<h2>
+<span class="material-icons">person</span>
+Profile Information
+</h2>
+
+<div class="grid profile-grid">
+
+<div class="box">
+<span class="material-icons">badge</span>
+<p id="name">Loading...</p>
+</div>
+
+<div class="box">
+<span class="material-icons">calendar_today</span>
+<p id="age">Loading...</p>
+</div>
+
+<div class="box">
+<span class="material-icons">phone</span>
+<p id="phone">Loading...</p>
+</div>
+
+<div class="box">
+<span class="material-icons">location_on</span>
+<p id="district">Loading...</p>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FARM DETAILS -->
+
+<div class="section">
+
+<h2>
+<span class="material-icons">agriculture</span>
+Farm Details
+</h2>
+
+<div class="grid">
+
+<div class="box highlight">
+<p id="farmSize">Loading...</p>
+<small>Farm Size</small>
+</div>
+
+<div class="box">
+<p id="crop">Loading...</p>
+<small>Main Crop</small>
+</div>
+
+<div class="box">
+<p id="soil">Loading...</p>
+<small>Soil Type</small>
+</div>
+
+<div class="box">
+<p id="experience">Loading...</p>
+<small>Experience</small>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- FACILITIES -->
+
+<div class="section">
+
+<h2>
+<span class="material-icons">build</span>
+Facilities & Resources
+</h2>
+
+<div class="grid">
+
+<div class="box">
+<p id="irrigation">Loading...</p>
+<small>Irrigation</small>
+</div>
+
+<div class="box">
+<p id="water">Loading...</p>
+<small>Water Level</small>
+</div>
+
+<div class="box">
+<p id="storage">Loading...</p>
+<small>Storage</small>
+</div>
+
+<div class="box">
+<p id="tractor">Loading...</p>
+<small>Tractor</small>
+</div>
+
+<div class="box">
+<p id="insurance">Loading...</p>
+<small>Insurance</small>
+</div>
+
+<div class="box">
+<p id="loan">Loading...</p>
+<small>Loan</small>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SELLING STRATEGY -->
+
+<div class="section">
+
+<h2>
+<span class="material-icons">trending_up</span>
+Selling Strategy
+</h2>
+
+<div class="strategy-box" id="risk">
+Loading...
+</div>
+
+</div>
+
+</div>
+
+
+<script type="module">
+
+/* FIREBASE IMPORTS */
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+
+import { getFirestore, doc, getDoc }
+from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
+
+
+/* FIREBASE CONFIG */
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyAFz6Y_XweoVKKQNWMvTk6Zp__Ja-VCq7I",
+
+authDomain: "krushicare-4a91b.firebaseapp.com",
+
+projectId: "krushicare-4a91b",
+
+storageBucket: "krushicare-4a91b.firebasestorage.app",
+
+messagingSenderId: "792560987514",
+
+appId: "1:792560987514:web:0e7545500423afb3eefac3"
+
+};
+
+
+/* INITIALIZE FIREBASE */
+
+const app = initializeApp(firebaseConfig);
+
+const db = getFirestore(app);
+
+
+
+/* LOAD PROFILE */
+
+async function loadProfile() {
+
+const phone = localStorage.getItem("farmerPhone");
+
+console.log("Farmer phone:", phone);
+
+
+if (!phone) {
+
+alert("Profile not found. Please fill profile first.");
+
+window.location.href = "you.html";
+
+return;
+
+}
+
+
+try {
+
+const docRef = doc(db, "farmers", phone);
+
+const docSnap = await getDoc(docRef);
+
+
+if (docSnap.exists()) {
+
+const data = docSnap.data();
+
+console.log("Profile Data:", data);
+
+
+/* PROFILE */
+
+document.getElementById("name").innerText = data.name;
+
+document.getElementById("age").innerText = data.age;
+
+document.getElementById("phone").innerText = data.phone;
+
+document.getElementById("district").innerText = data.district;
+
+
+/* FARM */
+
+document.getElementById("farmSize").innerText =
+data.farmSize + " acres";
+
+document.getElementById("crop").innerText =
+data.crop;
+
+document.getElementById("soil").innerText =
+data.soil;
+
+document.getElementById("experience").innerText =
+data.experience + " years";
+
+
+/* FACILITIES */
+
+document.getElementById("irrigation").innerText =
+data.irrigation;
+
+document.getElementById("water").innerText =
+data.water;
+
+document.getElementById("storage").innerText =
+data.storage;
+
+document.getElementById("tractor").innerText =
+data.tractor;
+
+document.getElementById("insurance").innerText =
+data.insurance;
+
+document.getElementById("loan").innerText =
+data.loan;
+
+
+/* SELLING STRATEGY */
+
+document.getElementById("risk").innerText =
+data.risk;
+
+
+} else {
+
+alert("No profile data found. Please create profile.");
+
+window.location.href = "you.html";
+
+}
+
+}
+
+catch(error){
+
+console.error("Firestore Error:", error);
+
+alert("Failed to load profile data.");
+
+}
+
+}
+
+
+loadProfile();
+
+</script>
+
+</body>
+
+</html>

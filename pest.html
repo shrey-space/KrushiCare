@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pest Advisory | KrushiCare</title>
+
+<link rel="stylesheet" href="pest.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="pest-container">
+
+<header class="pest-header">
+
+<button onclick="goBack()" class="back-btn">
+<span class="material-icons">arrow_back</span>
+</button>
+
+<h2>Pest Advisory</h2>
+
+</header>
+
+
+<div class="pest-card">
+
+<div class="pest-title">
+
+<span class="material-icons pest-icon">bug_report</span>
+
+<h3 id="pestName">Loading...</h3>
+
+</div>
+
+<p id="pestDesc" class="pest-desc">
+Fetching pest information...
+</p>
+
+
+<div class="solution-section">
+
+<h4>
+<span class="material-icons">health_and_safety</span>
+Recommended Solutions
+</h4>
+
+<ul id="pestSolutions"></ul>
+
+</div>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+const pest = JSON.parse(localStorage.getItem("pestData"));
+
+if (pest) {
+
+  // Pest name
+  document.getElementById("pestName").innerText = pest.common_name;
+
+  // Description section
+  const descContainer = document.getElementById("pestDesc");
+
+  if (Array.isArray(pest.description)) {
+
+    let text = "";
+
+    pest.description.forEach(item => {
+      text += item.subtitle + ": " + item.description + "\n\n";
+    });
+
+    descContainer.innerText = text;
+
+  } else {
+    descContainer.innerText = pest.description;
+  }
+
+
+  // Solutions section
+  const list = document.getElementById("pestSolutions");
+
+  if (Array.isArray(pest.solution)) {
+
+    pest.solution.forEach(sol => {
+
+      const li = document.createElement("li");
+
+      // Some APIs return object with description
+      if (typeof sol === "object") {
+        li.innerText = sol.description;
+      } else {
+        li.innerText = sol;
+      }
+
+      list.appendChild(li);
+
+    });
+
+  }
+
+}
+
+
+/* Back button */
+
+function goBack(){
+
+window.location.href = "enviroment.html";
+
+}
+
+</script>
+
+
+</body>
+
+</html>

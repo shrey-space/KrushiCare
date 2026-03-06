@@ -1,109 +1,194 @@
-/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* FULL SCREEN BODY */
+/* ===============================
+   MODERN BACKGROUND
+================================ */
 body {
   min-height: 100vh;
-  background: linear-gradient(135deg, #1b5e20, #2e7d32);
-  overflow-y: auto;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  background-size: 300% 300%;
+  animation: gradientMove 8s ease infinite;
   color: white;
 }
 
-/* PAGE CONTAINER */
-.you-page {
-  width: 100%;
-  min-height: 100vh;
-  padding: 25px 20px 40px;
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
-/* PAGE TITLE */
-.page-title {
-  font-size: 24px;
-  margin-bottom: 20px;
+/* ===============================
+   TOP HEADER (GLASS)
+================================ */
+.top-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 65px;
+  backdrop-filter: blur(18px);
+  background: rgba(255, 255, 255, 0.08);
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  padding: 0 18px;
+  z-index: 1000;
+}
+
+.top-header h2 {
+  flex: 1;
   text-align: center;
-  font-weight: 600;
-}
-
-/* CARD */
-.you-card {
-  width: 100%;
-  background: rgba(255,255,255,0.15);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 20px;
-  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-}
-
-/* HEADINGS */
-.you-card h3 {
   font-size: 18px;
-  margin-bottom: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
-/* LABEL */
+.back-btn {
+  background: none;
+  border: none;
+  color: #00e676;
+  font-size: 24px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.back-btn:hover {
+  transform: scale(1.2);
+}
+
+/* ===============================
+   PAGE
+================================ */
+.you-page {
+  padding: 95px 18px 40px;
+}
+
+/* ===============================
+   GLASS CARDS
+================================ */
+.you-card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 22px;
+  margin-bottom: 20px;
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  transition: 0.3s ease;
+}
+
+.you-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 40px rgba(0,0,0,0.45);
+}
+
+.you-card h3 {
+  margin-bottom: 16px;
+  font-size: 17px;
+  font-weight: 600;
+  color: #00e676;
+}
+
+/* ===============================
+   INPUTS (MODERN FLOAT STYLE)
+================================ */
 .you-card label {
+  font-size: 13px;
+  margin-top: 14px;
   display: block;
-  margin-top: 12px;
-  font-size: 15px;
+  opacity: 0.85;
 }
 
-/* INPUT + SELECT */
 .you-card input,
 .you-card select {
   width: 100%;
   padding: 14px;
   margin-top: 6px;
-  border-radius: 12px;
-  border: none;
-  font-size: 16px;
-  background: white;
-  color: #222;
+  border-radius: 14px;
+  border: 1px solid rgba(255,255,255,0.2);
+  font-size: 14px;
+  background: rgba(255,255,255,0.12);
+  color: white;
+  outline: none;
+  transition: 0.3s ease;
 }
 
-/* RADIO */
-.you-card input[type="radio"] {
+.you-card input::placeholder {
+  color: rgba(255,255,255,0.6);
+}
+
+.you-card input:focus,
+.you-card select:focus {
+  border: 1px solid #00e676;
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.6);
+  background: rgba(255,255,255,0.18);
+}
+
+/* ===============================
+   RADIO STYLE
+================================ */
+.radio-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255,255,255,0.07);
+  padding: 12px 14px;
+  border-radius: 14px;
+  cursor: pointer;
+  transition: 0.3s ease;
+  margin-top: 10px;
+}
+
+.radio-item:hover {
+  background: rgba(0, 230, 118, 0.15);
+}
+
+.radio-item input {
   transform: scale(1.2);
-  margin-right: 8px;
 }
 
-/* SAVE BUTTON */
+/* ===============================
+   SAVE BUTTON (GRADIENT + GLOW)
+================================ */
 .save-btn {
   width: 100%;
   padding: 16px;
-  border-radius: 14px;
+  border-radius: 16px;
   border: none;
-  background: #1b5e20;
-  color: white;
-  font-size: 17px;
-  font-weight: 600;
+  background: linear-gradient(135deg, #00e676, #00c853);
+  color: #0f2027;
+  font-size: 16px;
+  font-weight: 700;
   margin-bottom: 20px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+  cursor: pointer;
+  box-shadow: 0 8px 25px rgba(0, 230, 118, 0.4);
+  transition: 0.3s ease;
 }
 
-/* SUMMARY */
+.save-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 230, 118, 0.7);
+}
+
+/* ===============================
+   SUMMARY CARD
+================================ */
 .summary {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 1.7;
-  background: rgba(255,255,255,0.2);
+  background: rgba(0, 230, 118, 0.12);
+  border: 1px solid rgba(0, 230, 118, 0.3);
 }
 
-/* MOBILE OPTIMIZED */
+/* ===============================
+   RESPONSIVE
+================================ */
 @media (max-width: 480px) {
   .you-page {
-    padding: 20px 16px 40px;
-  }
-
-  .page-title {
-    font-size: 22px;
-  }
-
-  .save-btn {
-    font-size: 16px;
+    padding: 90px 15px 40px;
   }
 }

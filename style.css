@@ -9,12 +9,13 @@
 }
 
 /* ===============================
-   BODY (FIXED)
+   BODY
 ================================ */
 body {
   min-height: 100vh;
   overflow-x: hidden;
   color: white;
+  padding-bottom: 170px;  /* increase space */
 }
 
 /* ===============================
@@ -37,7 +38,7 @@ body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.40);   /* lighter → video more visible */
+  background: rgba(0, 0, 0, 0.40);
   z-index: -1;
 }
 
@@ -94,7 +95,6 @@ body {
   text-align: center;
   margin-top: 18px;
   padding: 0 16px;
-  z-index: 4;
 }
 
 .app-name {
@@ -121,94 +121,35 @@ body {
 }
 
 /* ===============================
-   HOME CARDS (GLASS + VIDEO VISIBLE)
+   BOTTOM SMART ADVICE
 ================================ */
-.home-cards {
-  margin-top: 12px;
-  padding: 0 12px 95px;
-  max-height: 56vh;              /* prevents video blocking */
-  overflow-y: auto;
+.bottom-advice {
+  position: fixed;
+  bottom: 105px;   /* moved higher */
+  left: 0;
+  width: 100%;
+  padding: 0 20px;
+  z-index: 9;
 }
 
-/* Grid */
-.home-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-/* ===============================
-   CARD BASE (GLASS STYLE)
-================================ */
-.home-card {
-  background: rgba(255, 255, 255, 0.10);  /* transparent */
-  backdrop-filter: blur(10px);
+.bottom-advice-card {
+  background: linear-gradient(135deg, #ffd54f, #ffb300);
+  color: #222;
   border-radius: 14px;
-  padding: 12px;
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 6px 14px rgba(0,0,0,0.20);
-}
-
-/* ===============================
-   HERO MARKET CARD
-================================ */
-.home-card.hero {
-  background: linear-gradient(
-    135deg,
-    rgba(46, 125, 50, 0.75),
-    rgba(104, 159, 56, 0.75)
-  );
-}
-
-.home-card.hero .price {
-  font-size: 21px;
-  font-weight: 700;
-}
-
-.home-card.hero .price span {
-  font-size: 11px;
-  opacity: 0.8;
-}
-
-.home-card.hero .crop {
-  font-size: 12px;
-}
-
-/* ===============================
-   SIDE ROW
-================================ */
-.home-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px;
-}
-
-/* ===============================
-   SMART ADVICE
-================================ */
-.home-card.advice {
-  background: linear-gradient(
-    135deg,
-    rgba(255, 235, 59, 0.85),
-    rgba(255, 193, 7, 0.85)
-  );
-  color: #2e2e2e;
-  font-weight: 600;
-  font-size: 12.5px;
-}
-
-/* ===============================
-   TEXT
-================================ */
-.home-card h4 {
+  padding: 10px 12px;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.25);
   font-size: 13px;
+  font-weight: 500;
+}
+
+.bottom-advice-card h3 {
+  font-size: 14px;
   margin-bottom: 4px;
 }
 
-.home-card p {
-  font-size: 12px;
-  margin: 3px 0;
+.bottom-advice-card p {
+  font-size: 12.5px;
+  line-height: 1.4;
 }
 
 /* ===============================
@@ -216,7 +157,7 @@ body {
 ================================ */
 .bottom-menu {
   position: fixed;
-  bottom: 12px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
   width: 95%;
@@ -258,8 +199,7 @@ body {
    RESPONSIVE
 ================================ */
 @media (min-width: 600px) {
-  .home-cards {
+  .weather-bar {
     max-width: 420px;
-    margin: auto;
   }
 }

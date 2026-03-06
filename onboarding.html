@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KrushiCare Guide</title>
+
+<link rel="stylesheet" href="onboarding.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+
+<body>
+
+<div class="onboard-wrapper">
+
+<!-- SKIP -->
+
+<button class="skip-btn" onclick="finishOnboarding()">Skip</button>
+
+
+<!-- SLIDER -->
+
+<div class="slider">
+
+<div class="slide active">
+
+<div class="icon-box">
+<span class="material-icons">agriculture</span>
+</div>
+
+<h2>Welcome to KrushiCare</h2>
+
+<p>
+Your smart farming assistant helping farmers make
+better decisions using environment and market insights.
+</p>
+
+</div>
+
+
+<div class="slide">
+
+<div class="icon-box blue">
+<span class="material-icons">eco</span>
+</div>
+
+<h2>Environment Intelligence</h2>
+
+<p>
+Get weather insights, irrigation advice, pest alerts
+and crop health recommendations.
+</p>
+
+</div>
+
+
+<div class="slide">
+
+<div class="icon-box orange">
+<span class="material-icons">currency_rupee</span>
+</div>
+
+<h2>Market Intelligence</h2>
+
+<p>
+See mandi prices, best markets and AI powered
+selling advice to maximize your profit.
+</p>
+
+</div>
+
+
+<div class="slide">
+
+<div class="icon-box purple">
+<span class="material-icons">psychology</span>
+</div>
+
+<h2>Smart Farming Decisions</h2>
+
+<p>
+KrushiCare combines environment and economy data
+to give intelligent recommendations for farmers.
+</p>
+
+</div>
+
+
+</div>
+
+
+
+<!-- PROGRESS BAR -->
+
+<div class="progress-bar">
+
+<div class="progress" id="progress"></div>
+
+</div>
+
+
+
+<!-- BUTTON -->
+
+<button class="next-btn" onclick="nextSlide()">Next</button>
+
+</div>
+
+
+
+<script>
+
+let currentSlide = 0
+
+const slides = document.querySelectorAll(".slide")
+
+const progress = document.getElementById("progress")
+
+const nextBtn = document.querySelector(".next-btn")
+
+
+function showSlide(index){
+
+slides.forEach(s => s.classList.remove("active"))
+
+slides[index].classList.add("active")
+
+progress.style.width = ((index+1)/slides.length)*100 + "%"
+
+if(index === slides.length-1){
+nextBtn.innerText="Start App"
+}
+
+}
+
+
+function nextSlide(){
+
+currentSlide++
+
+if(currentSlide < slides.length){
+
+showSlide(currentSlide)
+
+}else{
+
+finishOnboarding()
+
+}
+
+}
+
+
+function finishOnboarding(){
+
+localStorage.setItem("onboardingDone","true")
+
+window.location.href="index.html"
+
+}
+
+</script>
+
+</body>
+
+</html>

@@ -1,31 +1,122 @@
-.env-page {
-  width: 100%;
-  min-height: 100vh;
-  padding: 20px 18px 120px;
-  overflow-y: auto;
-  color: white;
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
 }
 
-.env-card {
-  background: rgba(255,255,255,0.14);
-  backdrop-filter: blur(12px);
-  border-radius: 18px;
-  padding: 20px;
-  margin-bottom: 18px;
-  box-shadow: 0 8px 22px rgba(0,0,0,0.25);
+body{
+background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+color:white;
 }
 
-.env-card h3 {
-  font-size: 19px;
-  margin-bottom: 12px;
+.env-container{
+padding:20px 16px 120px;
+min-height:100vh;
 }
 
-.env-card p {
-  font-size: 16px;
-  margin: 6px 0;
+
+/* HEADER */
+
+.env-header{
+text-align:center;
+margin-bottom:20px;
 }
 
-.env-card.alert {
-  background: linear-gradient(135deg, #ff7043, #ff5722);
-  color: white;
+.env-header h2{
+font-size:24px;
+font-weight:700;
 }
+
+.env-header p{
+opacity:0.8;
+font-size:13px;
+}
+
+
+/* WEATHER */
+
+.weather-main{
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(12px);
+padding:20px;
+border-radius:18px;
+margin-bottom:20px;
+}
+
+.weather-temp{
+text-align:center;
+margin-bottom:15px;
+}
+
+.weather-temp h1{
+font-size:42px;
+}
+
+.weather-stats{
+display:flex;
+justify-content:space-between;
+}
+
+.stat{
+text-align:center;
+}
+
+.stat span{
+font-size:28px;
+margin-bottom:5px;
+display:block;
+}
+
+
+
+/* ALERT */
+
+.alert-card{
+background:linear-gradient(135deg,#ff7043,#ff5722);
+padding:16px;
+border-radius:14px;
+display:flex;
+align-items:center;
+gap:10px;
+margin-bottom:20px;
+}
+
+
+
+/* GRID */
+
+.insight-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:14px;
+}
+
+.card{
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(10px);
+padding:16px;
+border-radius:16px;
+text-align:center;
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-4px);
+}
+
+.card span{
+font-size:30px;
+margin-bottom:6px;
+display:block;
+}
+
+
+/* COLORS */
+
+.blue{color:#42a5f5}
+.green{color:#66bb6a}
+.orange{color:#ffa726}
+.purple{color:#ba68c8}
+.cyan{color:#4dd0e1}
+.brown{color:#a1887f}

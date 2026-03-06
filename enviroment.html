@@ -1,114 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="stylesheet" href="enviroment.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KrushiCare Environment</title>
+
+<link rel="stylesheet" href="enviroment.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
 </head>
 
-<div class="env-page">
+<body>
 
-  <!-- Current Weather -->
-  <div class="env-card">
-    <h3>🌦 Current Weather</h3>
-    <p><b>Temperature:</b> <span id="envTemp">--°C</span></p>
-    <p><b>Condition:</b> <span id="envCondition">Loading...</span></p>
-    <p><b>Humidity:</b> <span id="envHumidity">--%</span></p>
-    <p><b>Wind:</b> <span id="envWind">-- km/h</span></p>
-  </div>
+<div class="env-container">
 
-  <!-- Farming Alert -->
-  <div class="env-card alert" id="envAlert">
-    <h3>🚨 Farming Alert</h3>
-    <p>Checking conditions...</p>
-  </div>
+<header class="env-header">
+<h2>🌱 Farm Environment</h2>
+<p>Weather + Market insights for farmers</p>
+</header>
 
-  <!-- Irrigation Advice -->
-  <div class="env-card">
-    <h3>💧 Irrigation Advice</h3>
-    <p id="irrigationAdvice">Analyzing weather...</p>
-  </div>
 
-  <!-- Pest Risk -->
-  <div class="env-card">
-    <h3>🐛 Pest Risk Level</h3>
-    <p id="pestRisk">Calculating...</p>
-  </div>
+<!-- WEATHER SUMMARY -->
+
+<div class="weather-main">
+
+<div class="weather-temp">
+<h1 id="temp">--°C</h1>
+<p id="condition">Loading...</p>
+</div>
+
+<div class="weather-stats">
+
+<div class="stat">
+<span class="material-icons">water_drop</span>
+<p>Humidity</p>
+<b id="humidity">--%</b>
+</div>
+
+<div class="stat">
+<span class="material-icons">air</span>
+<p>Wind</p>
+<b id="wind">-- km/h</b>
+</div>
+
+<div class="stat">
+<span class="material-icons">thermostat</span>
+<p>Feels Like</p>
+<b id="feels">--°C</b>
+</div>
+
+</div>
+</div>
+
+
+<!-- ALERT -->
+
+<div class="alert-card" id="alertBox">
+<span class="material-icons">warning</span>
+<p>Analyzing weather risk...</p>
+</div>
+
+
+<!-- INSIGHT GRID -->
+
+<div class="insight-grid">
+
+<div class="card" onclick="openIrrigationPage()">
+<span class="material-icons blue">water</span>
+<h3>Irrigation</h3>
+<p id="irrigation">Analyzing...</p>
+</div>
+
+
+<div class="card" onclick="openPestPage()">
+<span class="material-icons green">bug_report</span>
+<h3>Pest Risk</h3>
+<p id="pest">Loading pest data...</p>
+</div>
+
+
+<div class="card">
+<span class="material-icons orange">wb_sunny</span>
+<h3>Heat Stress</h3>
+<p id="sun">Analyzing...</p>
+</div>
+
+
+<div class="card">
+<span class="material-icons purple">eco</span>
+<h3>Crop Growth</h3>
+<p id="growth">Analyzing...</p>
+</div>
+
+
+<div class="card">
+<span class="material-icons cyan">water_drop</span>
+<h3>Soil Moisture</h3>
+<p id="soilMoisture">Analyzing...</p>
+</div>
+
+
+<div class="card">
+<span class="material-icons brown">agriculture</span>
+<h3>Farm Activity</h3>
+<p id="activity">Analyzing...</p>
+</div>
+
+
+<!-- MARKET CARD -->
+
+<div class="card" onclick="openMandiPage()">
+<span class="material-icons green">currency_rupee</span>
+<h3>Market Price</h3>
+<p id="market">Loading mandi price...</p>
+</div>
+
+
+<div class="card">
+<span class="material-icons orange">trending_up</span>
+<h3>Sell Advice</h3>
+<p id="sellAdvice">Analyzing market...</p>
+</div>
 
 </div>
 
+</div>
+
+
+
 <script>
-const WEATHER_API_KEY = "YOUR_OPENWEATHER_KEY";
 
-function loadEnvironmentWeather(lat, lon) {
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${WEATHER_API_KEY}`)
-    .then(res => res.json())
-    .then(data => {
+/* API KEYS */
 
-      const temp = data.main.temp;
-      const humidity = data.main.humidity;
-      const wind = data.wind.speed;
-      const condition = data.weather[0].main;
+const WEATHER_API="7890d18ea0eb73d0fd252f2c8a90322a"
 
-      document.getElementById("envTemp").innerText = temp + "°C";
-      document.getElementById("envCondition").innerText = condition;
-      document.getElementById("envHumidity").innerText = humidity + "%";
-      document.getElementById("envWind").innerText = wind + " km/h";
+const PEST_API="https://perenual.com/api/pest-disease-list?key=sk-lNwb69a9cb61ef6c015228"
 
-      generateEnvironmentAdvice(temp, humidity, condition);
+const MANDI_API=
+"https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd00000156c8041690bd45956332eabf01fe61eb&format=json&filters[state]=Maharashtra&limit=100"
 
-    })
-    .catch(() => {
-      document.getElementById("envCondition").innerText = "Weather unavailable";
-    });
+
+
+/* NAVIGATION */
+
+function openIrrigationPage(){
+window.location.href="irrigation.html"
 }
 
-function generateEnvironmentAdvice(temp, humidity, condition) {
-
-  // Farming Alert
-  let alertText = "Weather conditions are stable.";
-
-  if (condition.includes("Rain")) {
-    alertText = "Heavy rain expected. Avoid spraying pesticides.";
-  } else if (temp > 35) {
-    alertText = "High temperature. Protect crops from heat stress.";
-  } else if (temp < 15) {
-    alertText = "Low temperature. Risk of cold damage.";
-  }
-
-  document.getElementById("envAlert").innerHTML = `
-    <h3>🚨 Farming Alert</h3>
-    <p>${alertText}</p>
-  `;
-
-  // Irrigation Advice
-  let irrigationText = "Normal irrigation schedule.";
-
-  if (temp > 32 && humidity < 50) {
-    irrigationText = "Increase irrigation frequency.";
-  } else if (condition.includes("Rain")) {
-    irrigationText = "Reduce irrigation due to rainfall.";
-  }
-
-  document.getElementById("irrigationAdvice").innerText = irrigationText;
-
-  // Pest Risk Logic
-  let pest = "Low";
-
-  if (humidity > 70 && temp > 25) {
-    pest = "High (Fungal disease risk)";
-  } else if (humidity > 60) {
-    pest = "Moderate";
-  }
-
-  document.getElementById("pestRisk").innerText = pest;
+function openPestPage(){
+window.location.href="pest.html"
 }
 
-// Auto load using GPS
-if ("geolocation" in navigator) {
-  navigator.geolocation.getCurrentPosition(
-    pos => {
-      loadEnvironmentWeather(pos.coords.latitude, pos.coords.longitude);
-    },
-    () => {
-      document.getElementById("envCondition").innerText = "Location denied";
-    }
-  );
+function openMandiPage(){
+window.location.href="mandi.html"
 }
+
+
+
+/* WEATHER */
+
+function loadWeather(lat,lon){
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${WEATHER_API}`)
+
+.then(res=>res.json())
+
+.then(data=>{
+
+const temp=data.main.temp
+const humidity=data.main.humidity
+const wind=data.wind.speed
+const condition=data.weather[0].main
+const feels=data.main.feels_like
+
+document.getElementById("temp").innerText=Math.round(temp)+"°C"
+document.getElementById("condition").innerText=condition
+document.getElementById("humidity").innerText=humidity+"%"
+document.getElementById("wind").innerText=wind+" km/h"
+document.getElementById("feels").innerText=Math.round(feels)+"°C"
+
+generateAdvice(temp,humidity,wind,condition)
+
+})
+
+}
+
+
+
+/* FARM ADVICE */
+
+function generateAdvice(temp,humidity,wind,condition){
+
+let alert="Weather conditions normal"
+
+if(condition.includes("Rain"))
+alert="Rain expected. Avoid pesticide spraying."
+
+else if(temp>35)
+alert="High heat stress risk for crops."
+
+else if(wind>20)
+alert="High wind. Spraying chemicals not recommended."
+
+document.getElementById("alertBox").innerHTML=
+`<span class="material-icons">warning</span><p>${alert}</p>`
+
+
+
+const profile = JSON.parse(localStorage.getItem("farmerProfile")) || {}
+
+const crop = (profile.crop || "").toLowerCase()
+const soil = (profile.soil || "").toLowerCase()
+
+
+
+/* IRRIGATION */
+
+let irrigation="Normal irrigation schedule."
+
+if(condition.includes("Rain")){
+irrigation="Rain expected today. Avoid irrigation."
+}
+
+else if(temp>36 && humidity<40){
+irrigation="Extreme heat. Irrigate crops today evening."
+}
+
+else if(temp>32 && humidity<55){
+irrigation="Moderate evaporation. Light irrigation recommended."
+}
+
+if(crop.includes("onion"))
+irrigation+=" Onion requires irrigation every 5-7 days."
+
+if(crop.includes("tomato"))
+irrigation+=" Tomato prefers frequent watering."
+
+if(soil.includes("black"))
+irrigation+=" Black soil retains moisture longer."
+
+document.getElementById("irrigation").innerText=irrigation
+
+
+
+/* PEST WEATHER RISK */
+
+let pestRisk="Low pest risk"
+
+if(humidity>70 && temp>25)
+pestRisk="High pest risk due to humidity"
+
+else if(humidity>60)
+pestRisk="Moderate pest activity possible"
+
+document.getElementById("pest").innerText=pestRisk
+
+
+
+/* HEAT */
+
+let sun="Normal sunlight"
+
+if(temp>34)
+sun="Heat stress possible for crops"
+
+document.getElementById("sun").innerText=sun
+
+
+
+/* GROWTH */
+
+let growth="Good growth conditions"
+
+if(temp>36)
+growth="Growth stress due to heat"
+
+document.getElementById("growth").innerText=growth
+
+
+
+/* SOIL MOISTURE */
+
+let soilMoisture="Moderate moisture"
+
+if(humidity<40)
+soilMoisture="Soil drying quickly"
+
+document.getElementById("soilMoisture").innerText=soilMoisture
+
+
+
+/* ACTIVITY */
+
+let activity="General farm work recommended"
+
+if(condition.includes("Rain"))
+activity="Avoid spraying today"
+
+document.getElementById("activity").innerText=activity
+
+}
+
+
+
+/* LOAD PEST DATA */
+
+async function loadPest(){
+
+try{
+
+const res=await fetch(PEST_API)
+const data=await res.json()
+
+const pest=data.data[0]
+
+localStorage.setItem("pestData",JSON.stringify(pest))
+
+document.getElementById("pest").innerText=
+`Possible pest: ${pest.common_name}`
+
+}
+catch(err){
+
+document.getElementById("pest").innerText="Pest data unavailable"
+
+}
+
+}
+
+
+
+/* LOAD MANDI DATA */
+
+async function loadMarket(){
+
+try{
+
+const response=await fetch(MANDI_API)
+const data=await response.json()
+
+const records=data.records
+
+if(!records || records.length===0){
+
+document.getElementById("market").innerText="No mandi data"
+return
+
+}
+
+/* example onion price */
+
+const onion=records.find(r=>
+r.commodity.toLowerCase().includes("onion")
+)
+
+if(onion){
+
+document.getElementById("market").innerText=
+`${onion.market} ₹${onion.modal_price}/quintal`
+
+}else{
+
+document.getElementById("market").innerText=
+"Price data available"
+
+}
+
+/* save for mandi page */
+
+localStorage.setItem("mandiData",JSON.stringify(records))
+
+}
+catch(err){
+
+document.getElementById("market").innerText="Market data unavailable"
+
+}
+
+}
+
+
+
+/* LOAD DATA */
+
+if("geolocation" in navigator){
+
+navigator.geolocation.getCurrentPosition(
+
+pos=>{
+loadWeather(pos.coords.latitude,pos.coords.longitude)
+loadMarket()
+loadPest()
+}
+
+)
+
+}
+
 </script>
+
+</body>
+</html>

@@ -1,113 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KrushiCare Settings</title>
+
 <link rel="stylesheet" href="setting.css">
 
-<div class="set-page">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-  <!-- Language -->
-  <div class="set-card">
-    <h3>🌐 Language</h3>
-    <select id="languageSelect" onchange="saveSettings()">
-      <option value="en">English</option>
-      <option value="mr">Marathi</option>
-      <option value="hi">Hindi</option>
-    </select>
-  </div>
+</head>
 
-  <!-- Notifications -->
-  <div class="set-card">
-    <h3>🔔 Alerts & Notifications</h3>
+<body>
 
-    <label>
-      <input type="checkbox" id="rainAlert" onchange="saveSettings()">
-      Rain Alert
-    </label>
+<div class="settings-container">
 
-    <label>
-      <input type="checkbox" id="priceAlert" onchange="saveSettings()">
-      Price Change Alert
-    </label>
+<header class="settings-header">
+<h2>⚙️ App Settings</h2>
+<p>Manage your KrushiCare preferences</p>
+</header>
 
-    <label>
-      <input type="checkbox" id="pestAlert" onchange="saveSettings()">
-      Pest Risk Alert
-    </label>
-  </div>
 
-  <!-- Units -->
-  <div class="set-card">
-    <h3>📏 Units</h3>
-    <select id="unitSelect" onchange="saveSettings()">
-      <option value="acre">Acre</option>
-      <option value="hectare">Hectare</option>
-    </select>
-  </div>
+<!-- LANGUAGE -->
+<div class="settings-card">
 
-  <!-- Theme -->
-  <div class="set-card">
-    <h3>🎨 Theme</h3>
-    <select id="themeSelect" onchange="applyTheme(); saveSettings();">
-      <option value="dark">Dark</option>
-      <option value="light">Light</option>
-    </select>
-  </div>
+<h3><span class="material-icons">language</span> Language</h3>
 
-  <!-- Data Reset -->
-  <div class="set-card danger">
-    <h3>🗑 Reset Data</h3>
-    <button onclick="resetApp()">Clear Profile & Data</button>
-  </div>
+<select id="languageSelect" onchange="saveSettings()">
+<option value="en">English</option>
+<option value="mr">Marathi</option>
+<option value="hi">Hindi</option>
+</select>
 
 </div>
 
+
+<!-- ALERTS -->
+<div class="settings-card">
+
+<h3><span class="material-icons">notifications</span> Alerts & Notifications</h3>
+
+<label class="toggle">
+<input type="checkbox" id="rainAlert" onchange="saveSettings()">
+<span class="slider"></span>
+Rain Alert
+</label>
+
+<label class="toggle">
+<input type="checkbox" id="priceAlert" onchange="saveSettings()">
+<span class="slider"></span>
+Price Change Alert
+</label>
+
+<label class="toggle">
+<input type="checkbox" id="pestAlert" onchange="saveSettings()">
+<span class="slider"></span>
+Pest Risk Alert
+</label>
+
+<label class="toggle">
+<input type="checkbox" id="heatAlert" onchange="saveSettings()">
+<span class="slider"></span>
+Heat Stress Alert
+</label>
+
+</div>
+
+
+<!-- LOCATION -->
+<div class="settings-card">
+
+<h3><span class="material-icons">location_on</span> Location</h3>
+
+<select id="locationMode" onchange="saveSettings()">
+<option value="auto">Auto Detect (GPS)</option>
+<option value="manual">Manual District</option>
+</select>
+
+<input type="text" id="districtInput" placeholder="Enter district">
+
+</div>
+
+
+<!-- CROP -->
+<div class="settings-card">
+
+<h3><span class="material-icons">eco</span> Default Crop</h3>
+
+<select id="cropSelect" onchange="saveSettings()">
+<option value="onion">Onion</option>
+<option value="tomato">Tomato</option>
+<option value="rice">Rice</option>
+<option value="wheat">Wheat</option>
+<option value="soybean">Soybean</option>
+</select>
+
+</div>
+
+
+<!-- UNITS -->
+<div class="settings-card">
+
+<h3><span class="material-icons">straighten</span> Farm Units</h3>
+
+<select id="unitSelect" onchange="saveSettings()">
+<option value="acre">Acre</option>
+<option value="hectare">Hectare</option>
+</select>
+
+</div>
+
+
+<!-- THEME -->
+<div class="settings-card">
+
+<h3><span class="material-icons">palette</span> Theme</h3>
+
+<select id="themeSelect" onchange="applyTheme(); saveSettings();">
+<option value="dark">Dark</option>
+<option value="light">Light</option>
+</select>
+
+</div>
+
+
+<!-- DATA SYNC -->
+<div class="settings-card">
+
+<h3><span class="material-icons">cloud</span> Data Sync</h3>
+
+<label class="toggle">
+<input type="checkbox" id="cloudSync" onchange="saveSettings()">
+<span class="slider"></span>
+Sync profile with cloud
+</label>
+
+</div>
+
+
+<!-- RESET -->
+<div class="settings-card danger">
+
+<h3><span class="material-icons">delete</span> Reset Data</h3>
+
+<button onclick="resetApp()">Clear Profile & App Data</button>
+
+</div>
+
+
+</div>
+
+
 <script>
-/* Load saved settings */
-function loadSettings() {
-  const settings = JSON.parse(localStorage.getItem("appSettings")) || {};
 
-  document.getElementById("languageSelect").value = settings.language || "en";
-  document.getElementById("rainAlert").checked = settings.rainAlert || false;
-  document.getElementById("priceAlert").checked = settings.priceAlert || false;
-  document.getElementById("pestAlert").checked = settings.pestAlert || false;
-  document.getElementById("unitSelect").value = settings.unit || "acre";
-  document.getElementById("themeSelect").value = settings.theme || "dark";
+/* LOAD SETTINGS */
 
-  applyTheme();
+function loadSettings(){
+
+const settings=JSON.parse(localStorage.getItem("appSettings"))||{}
+
+document.getElementById("languageSelect").value=settings.language||"en"
+document.getElementById("rainAlert").checked=settings.rainAlert||false
+document.getElementById("priceAlert").checked=settings.priceAlert||false
+document.getElementById("pestAlert").checked=settings.pestAlert||false
+document.getElementById("heatAlert").checked=settings.heatAlert||false
+
+document.getElementById("unitSelect").value=settings.unit||"acre"
+document.getElementById("themeSelect").value=settings.theme||"dark"
+
+document.getElementById("locationMode").value=settings.locationMode||"auto"
+document.getElementById("districtInput").value=settings.district||""
+
+document.getElementById("cropSelect").value=settings.crop||"onion"
+
+document.getElementById("cloudSync").checked=settings.cloudSync||false
+
+applyTheme()
+
 }
 
-/* Save settings */
-function saveSettings() {
-  const settings = {
-    language: document.getElementById("languageSelect").value,
-    rainAlert: document.getElementById("rainAlert").checked,
-    priceAlert: document.getElementById("priceAlert").checked,
-    pestAlert: document.getElementById("pestAlert").checked,
-    unit: document.getElementById("unitSelect").value,
-    theme: document.getElementById("themeSelect").value
-  };
 
-  localStorage.setItem("appSettings", JSON.stringify(settings));
+/* SAVE SETTINGS */
+
+function saveSettings(){
+
+const settings={
+
+language:document.getElementById("languageSelect").value,
+
+rainAlert:document.getElementById("rainAlert").checked,
+
+priceAlert:document.getElementById("priceAlert").checked,
+
+pestAlert:document.getElementById("pestAlert").checked,
+
+heatAlert:document.getElementById("heatAlert").checked,
+
+unit:document.getElementById("unitSelect").value,
+
+theme:document.getElementById("themeSelect").value,
+
+locationMode:document.getElementById("locationMode").value,
+
+district:document.getElementById("districtInput").value,
+
+crop:document.getElementById("cropSelect").value,
+
+cloudSync:document.getElementById("cloudSync").checked
+
 }
 
-/* Apply theme */
-function applyTheme() {
-  const theme = document.getElementById("themeSelect").value;
+localStorage.setItem("appSettings",JSON.stringify(settings))
 
-  if (theme === "light") {
-    document.body.style.background = "#f5f5f5";
-    document.body.style.color = "#222";
-  } else {
-    document.body.style.background = "#111";
-    document.body.style.color = "white";
-  }
 }
 
-/* Reset app data */
-function resetApp() {
-  if (confirm("Are you sure? This will delete all data.")) {
-    localStorage.clear();
-    alert("App data cleared!");
-    location.reload();
-  }
+
+/* THEME */
+
+function applyTheme(){
+
+const theme=document.getElementById("themeSelect").value
+
+if(theme==="light"){
+
+document.body.style.background="#f5f5f5"
+document.body.style.color="#222"
+
+}else{
+
+document.body.style.background="#0f2027"
+document.body.style.color="white"
+
 }
 
-window.addEventListener("load", loadSettings);
+}
+
+
+/* RESET */
+
+function resetApp(){
+
+if(confirm("This will delete all app data. Continue?")){
+
+localStorage.clear()
+
+alert("All data removed")
+
+location.reload()
+
+}
+
+}
+
+
+window.onload=loadSettings
+
 </script>
+
+</body>
+</html>
