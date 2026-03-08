@@ -1,173 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script>
 
-
+<script>
 if(!localStorage.getItem("onboardingDone")){
   window.location.href="onboarding.html";
 }
 </script>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KrushiCare</title>
 
-  <!-- PWA Manifest -->
-  <link rel="manifest" href="manifest.json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KrushiCare</title>
 
-  <!-- Material Icons -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<!-- PWA Manifest -->
+<link rel="manifest" href="manifest.json">
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
+<!-- Material Icons -->
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<!-- External CSS -->
+<link rel="stylesheet" href="style.css">
+
 </head>
+
+
 <body>
 
-  <!--  Background Video -->
-  <video class="bg-video" autoplay muted loop playsinline>
-    <source src="videos/farming.mp4" type="video/mp4">
-  </video>
+<!-- Background Video -->
+<video class="bg-video" autoplay muted loop playsinline>
+  <source src="videos/farming.mp4" type="video/mp4">
+</video>
 
-  <!-- Dark Overlay -->
-  <div class="video-overlay"></div>
+<!-- Dark Overlay -->
+<div class="video-overlay"></div>
 
-  <!-- 🌦 Weather Bar -->
-  <div class="weather-bar">
-    <div class="weather-left">
-      <span class="material-icons">cloud</span>
-      <div>
-        <p class="temp" id="temperature">--°C</p>
-        <p class="condition" id="condition">Loading...</p>
-      </div>
+<!-- Weather Bar -->
+<div class="weather-bar">
+
+  <div class="weather-left">
+    <span class="material-icons">cloud</span>
+
+    <div>
+      <p class="temp" id="temperature">--°C</p>
+      <p class="condition" id="condition">Loading...</p>
     </div>
 
-    <div class="weather-right">
-      <span class="material-icons">location_on</span>
-      <p id="location">Detecting...</p>
-    </div>
   </div>
 
-  <!-- Main Content -->
-  <main class="content">
-    <h1 class="app-name">
-      <span class="green">Krushi</span><span class="gold">Care</span>
-    </h1>
-    <p class="tagline">Helping Maharashtra Farmers with Smart Decisions</p>
-  </main>
+  <div class="weather-right">
+    <span class="material-icons">location_on</span>
+    <p id="location">Detecting...</p>
+  </div>
 
-  <!-- Home Info Cards -->
-   
-  <section class="home-cards" id="homeCards"></section>
-  <!-- Smart Advice Bottom Card -->
- <div id="smartAdviceContainer" class="bottom-advice"></div>
-  <!-- Bottom Menu Bar -->
-  <nav class="bottom-menu">
-    <a href="#" class="menu-item active">
-      <span class="material-icons">home</span>
-      <small>Home</small>
-    </a>
+</div>
 
-    <a href="./you.html" class="menu-item">
-      <span class="material-icons">person</span>
-      <small>You</small>
-    </a>
 
-    <a href="./enviroment.html" class="menu-item">
-      <span class="material-icons">eco</span>
-      <small>Environment</small>
-    </a>
+<!-- Main Content -->
+<main class="content">
 
-    <a href="./economy.html" class="menu-item">
-      <span class="material-icons">currency_rupee</span>
-      <small>Economy</small>
-    </a>
+<h1 class="app-name">
+<span class="green">Krushi</span><span class="gold">Care</span>
+</h1>
 
-    <a href="./setting.html" class="menu-item">
-      <span class="material-icons">settings</span>
-      <small>Setting</small>
-    </a>
-  </nav>
+<p class="tagline">
+Helping Maharashtra Farmers with Smart Decisions
+</p>
 
-  <!-- Service Worker -->
-  <script>
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js')
-          .then(reg => console.log('Service Worker registered', reg))
-          .catch(err => console.log('Service Worker failed', err));
-      });
-    }
-  </script>
+</main>
 
-  <!-- Weather Script -->
-  <script>
-    const API_KEY = "7890d18ea0eb73d0fd252f2c8a90322a";
 
-    function fetchWeather(lat, lon) {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`)
-        .then(res => {
-          if (!res.ok) throw new Error("API request failed");
-          return res.json();
-        })
-        .then(data => {
-          document.getElementById("temperature").innerText =
-            Math.round(data.main.temp) + "°C";
 
-          document.getElementById("condition").innerText =
-            data.weather[0].main;
+<!-- Smart Advice -->
+<div id="smartAdviceContainer" class="bottom-advice"></div>
 
-          document.getElementById("location").innerText =
-            data.name;
-        })
-        .catch(err => {
-          console.log("Weather Error:", err);
-          document.getElementById("condition").innerText = "Weather unavailable";
-        });
-    }
 
-    if ("geolocation" in navigator) {
-      navigator.geolocation.getCurrentPosition(
-        pos => {
-          fetchWeather(pos.coords.latitude, pos.coords.longitude);
-        },
-        () => {
-          document.getElementById("condition").innerText = "Location denied";
-        }
-      );
-    } else {
-      document.getElementById("condition").innerText = "No GPS support";
-    }
-  </script>
 
-  <!-- SMART ADVICE ONLY -->
-  <script>
-/* ===============================
-   SMART ADVICE MODULE
-================================ */
+<!-- Bottom Menu -->
+<nav class="bottom-menu">
 
-function generateSmartAdvice() {
-  const condition = document.getElementById("condition").innerText;
+<a href="#" class="menu-item active">
+<span class="material-icons">home</span>
+<small>Home</small>
+</a>
 
-  if (condition.includes("Rain")) {
-    return "⏳ Delay harvesting by 2–3 days due to rain.";
-  }
-  return "✅ Good time for harvesting and selling crops.";
-}
+<!-- 🔹 CHANGED BUTTON -->
+<a href="#" onclick="openYouPage()" class="menu-item">
+<span class="material-icons">person</span>
+<small>You</small>
+</a>
 
-function loadSmartAdvice() {
-  const container = document.getElementById("smartAdviceContainer");
+<a href="./enviroment.html" class="menu-item">
+<span class="material-icons">eco</span>
+<small>Environment</small>
+</a>
 
-  container.innerHTML = `
-    <div class="bottom-advice-card">
-      <h3>Today’s Smart Advice</h3>
-      <p>${generateSmartAdvice()}</p>
-    </div>
-  `;
-}
+<a href="./economy.html" class="menu-item">
+<span class="material-icons">currency_rupee</span>
+<small>Economy</small>
+</a>
 
-window.addEventListener("load", () => {
-  loadSmartAdvice();
+<a href="./setting.html" class="menu-item">
+<span class="material-icons">settings</span>
+<small>Setting</small>
+</a>
+
+</nav>
+
+
+
+<!-- Service Worker -->
+<script>
+
+if ('serviceWorker' in navigator) {
+
+window.addEventListener('load', () => {
+
+navigator.serviceWorker.register('/service-worker.js')
+.then(reg => console.log('Service Worker registered', reg))
+.catch(err => console.log('Service Worker failed', err));
+
 });
+
+}
+
 </script>
+
+
+
+<!-- Weather Script -->
+<script>
+
+const API_KEY = "7890d18ea0eb73d0fd252f2c8a90322a";
+
+function fetchWeather(lat, lon){
+
+fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=metric&appid=${API_KEY}`)
+
+.then(res=>{
+if(!res.ok) throw new Error("API request failed");
+return res.json();
+})
+
+.then(data=>{
+
+document.getElementById("temperature").innerText =
+Math.round(data.main.temp)+"°C";
+
+document.getElementById("condition").innerText =
+data.weather[0].main;
+
+document.getElementById("location").innerText =
+data.name;
+
+})
+
+.catch(err=>{
+
+console.log("Weather Error:",err);
+document.getElementById("condition").innerText="Weather unavailable";
+
+});
+
+}
+
+
+
+if("geolocation" in navigator){
+
+navigator.geolocation.getCurrentPosition(
+
+pos=>{
+fetchWeather(pos.coords.latitude,pos.coords.longitude);
+},
+
+()=>{
+document.getElementById("condition").innerText="Location denied";
+}
+
+);
+
+}else{
+
+document.getElementById("condition").innerText="No GPS support";
+
+}
+
+</script>
+
+
+
+<!-- SMART ADVICE -->
+<script>
+
+function generateSmartAdvice(){
+
+const condition=document.getElementById("condition").innerText;
+
+if(condition.includes("Rain")){
+return "⏳ Delay harvesting by 2–3 days due to rain.";
+}
+
+return "✅ Good time for harvesting and selling crops.";
+
+}
+
+function loadSmartAdvice(){
+
+const container=document.getElementById("smartAdviceContainer");
+
+container.innerHTML=`
+
+<div class="bottom-advice-card">
+<h3>Today’s Smart Advice</h3>
+<p>${generateSmartAdvice()}</p>
+</div>
+
+`;
+
+}
+
+window.addEventListener("load",()=>{
+loadSmartAdvice();
+});
+
+</script>
+
+
+
+<!-- 🔹 NEW SCRIPT FOR YOU PAGE LOGIC -->
+<script>
+
+function openYouPage(){
+
+const profileDone = localStorage.getItem("profileCompleted");
+
+if(profileDone === "true"){
+
+window.location.href = "dashboard.html";
+
+}else{
+
+window.location.href = "you.html";
+
+}
+
+}
+
+</script>
+
+
+
 </body>
 </html>

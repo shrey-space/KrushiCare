@@ -1,0 +1,1627 @@
+{
+  "Ahmednagar": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1220,
+        "previous_price": 1074,
+        "yield_per_acre": 80,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 981,
+        "previous_price": 942,
+        "yield_per_acre": 70,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2398,
+        "previous_price": 2277,
+        "yield_per_acre": 60,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2466,
+        "previous_price": 2480,
+        "yield_per_acre": 55,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 5022,
+        "previous_price": 4895,
+        "yield_per_acre": 40,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 639,
+        "previous_price": 474,
+        "yield_per_acre": 350,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7867,
+        "previous_price": 7849,
+        "yield_per_acre": 25,
+        "demand_level": "High"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Ahmednagar APMC",
+        "distance_km": 19
+      },
+      {
+        "name": "Ahmednagar Market Yard",
+        "distance_km": 22
+      }
+    ],
+    "transport_cost_per_km": 15,
+    "storage_available": false
+  },
+  "Akola": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1242,
+        "previous_price": 1211,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 967,
+        "previous_price": 940,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2312,
+        "previous_price": 2433,
+        "yield_per_acre": 60,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2424,
+        "previous_price": 2362,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 5030,
+        "previous_price": 5037,
+        "yield_per_acre": 40,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 630,
+        "previous_price": 436,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7838,
+        "previous_price": 7674,
+        "yield_per_acre": 25,
+        "demand_level": "High"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Akola APMC",
+        "distance_km": 11
+      },
+      {
+        "name": "Akola Market Yard",
+        "distance_km": 25
+      }
+    ],
+    "transport_cost_per_km": 14,
+    "storage_available": false
+  },
+  "Amravati": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1177,
+        "previous_price": 1167,
+        "yield_per_acre": 80,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 836,
+        "previous_price": 901,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2372,
+        "previous_price": 2266,
+        "yield_per_acre": 60,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2484,
+        "previous_price": 2303,
+        "yield_per_acre": 55,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4953,
+        "previous_price": 5012,
+        "yield_per_acre": 40,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 598,
+        "previous_price": 536,
+        "yield_per_acre": 350,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7704,
+        "previous_price": 7660,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Amravati APMC",
+        "distance_km": 16
+      },
+      {
+        "name": "Amravati Market Yard",
+        "distance_km": 39
+      }
+    ],
+    "transport_cost_per_km": 14,
+    "storage_available": false
+  },
+  "Aurangabad": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1116,
+        "previous_price": 1249,
+        "yield_per_acre": 80,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 964,
+        "previous_price": 880,
+        "yield_per_acre": 70,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2332,
+        "previous_price": 2264,
+        "yield_per_acre": 60,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2415,
+        "previous_price": 2397,
+        "yield_per_acre": 55,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4959,
+        "previous_price": 4945,
+        "yield_per_acre": 40,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 558,
+        "previous_price": 520,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7879,
+        "previous_price": 7804,
+        "yield_per_acre": 25,
+        "demand_level": "High"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Aurangabad APMC",
+        "distance_km": 15
+      },
+      {
+        "name": "Aurangabad Market Yard",
+        "distance_km": 29
+      }
+    ],
+    "transport_cost_per_km": 10,
+    "storage_available": true
+  },
+  "Beed": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1246,
+        "previous_price": 1117,
+        "yield_per_acre": 80,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 809,
+        "previous_price": 848,
+        "yield_per_acre": 70,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2430,
+        "previous_price": 2269,
+        "yield_per_acre": 60,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2381,
+        "previous_price": 2454,
+        "yield_per_acre": 55,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4959,
+        "previous_price": 4876,
+        "yield_per_acre": 40,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 627,
+        "previous_price": 581,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7757,
+        "previous_price": 7687,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Beed APMC",
+        "distance_km": 6
+      },
+      {
+        "name": "Beed Market Yard",
+        "distance_km": 21
+      }
+    ],
+    "transport_cost_per_km": 10,
+    "storage_available": true
+  },
+  "Bhandara": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1101,
+        "previous_price": 1225,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 996,
+        "previous_price": 894,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2487,
+        "previous_price": 2376,
+        "yield_per_acre": 60,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2483,
+        "previous_price": 2439,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 5007,
+        "previous_price": 4994,
+        "yield_per_acre": 40,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 572,
+        "previous_price": 585,
+        "yield_per_acre": 350,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7853,
+        "previous_price": 7683,
+        "yield_per_acre": 25,
+        "demand_level": "Low"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Bhandara APMC",
+        "distance_km": 7
+      },
+      {
+        "name": "Bhandara Market Yard",
+        "distance_km": 23
+      }
+    ],
+    "transport_cost_per_km": 15,
+    "storage_available": true
+  },
+  "Chandrapur": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1131,
+        "previous_price": 1140,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 947,
+        "previous_price": 754,
+        "yield_per_acre": 70,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2358,
+        "previous_price": 2275,
+        "yield_per_acre": 60,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2534,
+        "previous_price": 2396,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4959,
+        "previous_price": 4989,
+        "yield_per_acre": 40,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 509,
+        "previous_price": 474,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7714,
+        "previous_price": 7662,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Chandrapur APMC",
+        "distance_km": 8
+      },
+      {
+        "name": "Chandrapur Market Yard",
+        "distance_km": 21
+      }
+    ],
+    "transport_cost_per_km": 14,
+    "storage_available": false
+  },
+  "Dhule": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1167,
+        "previous_price": 1084,
+        "yield_per_acre": 80,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 843,
+        "previous_price": 869,
+        "yield_per_acre": 70,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2407,
+        "previous_price": 2315,
+        "yield_per_acre": 60,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2460,
+        "previous_price": 2480,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4927,
+        "previous_price": 4877,
+        "yield_per_acre": 40,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 482,
+        "previous_price": 587,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7745,
+        "previous_price": 7737,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Dhule APMC",
+        "distance_km": 7
+      },
+      {
+        "name": "Dhule Market Yard",
+        "distance_km": 21
+      }
+    ],
+    "transport_cost_per_km": 14,
+    "storage_available": true
+  },
+  "Gondia": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1222,
+        "previous_price": 1115,
+        "yield_per_acre": 80,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 996,
+        "previous_price": 929,
+        "yield_per_acre": 70,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2476,
+        "previous_price": 2292,
+        "yield_per_acre": 60,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2457,
+        "previous_price": 2479,
+        "yield_per_acre": 55,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4930,
+        "previous_price": 4878,
+        "yield_per_acre": 40,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 557,
+        "previous_price": 502,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7737,
+        "previous_price": 7769,
+        "yield_per_acre": 25,
+        "demand_level": "Low"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Gondia APMC",
+        "distance_km": 17
+      },
+      {
+        "name": "Gondia Market Yard",
+        "distance_km": 35
+      }
+    ],
+    "transport_cost_per_km": 12,
+    "storage_available": false
+  },
+  "Jalgaon": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1126,
+        "previous_price": 1156,
+        "yield_per_acre": 80,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 860,
+        "previous_price": 772,
+        "yield_per_acre": 70,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2461,
+        "previous_price": 2265,
+        "yield_per_acre": 60,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2505,
+        "previous_price": 2469,
+        "yield_per_acre": 55,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4948,
+        "previous_price": 4975,
+        "yield_per_acre": 40,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 472,
+        "previous_price": 563,
+        "yield_per_acre": 350,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7701,
+        "previous_price": 7650,
+        "yield_per_acre": 25,
+        "demand_level": "High"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Jalgaon APMC",
+        "distance_km": 18
+      },
+      {
+        "name": "Jalgaon Market Yard",
+        "distance_km": 30
+      }
+    ],
+    "transport_cost_per_km": 12,
+    "storage_available": false
+  },
+  "Jalna": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1228,
+        "previous_price": 1184,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 990,
+        "previous_price": 796,
+        "yield_per_acre": 70,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2484,
+        "previous_price": 2291,
+        "yield_per_acre": 60,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2529,
+        "previous_price": 2304,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4906,
+        "previous_price": 4889,
+        "yield_per_acre": 40,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 504,
+        "previous_price": 548,
+        "yield_per_acre": 350,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7786,
+        "previous_price": 7823,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Jalna APMC",
+        "distance_km": 7
+      },
+      {
+        "name": "Jalna Market Yard",
+        "distance_km": 27
+      }
+    ],
+    "transport_cost_per_km": 13,
+    "storage_available": false
+  },
+  "Kolhapur": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1159,
+        "previous_price": 1188,
+        "yield_per_acre": 80,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 900,
+        "previous_price": 761,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2457,
+        "previous_price": 2407,
+        "yield_per_acre": 60,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2396,
+        "previous_price": 2449,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4953,
+        "previous_price": 4898,
+        "yield_per_acre": 40,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 588,
+        "previous_price": 476,
+        "yield_per_acre": 350,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7807,
+        "previous_price": 7783,
+        "yield_per_acre": 25,
+        "demand_level": "Low"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Kolhapur APMC",
+        "distance_km": 9
+      },
+      {
+        "name": "Kolhapur Market Yard",
+        "distance_km": 36
+      }
+    ],
+    "transport_cost_per_km": 13,
+    "storage_available": true
+  },
+  "Latur": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1266,
+        "previous_price": 1106,
+        "yield_per_acre": 80,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 835,
+        "previous_price": 760,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2480,
+        "previous_price": 2418,
+        "yield_per_acre": 60,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2509,
+        "previous_price": 2380,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 5088,
+        "previous_price": 5032,
+        "yield_per_acre": 40,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 497,
+        "previous_price": 437,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7803,
+        "previous_price": 7677,
+        "yield_per_acre": 25,
+        "demand_level": "Low"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Latur APMC",
+        "distance_km": 20
+      },
+      {
+        "name": "Latur Market Yard",
+        "distance_km": 35
+      }
+    ],
+    "transport_cost_per_km": 12,
+    "storage_available": true
+  },
+  "Nagpur": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1227,
+        "previous_price": 1054,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 898,
+        "previous_price": 892,
+        "yield_per_acre": 70,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2415,
+        "previous_price": 2384,
+        "yield_per_acre": 60,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2413,
+        "previous_price": 2309,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 5084,
+        "previous_price": 4890,
+        "yield_per_acre": 40,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 527,
+        "previous_price": 537,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7765,
+        "previous_price": 7781,
+        "yield_per_acre": 25,
+        "demand_level": "Low"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Nagpur APMC",
+        "distance_km": 15
+      },
+      {
+        "name": "Nagpur Market Yard",
+        "distance_km": 32
+      }
+    ],
+    "transport_cost_per_km": 10,
+    "storage_available": false
+  },
+  "Nashik": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1192,
+        "previous_price": 1108,
+        "yield_per_acre": 80,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 959,
+        "previous_price": 751,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2352,
+        "previous_price": 2444,
+        "yield_per_acre": 60,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2433,
+        "previous_price": 2402,
+        "yield_per_acre": 55,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4929,
+        "previous_price": 4874,
+        "yield_per_acre": 40,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 577,
+        "previous_price": 500,
+        "yield_per_acre": 350,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7771,
+        "previous_price": 7662,
+        "yield_per_acre": 25,
+        "demand_level": "High"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Nashik APMC",
+        "distance_km": 18
+      },
+      {
+        "name": "Nashik Market Yard",
+        "distance_km": 26
+      }
+    ],
+    "transport_cost_per_km": 12,
+    "storage_available": false
+  },
+  "Osmanabad": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1270,
+        "previous_price": 1137,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 986,
+        "previous_price": 816,
+        "yield_per_acre": 70,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2378,
+        "previous_price": 2310,
+        "yield_per_acre": 60,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2522,
+        "previous_price": 2399,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4939,
+        "previous_price": 5024,
+        "yield_per_acre": 40,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 638,
+        "previous_price": 442,
+        "yield_per_acre": 350,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7702,
+        "previous_price": 7756,
+        "yield_per_acre": 25,
+        "demand_level": "High"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Osmanabad APMC",
+        "distance_km": 16
+      },
+      {
+        "name": "Osmanabad Market Yard",
+        "distance_km": 27
+      }
+    ],
+    "transport_cost_per_km": 13,
+    "storage_available": false
+  },
+  "Palghar": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1211,
+        "previous_price": 1091,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 867,
+        "previous_price": 881,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2491,
+        "previous_price": 2295,
+        "yield_per_acre": 60,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2359,
+        "previous_price": 2315,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4979,
+        "previous_price": 4876,
+        "yield_per_acre": 40,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 509,
+        "previous_price": 463,
+        "yield_per_acre": 350,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7715,
+        "previous_price": 7723,
+        "yield_per_acre": 25,
+        "demand_level": "Low"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Palghar APMC",
+        "distance_km": 19
+      },
+      {
+        "name": "Palghar Market Yard",
+        "distance_km": 33
+      }
+    ],
+    "transport_cost_per_km": 14,
+    "storage_available": false
+  },
+  "Parbhani": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1297,
+        "previous_price": 1060,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 831,
+        "previous_price": 859,
+        "yield_per_acre": 70,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2382,
+        "previous_price": 2306,
+        "yield_per_acre": 60,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2489,
+        "previous_price": 2353,
+        "yield_per_acre": 55,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4902,
+        "previous_price": 5041,
+        "yield_per_acre": 40,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 645,
+        "previous_price": 433,
+        "yield_per_acre": 350,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7720,
+        "previous_price": 7702,
+        "yield_per_acre": 25,
+        "demand_level": "Low"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Parbhani APMC",
+        "distance_km": 10
+      },
+      {
+        "name": "Parbhani Market Yard",
+        "distance_km": 36
+      }
+    ],
+    "transport_cost_per_km": 15,
+    "storage_available": false
+  },
+  "Pune": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1165,
+        "previous_price": 1111,
+        "yield_per_acre": 80,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 880,
+        "previous_price": 755,
+        "yield_per_acre": 70,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2446,
+        "previous_price": 2377,
+        "yield_per_acre": 60,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2474,
+        "previous_price": 2373,
+        "yield_per_acre": 55,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4981,
+        "previous_price": 5048,
+        "yield_per_acre": 40,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 606,
+        "previous_price": 485,
+        "yield_per_acre": 350,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7805,
+        "previous_price": 7834,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Pune APMC",
+        "distance_km": 13
+      },
+      {
+        "name": "Pune Market Yard",
+        "distance_km": 37
+      }
+    ],
+    "transport_cost_per_km": 12,
+    "storage_available": false
+  },
+  "Raigad": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1161,
+        "previous_price": 1093,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 949,
+        "previous_price": 898,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2484,
+        "previous_price": 2434,
+        "yield_per_acre": 60,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2417,
+        "previous_price": 2329,
+        "yield_per_acre": 55,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4982,
+        "previous_price": 4857,
+        "yield_per_acre": 40,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 483,
+        "previous_price": 441,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7895,
+        "previous_price": 7733,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Raigad APMC",
+        "distance_km": 16
+      },
+      {
+        "name": "Raigad Market Yard",
+        "distance_km": 32
+      }
+    ],
+    "transport_cost_per_km": 13,
+    "storage_available": true
+  },
+  "Ratnagiri": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1214,
+        "previous_price": 1143,
+        "yield_per_acre": 80,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 818,
+        "previous_price": 857,
+        "yield_per_acre": 70,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2464,
+        "previous_price": 2303,
+        "yield_per_acre": 60,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2542,
+        "previous_price": 2420,
+        "yield_per_acre": 55,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 5036,
+        "previous_price": 4880,
+        "yield_per_acre": 40,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 517,
+        "previous_price": 461,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7758,
+        "previous_price": 7697,
+        "yield_per_acre": 25,
+        "demand_level": "Low"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Ratnagiri APMC",
+        "distance_km": 11
+      },
+      {
+        "name": "Ratnagiri Market Yard",
+        "distance_km": 28
+      }
+    ],
+    "transport_cost_per_km": 10,
+    "storage_available": false
+  },
+  "Sangli": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1135,
+        "previous_price": 1242,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 987,
+        "previous_price": 822,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2440,
+        "previous_price": 2314,
+        "yield_per_acre": 60,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2534,
+        "previous_price": 2494,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4980,
+        "previous_price": 5013,
+        "yield_per_acre": 40,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 603,
+        "previous_price": 565,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7807,
+        "previous_price": 7653,
+        "yield_per_acre": 25,
+        "demand_level": "High"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Sangli APMC",
+        "distance_km": 10
+      },
+      {
+        "name": "Sangli Market Yard",
+        "distance_km": 36
+      }
+    ],
+    "transport_cost_per_km": 10,
+    "storage_available": false
+  },
+  "Sindhudurg": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1220,
+        "previous_price": 1156,
+        "yield_per_acre": 80,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 934,
+        "previous_price": 828,
+        "yield_per_acre": 70,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2340,
+        "previous_price": 2412,
+        "yield_per_acre": 60,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2529,
+        "previous_price": 2346,
+        "yield_per_acre": 55,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 5096,
+        "previous_price": 4973,
+        "yield_per_acre": 40,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 588,
+        "previous_price": 532,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7830,
+        "previous_price": 7801,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Sindhudurg APMC",
+        "distance_km": 5
+      },
+      {
+        "name": "Sindhudurg Market Yard",
+        "distance_km": 33
+      }
+    ],
+    "transport_cost_per_km": 12,
+    "storage_available": false
+  },
+  "Solapur": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1180,
+        "previous_price": 1213,
+        "yield_per_acre": 80,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 806,
+        "previous_price": 755,
+        "yield_per_acre": 70,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2306,
+        "previous_price": 2320,
+        "yield_per_acre": 60,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2390,
+        "previous_price": 2430,
+        "yield_per_acre": 55,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 5012,
+        "previous_price": 4872,
+        "yield_per_acre": 40,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 584,
+        "previous_price": 426,
+        "yield_per_acre": 350,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7709,
+        "previous_price": 7694,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Solapur APMC",
+        "distance_km": 6
+      },
+      {
+        "name": "Solapur Market Yard",
+        "distance_km": 27
+      }
+    ],
+    "transport_cost_per_km": 12,
+    "storage_available": true
+  },
+  "Thane": {
+    "Crops": [
+      {
+        "crop": "Onion",
+        "price_quintal": 1219,
+        "previous_price": 1089,
+        "yield_per_acre": 80,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Tomato",
+        "price_quintal": 866,
+        "previous_price": 814,
+        "yield_per_acre": 70,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Rice",
+        "price_quintal": 2347,
+        "previous_price": 2366,
+        "yield_per_acre": 60,
+        "demand_level": "Low"
+      },
+      {
+        "crop": "Wheat",
+        "price_quintal": 2538,
+        "previous_price": 2300,
+        "yield_per_acre": 55,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Soybean",
+        "price_quintal": 4992,
+        "previous_price": 5026,
+        "yield_per_acre": 40,
+        "demand_level": "High"
+      },
+      {
+        "crop": "Sugarcane",
+        "price_quintal": 566,
+        "previous_price": 599,
+        "yield_per_acre": 350,
+        "demand_level": "Medium"
+      },
+      {
+        "crop": "Cotton",
+        "price_quintal": 7737,
+        "previous_price": 7692,
+        "yield_per_acre": 25,
+        "demand_level": "Medium"
+      }
+    ],
+    "mandis": [
+      {
+        "name": "Thane APMC",
+        "distance_km": 12
+      },
+      {
+        "name": "Thane Market Yard",
+        "distance_km": 34
+      }
+    ],
+    "transport_cost_per_km": 13,
+    "storage_available": true
+  }
+}

@@ -1,0 +1,1786 @@
+{
+ "Ahmednagar": {
+  "Food Grains": [
+   {"crop": "Jowar", "price_quintal": 2600},
+   {"crop": "Bajra", "price_quintal": 2300},
+   {"crop": "Wheat", "price_quintal": 2400},
+   {"crop": "Maize", "price_quintal": 2100},
+   {"crop": "Rice", "price_quintal": 2400}
+  ],
+
+  "Pulses": [
+   {"crop": "Tur (Arhar)", "price_quintal": 7800},
+   {"crop": "Gram (Chana)", "price_quintal": 5200},
+   {"crop": "Moong", "price_quintal": 7400},
+   {"crop": "Urad", "price_quintal": 6900},
+   {"crop": "Masoor", "price_quintal": 6100}
+  ],
+
+  "Oilseeds": [
+   {"crop": "Soybean", "price_quintal": 5000},
+   {"crop": "Groundnut", "price_quintal": 5600},
+   {"crop": "Sunflower", "price_quintal": 5200},
+   {"crop": "Sesame", "price_quintal": 7200},
+   {"crop": "Mustard", "price_quintal": 6000}
+  ],
+
+  "Vegetables": [
+   {"crop": "Onion", "price_quintal": 1200},
+   {"crop": "Tomato", "price_quintal": 600},
+   {"crop": "Potato", "price_quintal": 1400},
+   {"crop": "Brinjal", "price_quintal": 1200},
+   {"crop": "Cabbage", "price_quintal": 800}
+  ],
+
+  "Fruits": [
+   {"crop": "Pomegranate", "price_quintal": 6500},
+   {"crop": "Grapes", "price_quintal": 6500},
+   {"crop": "Banana", "price_quintal": 3200},
+   {"crop": "Guava", "price_quintal": 3500},
+   {"crop": "Papaya", "price_quintal": 2800}
+  ],
+
+  "Cash Crops": [
+   {"crop": "Sugarcane", "price_quintal": 570},
+   {"crop": "Cotton", "price_quintal": 7800},
+   {"crop": "Soybean", "price_quintal": 5000},
+   {"crop": "Tobacco", "price_quintal": 9000},
+   {"crop": "Groundnut", "price_quintal": 5600}
+  ],
+
+  "Spices": [
+   {"crop": "Turmeric", "price_quintal": 8200},
+   {"crop": "Ginger", "price_quintal": 4200},
+   {"crop": "Garlic", "price_quintal": 5000},
+   {"crop": "Coriander", "price_quintal": 6000},
+   {"crop": "Chilli", "price_quintal": 7000}
+  ]
+ },
+ "Akola": {
+  "Food Grains": [
+   {"crop":"Jowar","price_quintal":1900},
+   {"crop":"Wheat","price_quintal":2629},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+
+  "Pulses": [
+   {"crop":"Tur (Pigeon Pea)","price_quintal":8000},
+   {"crop":"Gram (Chana)","price_quintal":5200},
+   {"crop":"Moong (Green Gram)","price_quintal":4790},
+   {"crop":"Urad (Black Gram)","price_quintal":4620},
+   {"crop":"Masoor (Lentil)","price_quintal":6100}
+  ],
+
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5170},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+
+  "Fruits": [
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Pomegranate","price_quintal":6500}
+  ],
+
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7899},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5170},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+"Amravati": {
+  "Food Grains": [
+   {"crop":"Jowar","price_quintal":2000},
+   {"crop":"Wheat","price_quintal":2500},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+
+  "Pulses": [
+   {"crop":"Tur (Pigeon Pea)","price_quintal":8000},
+   {"crop":"Gram (Chana)","price_quintal":5200},
+   {"crop":"Moong (Green Gram)","price_quintal":7500},
+   {"crop":"Urad (Black Gram)","price_quintal":6900},
+   {"crop":"Masoor (Lentil)","price_quintal":6200}
+  ],
+
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+
+  "Fruits": [
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Pomegranate","price_quintal":6500}
+  ],
+
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+"Aurangabad": {
+  "Food Grains": [
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2500},
+   {"crop":"Maize","price_quintal":2200},
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+
+  "Pulses": [
+   {"crop":"Tur (Pigeon Pea)","price_quintal":7900},
+   {"crop":"Gram (Chana)","price_quintal":5200},
+   {"crop":"Moong (Green Gram)","price_quintal":7400},
+   {"crop":"Urad (Black Gram)","price_quintal":6900},
+   {"crop":"Masoor (Lentil)","price_quintal":6200}
+  ],
+
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1300},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+
+  "Fruits": [
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+"Beed": {
+  "Food Grains": [
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2200},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+
+  "Pulses": [
+   {"crop":"Tur (Pigeon Pea)","price_quintal":7800},
+   {"crop":"Gram (Chana)","price_quintal":5200},
+   {"crop":"Moong (Green Gram)","price_quintal":7400},
+   {"crop":"Urad (Black Gram)","price_quintal":6900},
+   {"crop":"Masoor (Lentil)","price_quintal":6200}
+  ],
+
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+
+  "Fruits": [
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+"Bhandara": {
+  "Food Grains": [
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2000},
+   {"crop":"Bajra","price_quintal":2200}
+  ],
+  "Pulses": [
+   {"crop":"Tur (Pigeon Pea)","price_quintal":7800},
+   {"crop":"Gram (Chana)","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits": [
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+"Bhiwandi": {
+  "Food Grains": [
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2200}
+  ],
+  "Pulses": [
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Okra","price_quintal":1300}
+  ],
+  "Fruits": [
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Mango","price_quintal":4500},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Chikoo","price_quintal":4000}
+  ],
+  "Cash Crops": [
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+"Chandrapur": {
+  "Food Grains": [
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2000},
+   {"crop":"Bajra","price_quintal":2200}
+  ],
+  "Pulses": [
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits": [
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+ "Dhule": {
+  "Food Grains": [
+   {"crop":"Bajra","price_quintal":2300},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+
+  "Pulses": [
+   {"crop":"Tur (Pigeon Pea)","price_quintal":7800},
+   {"crop":"Gram (Chana)","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+
+  "Fruits": [
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Mango","price_quintal":4500},
+   {"crop":"Pomegranate","price_quintal":6500}
+  ],
+
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+ "Gondia": {
+  "Food Grains": [
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Jowar","price_quintal":2000},
+   {"crop":"Bajra","price_quintal":2200}
+  ],
+  "Pulses": [
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits": [
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Jalna": {
+  "Food Grains": [
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2200},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses": [
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits": [
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Jalgaon": {
+  "Food Grains": [
+   {"crop":"Bajra","price_quintal":2300},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses": [
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits": [
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500},
+   {"crop":"Pomegranate","price_quintal":6500}
+  ],
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+"Kolhapur": {
+  "Food Grains": [
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses": [
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits": [
+   {"crop":"Mango","price_quintal":4500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Pomegranate","price_quintal":6500}
+  ],
+  "Cash Crops": [
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Latur": {
+  "Food Grains": [
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2200},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses": [
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits": [
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops": [
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Mumbai City": {
+  "Food Grains": [
+   {"crop":"Rice","price_quintal":2500},
+   {"crop":"Wheat","price_quintal":2500},
+   {"crop":"Maize","price_quintal":2200},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses": [
+   {"crop":"Tur","price_quintal":8000},
+   {"crop":"Gram","price_quintal":5400},
+   {"crop":"Moong","price_quintal":7600},
+   {"crop":"Urad","price_quintal":7000},
+   {"crop":"Masoor","price_quintal":6300}
+  ],
+  "Oilseeds": [
+   {"crop":"Soybean","price_quintal":5200},
+   {"crop":"Groundnut","price_quintal":5700},
+   {"crop":"Sunflower","price_quintal":5300},
+   {"crop":"Sesame","price_quintal":7400},
+   {"crop":"Mustard","price_quintal":6200}
+  ],
+  "Vegetables": [
+   {"crop":"Onion","price_quintal":1400},
+   {"crop":"Tomato","price_quintal":1100},
+   {"crop":"Potato","price_quintal":1500},
+   {"crop":"Brinjal","price_quintal":1300},
+   {"crop":"Cabbage","price_quintal":900}
+  ],
+  "Fruits": [
+   {"crop":"Banana","price_quintal":3400},
+   {"crop":"Mango","price_quintal":4800},
+   {"crop":"Papaya","price_quintal":3000},
+   {"crop":"Guava","price_quintal":3600},
+   {"crop":"Chikoo","price_quintal":4200}
+  ],
+  "Cash Crops": [
+   {"crop":"Sugarcane","price_quintal":600},
+   {"crop":"Cotton","price_quintal":7900},
+   {"crop":"Soybean","price_quintal":5200},
+   {"crop":"Groundnut","price_quintal":5700},
+   {"crop":"Tobacco","price_quintal":9100}
+  ],
+  "Spices": [
+   {"crop":"Turmeric","price_quintal":8300},
+   {"crop":"Ginger","price_quintal":4300},
+   {"crop":"Garlic","price_quintal":5100},
+   {"crop":"Coriander","price_quintal":6100},
+   {"crop":"Chilli","price_quintal":7100}
+  ]
+ },
+ "Mumbai Suburban": {
+  "Food Grains":[
+   {"crop":"Rice","price_quintal":2500},
+   {"crop":"Wheat","price_quintal":2500},
+   {"crop":"Maize","price_quintal":2200},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":8000},
+   {"crop":"Gram","price_quintal":5400},
+   {"crop":"Moong","price_quintal":7600},
+   {"crop":"Urad","price_quintal":7000},
+   {"crop":"Masoor","price_quintal":6300}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5200},
+   {"crop":"Groundnut","price_quintal":5700},
+   {"crop":"Sunflower","price_quintal":5300},
+   {"crop":"Sesame","price_quintal":7400},
+   {"crop":"Mustard","price_quintal":6200}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1400},
+   {"crop":"Tomato","price_quintal":1100},
+   {"crop":"Potato","price_quintal":1500},
+   {"crop":"Brinjal","price_quintal":1300},
+   {"crop":"Okra","price_quintal":1400}
+  ],
+  "Fruits":[
+   {"crop":"Banana","price_quintal":3400},
+   {"crop":"Mango","price_quintal":4800},
+   {"crop":"Papaya","price_quintal":3000},
+   {"crop":"Guava","price_quintal":3600},
+   {"crop":"Chikoo","price_quintal":4200}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":600},
+   {"crop":"Cotton","price_quintal":7900},
+   {"crop":"Soybean","price_quintal":5200},
+   {"crop":"Groundnut","price_quintal":5700},
+   {"crop":"Tobacco","price_quintal":9100}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8300},
+   {"crop":"Ginger","price_quintal":4300},
+   {"crop":"Garlic","price_quintal":5100},
+   {"crop":"Coriander","price_quintal":6100},
+   {"crop":"Chilli","price_quintal":7100}
+  ]
+ },
+"Nagpur": {
+  "Food Grains":[
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2000},
+   {"crop":"Bajra","price_quintal":2200}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Nashik": {
+  "Food Grains":[
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Grapes","price_quintal":6500},
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Osmanabad": {
+  "Food Grains":[
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2200},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+
+ "Palghar": {
+  "Food Grains":[
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Okra","price_quintal":1300}
+  ],
+  "Fruits":[
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Chikoo","price_quintal":4200},
+   {"crop":"Mango","price_quintal":4500},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+
+ "Parbhani": {
+  "Food Grains":[
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2200},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+
+ "Pune": {
+  "Food Grains":[
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Cabbage","price_quintal":800},
+   {"crop":"Cauliflower","price_quintal":900}
+  ],
+  "Fruits":[
+   {"crop":"Grapes","price_quintal":6500},
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Raigad": {
+  "Food Grains":[
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Okra","price_quintal":1300}
+  ],
+  "Fruits":[
+   {"crop":"Mango","price_quintal":4500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Chikoo","price_quintal":4200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Ratnagiri": {
+  "Food Grains":[
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Okra","price_quintal":1300}
+  ],
+  "Fruits":[
+   {"crop":"Mango","price_quintal":4500},
+   {"crop":"Cashew","price_quintal":8500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Sangli": {
+  "Food Grains":[
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Grapes","price_quintal":6500},
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+,
+"Sindhudurg": {
+  "Food Grains":[
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Okra","price_quintal":1300}
+  ],
+  "Fruits":[
+   {"crop":"Mango","price_quintal":4500},
+   {"crop":"Cashew","price_quintal":8500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Solapur": {
+  "Food Grains":[
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Thane": {
+  "Food Grains":[
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Okra","price_quintal":1300}
+  ],
+  "Fruits":[
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Chikoo","price_quintal":4200},
+   {"crop":"Mango","price_quintal":4500},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500}
+  ],
+  "Cash Crops":[
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },"Wardha": {
+  "Food Grains":[
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Jowar","price_quintal":2000},
+   {"crop":"Bajra","price_quintal":2200}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+ ,
+"Washim": {
+  "Food Grains":[
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },"Yavatmal": {
+  "Food Grains":[
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Nanded": {
+  "Food Grains":[
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2450},
+   {"crop":"Rice","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+ "Buldhana": {
+  "Food Grains":[
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Orange","price_quintal":4200},
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ },
+"Hingoli": {
+  "Food Grains":[
+   {"crop":"Jowar","price_quintal":2100},
+   {"crop":"Wheat","price_quintal":2400},
+   {"crop":"Maize","price_quintal":2100},
+   {"crop":"Bajra","price_quintal":2300},
+   {"crop":"Rice","price_quintal":2400}
+  ],
+  "Pulses":[
+   {"crop":"Tur","price_quintal":7800},
+   {"crop":"Gram","price_quintal":5200},
+   {"crop":"Moong","price_quintal":7400},
+   {"crop":"Urad","price_quintal":6900},
+   {"crop":"Masoor","price_quintal":6200}
+  ],
+  "Oilseeds":[
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Sunflower","price_quintal":5200},
+   {"crop":"Sesame","price_quintal":7200},
+   {"crop":"Mustard","price_quintal":6000}
+  ],
+  "Vegetables":[
+   {"crop":"Onion","price_quintal":1200},
+   {"crop":"Tomato","price_quintal":900},
+   {"crop":"Potato","price_quintal":1400},
+   {"crop":"Brinjal","price_quintal":1200},
+   {"crop":"Cabbage","price_quintal":800}
+  ],
+  "Fruits":[
+   {"crop":"Banana","price_quintal":3200},
+   {"crop":"Pomegranate","price_quintal":6500},
+   {"crop":"Papaya","price_quintal":2800},
+   {"crop":"Guava","price_quintal":3500},
+   {"crop":"Mango","price_quintal":4500}
+  ],
+  "Cash Crops":[
+   {"crop":"Cotton","price_quintal":7800},
+   {"crop":"Sugarcane","price_quintal":570},
+   {"crop":"Soybean","price_quintal":5000},
+   {"crop":"Groundnut","price_quintal":5600},
+   {"crop":"Tobacco","price_quintal":9000}
+  ],
+  "Spices":[
+   {"crop":"Turmeric","price_quintal":8200},
+   {"crop":"Ginger","price_quintal":4200},
+   {"crop":"Garlic","price_quintal":5000},
+   {"crop":"Coriander","price_quintal":6000},
+   {"crop":"Chilli","price_quintal":7000}
+  ]
+ }
+}
+
+

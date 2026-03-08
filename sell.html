@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="sell.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<title>Sell Decision Analysis</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+
+<span class="material-icons back" onclick="goBack()">arrow_back</span>
+
+<div>
+<h2 id="title">Sell Decision</h2>
+<p>AI powered market recommendation</p>
+</div>
+
+</header>
+
+
+<div class="summary">
+
+<div class="card">
+<h3>Current Price</h3>
+<p id="price">Loading...</p>
+</div>
+
+<div class="card">
+<h3>Price Change</h3>
+<p id="change">Loading...</p>
+</div>
+
+<div class="card">
+<h3>Demand Level</h3>
+<p id="demand">Loading...</p>
+</div>
+
+<div class="card">
+<h3>Expected Yield</h3>
+<p id="yield">Loading...</p>
+</div>
+
+</div>
+
+
+<div class="chartBox">
+
+<h3>Price Comparison</h3>
+<canvas id="priceChart"></canvas>
+
+</div>
+
+
+<div class="chartBox">
+
+<h3>Profit Estimate</h3>
+<canvas id="profitChart"></canvas>
+
+</div>
+
+
+<div class="tableSection">
+
+<h3>Best Market Option</h3>
+
+<table>
+
+<thead>
+<tr>
+<th>Mandi</th>
+<th>Distance (km)</th>
+<th>Transport Cost</th>
+<th>Net Profit Score</th>
+</tr>
+</thead>
+
+<tbody id="mandiTable">
+
+</tbody>
+
+</table>
+
+</div>
+
+
+<div class="analysis">
+
+<h3>Sell Recommendation</h3>
+
+<p id="recommendation">Analyzing...</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function goBack(){
+window.history.back()
+}
+
+
+async function loadSell(){
+
+const response = await fetch("./data/maharashtra_smart_farm_economy.json")
+
+const data = await response.json()
+
+const farmer = JSON.parse(localStorage.getItem("farmerProfile"))
+
+const district = farmer.district
+const crop = farmer.crop
+const farmSize = Number(farmer.farmSize || 1)
+
+
+/* FIND DISTRICT */
+
+const districtKey = Object.keys(data).find(d =>
+d.toLowerCase() === district.toLowerCase().trim()
+)
+
+const districtData = data[districtKey]
+
+document.getElementById("title").innerText =
+crop + " Sell Analysis (" + districtKey + ")"
+
+
+/* FIND CROP */
+
+const cropData = districtData.Crops.find(c =>
+c.crop.toLowerCase() === crop.toLowerCase()
+)
+
+
+const price = cropData.price_quintal
+const previous = cropData.previous_price
+
+
+/* PRICE CHANGE */
+
+const change =
+((price - previous) / previous) * 100
+
+
+document.getElementById("price").innerText =
+"₹" + price + " / quintal"
+
+document.getElementById("change").innerText =
+change.toFixed(2) + "%"
+
+document.getElementById("demand").innerText =
+cropData.demand_level
+
+
+/* YIELD */
+
+const yieldEstimate =
+cropData.yield_per_acre * farmSize
+
+document.getElementById("yield").innerText =
+yieldEstimate + " quintal"
+
+
+/* BEST MANDI */
+
+const table = document.getElementById("mandiTable")
+
+let bestScore = -999
+let bestMandi = ""
+
+districtData.mandis.forEach(m=>{
+
+const transport =
+m.distance_km * districtData.transport_cost_per_km
+
+const score = price - transport
+
+const row = `
+<tr>
+<td>${m.name}</td>
+<td>${m.distance_km}</td>
+<td>₹${transport}</td>
+<td>${score.toFixed(0)}</td>
+</tr>
+`
+
+table.innerHTML += row
+
+if(score > bestScore){
+bestScore = score
+bestMandi = m.name
+}
+
+})
+
+
+/* PROFIT */
+
+const gross =
+yieldEstimate * price
+
+const transportCost =
+districtData.mandis[0].distance_km *
+districtData.transport_cost_per_km
+
+const net =
+gross - transportCost
+
+
+/* PRICE CHART */
+
+new Chart(
+
+document.getElementById("priceChart"),
+
+{
+type:"bar",
+
+data:{
+labels:["Previous Price","Current Price"],
+datasets:[{
+data:[previous,price],
+backgroundColor:["#64748b","#22c55e"]
+}]
+},
+
+options:{
+plugins:{legend:{display:false}}
+}
+
+})
+
+
+/* PROFIT CHART */
+
+new Chart(
+
+document.getElementById("profitChart"),
+
+{
+
+type:"bar",
+
+data:{
+labels:["Gross Revenue","Net Revenue"],
+datasets:[{
+data:[gross,net],
+backgroundColor:["#f59e0b","#10b981"]
+}]
+}
+
+})
+
+
+/* SELL RECOMMENDATION */
+
+let recommendation = ""
+
+if(change > 5 && cropData.demand_level === "High")
+recommendation =
+"Market is rising and demand is high. Holding crop for few days may increase profit."
+
+else if(change > 2)
+recommendation =
+"Market improving. Selling gradually is recommended."
+
+else if(change < -3 && !districtData.storage_available)
+recommendation =
+"Prices falling and no storage available. Immediate selling recommended."
+
+else if(change < -3 && districtData.storage_available)
+recommendation =
+"Prices falling but storage available. Wait for market recovery."
+
+else
+recommendation =
+"Market stable. Sell based on cash flow needs."
+
+recommendation +=
+" Best mandi currently: " + bestMandi + "."
+
+
+document.getElementById("recommendation").innerText =
+recommendation
+
+}
+
+
+loadSell()
+
+</script>
+
+</body>
+</html>

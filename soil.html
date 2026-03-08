@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KrushiCare - Soil Moisture Analysis</title>
+
+<link rel="stylesheet" href="soil.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="soil-container">
+
+<header class="soil-header">
+
+<button class="back-btn" onclick="goBack()">←</button>
+
+<h2>💧 Soil Moisture Analysis</h2>
+<p>Smart soil water insights for better irrigation</p>
+
+</header>
+
+
+
+<!-- MOISTURE STATUS -->
+
+<div class="moisture-status">
+
+<span class="material-icons water-icon">water_drop</span>
+
+<h1 id="moistureLevel">Analyzing...</h1>
+
+<p id="moistureAdvice">Loading soil moisture insights...</p>
+
+</div>
+
+
+
+<!-- WEATHER IMPACT -->
+
+<div class="info-box">
+
+<h3>🌤 Weather Impact on Soil</h3>
+
+<div class="weather-grid">
+
+<div class="weather-card">
+<p>Temperature</p>
+<b id="temp">--°C</b>
+</div>
+
+<div class="weather-card">
+<p>Humidity</p>
+<b id="humidity">--%</b>
+</div>
+
+<div class="weather-card">
+<p>Wind</p>
+<b id="wind">-- km/h</b>
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SOIL ANALYSIS -->
+
+<div class="info-box">
+
+<h3>🪨 Soil Water Behavior</h3>
+
+<p id="soilAnalysis">Analyzing soil water retention...</p>
+
+</div>
+
+
+
+<!-- IRRIGATION ADVICE -->
+
+<div class="info-box">
+
+<h3>🚜 Irrigation Recommendation</h3>
+
+<p id="irrigationAdvice">Analyzing irrigation requirement...</p>
+
+</div>
+
+
+
+<!-- FARMER TIPS -->
+
+<div class="info-box">
+
+<h3>🌾 Moisture Management Tips</h3>
+
+<ul>
+
+<li>Use mulch to reduce evaporation</li>
+<li>Irrigate during early morning or evening</li>
+<li>Maintain proper soil organic matter</li>
+<li>Use drip irrigation for efficient water usage</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+/* LOAD DATA */
+
+const profile = JSON.parse(localStorage.getItem("farmerProfile")) || {}
+
+const crop = (profile.crop || "").toLowerCase()
+const soil = (profile.soil || "").toLowerCase()
+
+const temp = parseFloat(localStorage.getItem("temp")) || 30
+const humidity = parseFloat(localStorage.getItem("humidity")) || 50
+const wind = parseFloat(localStorage.getItem("wind")) || 10
+const condition = localStorage.getItem("condition") || "Clear"
+
+
+
+/* SHOW WEATHER */
+
+document.getElementById("temp").innerText=temp+"°C"
+document.getElementById("humidity").innerText=humidity+"%"
+document.getElementById("wind").innerText=wind+" km/h"
+
+
+
+/* MOISTURE INDEX CALCULATION */
+
+let moistureScore = 70
+
+moistureScore -= (temp - 25) * 1.5
+moistureScore += (humidity - 50) * 0.8
+moistureScore -= wind * 0.5
+
+if(condition.includes("Rain")) moistureScore += 20
+
+if(moistureScore > 100) moistureScore = 100
+if(moistureScore < 0) moistureScore = 0
+
+
+
+/* MOISTURE LEVEL */
+
+let level="Optimal soil moisture"
+let advice="Soil water level suitable for crops."
+
+if(moistureScore < 30){
+
+level="Very Dry Soil"
+advice="Immediate irrigation required."
+
+}
+
+else if(moistureScore < 50){
+
+level="Low Moisture"
+advice="Soil drying. Irrigation recommended."
+
+}
+
+else if(moistureScore < 70){
+
+level="Moderate Moisture"
+advice="Maintain normal irrigation schedule."
+
+}
+
+document.getElementById("moistureLevel").innerText=level
+document.getElementById("moistureAdvice").innerText=advice
+
+
+
+/* SOIL TYPE EFFECT */
+
+let soilAnalysis="Soil water retention normal."
+
+if(soil.includes("black"))
+soilAnalysis="Black soil holds water longer and dries slowly."
+
+else if(soil.includes("red"))
+soilAnalysis="Red soil drains water quickly and needs frequent irrigation."
+
+else if(soil.includes("laterite"))
+soilAnalysis="Laterite soil has poor water retention."
+
+document.getElementById("soilAnalysis").innerText=soilAnalysis
+
+
+
+/* IRRIGATION ADVICE */
+
+let irrigation="Normal irrigation required."
+
+if(moistureScore < 30)
+irrigation="Urgent irrigation required today."
+
+else if(moistureScore < 50)
+irrigation="Light irrigation recommended."
+
+if(crop.includes("rice"))
+irrigation+=" Rice requires high water levels."
+
+if(crop.includes("tomato"))
+irrigation+=" Tomato requires consistent soil moisture."
+
+if(crop.includes("onion"))
+irrigation+=" Avoid overwatering onion crops."
+
+document.getElementById("irrigationAdvice").innerText=irrigation
+
+
+
+function goBack(){
+window.history.back()
+}
+
+</script>
+
+</body>
+
+</html>

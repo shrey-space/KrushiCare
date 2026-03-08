@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,25 +44,25 @@
 <h3><span class="material-icons">notifications</span> Alerts & Notifications</h3>
 
 <label class="toggle">
-<input type="checkbox" id="rainAlert" onchange="saveSettings()">
+<input type="checkbox" id="rainAlert" onchange="requestNotificationPermission(); saveSettings()">
 <span class="slider"></span>
 Rain Alert
 </label>
 
 <label class="toggle">
-<input type="checkbox" id="priceAlert" onchange="saveSettings()">
+<input type="checkbox" id="irrigationAlert" onchange="requestNotificationPermission(); saveSettings()">
 <span class="slider"></span>
-Price Change Alert
+Irrigation Alert
 </label>
 
 <label class="toggle">
-<input type="checkbox" id="pestAlert" onchange="saveSettings()">
+<input type="checkbox" id="pestAlert" onchange="requestNotificationPermission(); saveSettings()">
 <span class="slider"></span>
 Pest Risk Alert
 </label>
 
 <label class="toggle">
-<input type="checkbox" id="heatAlert" onchange="saveSettings()">
+<input type="checkbox" id="heatAlert" onchange="requestNotificationPermission(); saveSettings()">
 <span class="slider"></span>
 Heat Stress Alert
 </label>
@@ -149,35 +150,70 @@ Sync profile with cloud
 
 </div>
 
-
 </div>
 
 
 <script>
 
+/* REQUEST NOTIFICATION PERMISSION */
+
+function requestNotificationPermission(){
+
+if("Notification" in window){
+
+Notification.requestPermission().then(permission=>{
+
+if(permission==="granted"){
+console.log("Notifications enabled")
+}
+
+})
+
+}
+
+}
+
+
+/* SEND NOTIFICATION */
+
+function sendNotification(title,message){
+
+if(Notification.permission==="granted"){
+
+new Notification(title,{
+body:message,
+icon:"icon.png"
+})
+
+}
+
+}
+
+
 /* LOAD SETTINGS */
 
 function loadSettings(){
 
-const settings=JSON.parse(localStorage.getItem("appSettings"))||{}
+const settings = JSON.parse(localStorage.getItem("appSettings")) || {}
 
-document.getElementById("languageSelect").value=settings.language||"en"
-document.getElementById("rainAlert").checked=settings.rainAlert||false
-document.getElementById("priceAlert").checked=settings.priceAlert||false
-document.getElementById("pestAlert").checked=settings.pestAlert||false
-document.getElementById("heatAlert").checked=settings.heatAlert||false
+document.getElementById("languageSelect").value = settings.language || "en"
+document.getElementById("rainAlert").checked = settings.rainAlert || false
+document.getElementById("irrigationAlert").checked = settings.irrigationAlert || false
+document.getElementById("pestAlert").checked = settings.pestAlert || false
+document.getElementById("heatAlert").checked = settings.heatAlert || false
 
-document.getElementById("unitSelect").value=settings.unit||"acre"
-document.getElementById("themeSelect").value=settings.theme||"dark"
+document.getElementById("unitSelect").value = settings.unit || "acre"
+document.getElementById("themeSelect").value = settings.theme || "dark"
 
-document.getElementById("locationMode").value=settings.locationMode||"auto"
-document.getElementById("districtInput").value=settings.district||""
+document.getElementById("locationMode").value = settings.locationMode || "auto"
+document.getElementById("districtInput").value = settings.district || ""
 
-document.getElementById("cropSelect").value=settings.crop||"onion"
-
-document.getElementById("cloudSync").checked=settings.cloudSync||false
+document.getElementById("cropSelect").value = settings.crop || "onion"
+document.getElementById("cloudSync").checked = settings.cloudSync || false
 
 applyTheme()
+
+triggerAlerts()
 
 }
 
@@ -186,33 +222,89 @@ applyTheme()
 
 function saveSettings(){
 
-const settings={
+const settings = {
 
-language:document.getElementById("languageSelect").value,
+language: document.getElementById("languageSelect").value,
 
-rainAlert:document.getElementById("rainAlert").checked,
+rainAlert: document.getElementById("rainAlert").checked,
+irrigationAlert: document.getElementById("irrigationAlert").checked,
+pestAlert: document.getElementById("pestAlert").checked,
+heatAlert: document.getElementById("heatAlert").checked,
 
-priceAlert:document.getElementById("priceAlert").checked,
+unit: document.getElementById("unitSelect").value,
+theme: document.getElementById("themeSelect").value,
 
-pestAlert:document.getElementById("pestAlert").checked,
+locationMode: document.getElementById("locationMode").value,
+district: document.getElementById("districtInput").value,
 
-heatAlert:document.getElementById("heatAlert").checked,
+crop: document.getElementById("cropSelect").value,
 
-unit:document.getElementById("unitSelect").value,
-
-theme:document.getElementById("themeSelect").value,
-
-locationMode:document.getElementById("locationMode").value,
-
-district:document.getElementById("districtInput").value,
-
-crop:document.getElementById("cropSelect").value,
-
-cloudSync:document.getElementById("cloudSync").checked
+cloudSync: document.getElementById("cloudSync").checked
 
 }
 
-localStorage.setItem("appSettings",JSON.stringify(settings))
+localStorage.setItem("appSettings", JSON.stringify(settings))
+
+}
+
+
+/* ALERT TRIGGER LOGIC */
+
+function triggerAlerts(){
+
+const settings = JSON.parse(localStorage.getItem("appSettings")) || {}
+
+const temp = parseFloat(localStorage.getItem("temp")) || 30
+const humidity = parseFloat(localStorage.getItem("humidity")) || 50
+const condition = localStorage.getItem("condition") || "Clear"
+
+
+/* RAIN ALERT */
+
+if(settings.rainAlert && condition.includes("Rain")){
+
+sendNotification(
+"🌧 Rain Alert",
+"Rain expected today. Avoid pesticide spraying."
+)
+
+}
+
+
+/* IRRIGATION ALERT */
+
+if(settings.irrigationAlert && temp > 36 && humidity < 40){
+
+sendNotification(
+"💧 Irrigation Alert",
+"High temperature detected. Irrigation recommended today evening."
+)
+
+}
+
+
+/* PEST ALERT */
+
+if(settings.pestAlert && humidity > 70 && temp > 25){
+
+sendNotification(
+"🐛 Pest Risk Alert",
+"High humidity may increase pest activity. Inspect crops."
+)
+
+}
+
+
+/* HEAT ALERT */
+
+if(settings.heatAlert && temp > 36){
+
+sendNotification(
+"🔥 Heat Stress Alert",
+"Extreme heat may damage crops. Provide irrigation."
+)
+
+}
 
 }
 
@@ -221,24 +313,24 @@ localStorage.setItem("appSettings",JSON.stringify(settings))
 
 function applyTheme(){
 
-const theme=document.getElementById("themeSelect").value
+const theme = document.getElementById("themeSelect").value
 
-if(theme==="light"){
+if(theme === "light"){
 
-document.body.style.background="#f5f5f5"
-document.body.style.color="#222"
+document.body.style.background = "#f5f5f5"
+document.body.style.color = "#222"
 
 }else{
 
-document.body.style.background="#0f2027"
-document.body.style.color="white"
+document.body.style.background = "#0f2027"
+document.body.style.color = "white"
 
 }
 
 }
 
 
-/* RESET */
+/* RESET APP */
 
 function resetApp(){
 
@@ -255,9 +347,10 @@ location.reload()
 }
 
 
-window.onload=loadSettings
+window.onload = loadSettings
 
 </script>
 
 </body>
 </html>
+

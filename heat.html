@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KrushiCare - Heat Stress Analysis</title>
+
+<link rel="stylesheet" href="heat.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="heat-container">
+
+<header class="heat-header">
+
+<button class="back-btn" onclick="goBack()">←</button>
+
+<h2>🌞 Heat Stress Analysis</h2>
+
+<p>Crop heat risk and protection advice</p>
+
+</header>
+
+
+<!-- HEAT STATUS -->
+
+<div class="heat-status">
+
+<span class="material-icons sun-icon">wb_sunny</span>
+
+<h1 id="heatLevel">Analyzing...</h1>
+
+<p id="heatAdvice">Loading heat insights...</p>
+
+</div>
+
+
+
+<!-- WEATHER DATA -->
+
+<div class="weather-box">
+
+<h3>🌤 Current Weather</h3>
+
+<div class="weather-grid">
+
+<div class="weather-card">
+<p>Temperature</p>
+<b id="temp">-- °C</b>
+</div>
+
+<div class="weather-card">
+<p>Humidity</p>
+<b id="humidity">-- %</b>
+</div>
+
+<div class="weather-card">
+<p>Heat Index</p>
+<b id="heatIndex">-- °C</b>
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CROP IMPACT -->
+
+<div class="impact-box">
+
+<h3>🌾 Crop Impact</h3>
+
+<p id="cropImpact">
+Analyzing crop heat tolerance...
+</p>
+
+</div>
+
+
+
+<!-- IRRIGATION ADVICE -->
+
+<div class="irrigation-box">
+
+<h3>💧 Irrigation Advice</h3>
+
+<p id="irrigationAdvice">
+Analyzing irrigation requirement...
+</p>
+
+</div>
+
+
+
+<!-- FARMER TIPS -->
+
+<div class="tips-box">
+
+<h3>🚜 Protection Tips</h3>
+
+<ul id="tips">
+
+<li>Provide shade for sensitive crops</li>
+<li>Use drip irrigation during hot periods</li>
+<li>Avoid spraying pesticides in afternoon</li>
+<li>Mulching helps retain soil moisture</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+/* GET DATA */
+
+const profile = JSON.parse(localStorage.getItem("farmerProfile")) || {}
+
+const crop = (profile.crop || "crop").toLowerCase()
+
+const temp = parseFloat(localStorage.getItem("temp")) || 30
+const humidity = parseFloat(localStorage.getItem("humidity")) || 50
+
+
+/* HEAT INDEX */
+
+const heatIndex = temp + (humidity/100)*5
+
+document.getElementById("temp").innerText=temp+" °C"
+document.getElementById("humidity").innerText=humidity+" %"
+document.getElementById("heatIndex").innerText=Math.round(heatIndex)+" °C"
+
+
+
+/* HEAT LEVEL */
+
+let level="Normal Heat"
+let advice="Weather safe for crops."
+
+if(heatIndex>42){
+
+level="🔥 Severe Heat Stress"
+advice="Extreme temperature may damage crops."
+
+}
+
+else if(heatIndex>38){
+
+level="⚠ High Heat Stress"
+advice="High evaporation risk."
+
+}
+
+else if(heatIndex>34){
+
+level="Moderate Heat"
+advice="Crops may experience mild stress."
+
+}
+
+document.getElementById("heatLevel").innerText=level
+document.getElementById("heatAdvice").innerText=advice
+
+
+
+/* CROP IMPACT */
+
+let impact="Crop growth conditions normal."
+
+if(crop.includes("onion") && heatIndex>36)
+impact="Onion bulbs may shrink due to heat."
+
+else if(crop.includes("tomato") && heatIndex>35)
+impact="Tomato flower drop risk due to heat."
+
+else if(crop.includes("rice") && heatIndex>38)
+impact="Rice may experience spikelet sterility."
+
+else if(crop.includes("wheat") && heatIndex>34)
+impact="Wheat grain filling affected by heat."
+
+document.getElementById("cropImpact").innerText=impact
+
+
+
+/* IRRIGATION */
+
+let irrigation="Normal irrigation schedule."
+
+if(heatIndex>40)
+irrigation="Urgent irrigation required today evening."
+
+else if(heatIndex>36)
+irrigation="Increase irrigation frequency."
+
+else if(heatIndex>32)
+irrigation="Light irrigation recommended."
+
+document.getElementById("irrigationAdvice").innerText=irrigation
+
+
+
+function goBack(){
+
+window.history.back()
+
+}
+
+</script>
+
+</body>
+</html>

@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="economy.css">
@@ -8,215 +10,283 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 <title>KrushiCare Economy</title>
+
 </head>
 
 <body>
 
 <div class="eco-container">
-
+ <span class="material-icons back-btn" onclick="goHome()">arrow_back</span>
 <header class="eco-header">
 <h2>📊 Farm Economy</h2>
 <p>Smart market insights for farmers</p>
 </header>
 
-
 <div class="eco-grid">
 
-<div class="eco-card">
+<div class="eco-card" onclick="openPricePage()">
 <span class="material-icons green">currency_rupee</span>
 <h3>Market Price</h3>
 <p id="ecoPrice">Loading...</p>
 </div>
 
-
-<div class="eco-card">
+<div class="eco-card" onclick="openTrendPage()">
 <span class="material-icons blue">trending_up</span>
 <h3>Price Trend</h3>
 <p id="priceTrend">Analyzing...</p>
 </div>
 
-
-<div class="eco-card highlight" id="sellAdvice">
+<div class="eco-card highlight" id="sellAdvice" onclick="openSellPage()">
 <span class="material-icons">lightbulb</span>
 <h3>Sell Decision</h3>
 <p>Calculating best action...</p>
 </div>
 
-
-<div class="eco-card">
+<div class="eco-card" onclick="openTransportPage()">
 <span class="material-icons orange">local_shipping</span>
 <h3>Transport Cost</h3>
 <p id="costImpact">Checking fuel impact...</p>
 </div>
 
-
-<div class="eco-card">
+<div class="eco-card" onclick="openMandiPage()">
 <span class="material-icons purple">store</span>
 <h3>Best Mandi</h3>
 <p id="bestMandi">Analyzing markets...</p>
 </div>
 
-
-<div class="eco-card">
+<div class="eco-card" onclick="openStoragePage()">
 <span class="material-icons cyan">inventory</span>
 <h3>Storage Advice</h3>
 <p id="storageAdvice">Analyzing...</p>
 </div>
 
 
-<div class="eco-card">
-<span class="material-icons brown">payments</span>
-<h3>Profit Estimate</h3>
-<p id="profitEstimate">Calculating...</p>
-</div>
 
 </div>
-
 </div>
 
 
 <script>
+function goHome(){
+window.location.href="index.html"
+}
+function openPricePage(){
 
-const MARKET_API =
-"https://api.allorigins.win/raw?url=" +
-encodeURIComponent(
-"https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd00000156c8041690bd45956332eabf01fe61eb&format=json&limit=5000"
-);
+const farmer = JSON.parse(localStorage.getItem("farmerProfile")) || {}
+
+if(!farmer.district || !farmer.crop){
+alert("Farmer profile missing")
+return
+}
+
+window.location.href="price.html"
+
+}
+
+function openTrendPage(){
+window.location.href="trend.html"
+}
 
 
+function openSellPage(){
+window.location.href="sell.html"
+}
 
+function openTransportPage(){
+window.location.href="transport.html"
+}
+
+function openMandiPage(){
+window.location.href="mandi.html"
+}
+
+function openStoragePage(){
+window.location.href="storage.html"
+}
 async function loadMarket(){
 
 try{
 
-const response=await fetch(MARKET_API)
-const data=await response.json()
+const response = await fetch("./data/maharashtra_smart_farm_economy.json")
+const data = await response.json()
 
-const records=data.records
+const farmer = JSON.parse(localStorage.getItem("farmerProfile")) || {}
 
+const district = farmer.district
+const crop = farmer.crop
+const farmSize = Number(farmer.farmSize || 1)
 
-/* FILTER MAHARASHTRA ONION */
-
-const mhOnion=records.filter(r=>{
-
-const commodity=(r.commodity||"").toLowerCase()
-const state=(r.state||"").toLowerCase()
-
-return commodity==="onion" && state==="maharashtra"
-
-})
-
-
-if(mhOnion.length===0){
-
-document.getElementById("ecoPrice").innerText="No data found"
+if(!district || !crop){
+ecoPrice.innerText="Farmer profile missing"
 return
-
 }
 
+/* MATCH DISTRICT */
 
-/* FIND BEST MANDI */
+let districtKey = Object.keys(data).find(d =>
+d.toLowerCase() === district.toLowerCase().trim()
+)
 
-let best=mhOnion[0]
+const districtData = data[districtKey]
 
-mhOnion.forEach(r=>{
-
-if(parseInt(r.modal_price)>parseInt(best.modal_price)){
-
-best=r
-
+if(!districtData){
+ecoPrice.innerText="District data not available"
+return
 }
 
-})
+/* FIND CROP */
 
+let cropData = districtData.Crops.find(c =>
+c.crop.toLowerCase() === crop.toLowerCase()
+)
 
-const price=parseInt(best.modal_price)
-
-document.getElementById("ecoPrice").innerText=
-`${best.commodity} ₹${price} / quintal`
-
-document.getElementById("bestMandi").innerText=
-`${best.market}, ${best.district}`
-
-
-
-/* FAKE YESTERDAY PRICE */
-
-const yesterday=price-40
-
-analyzeEconomy(price,yesterday)
-
-
-}catch(err){
-
-console.log(err)
-document.getElementById("ecoPrice").innerText="Market API error"
-
+if(!cropData){
+ecoPrice.innerText="Crop data not found"
+return
 }
 
-}
+/* MARKET PRICE */
+
+const price = cropData.price_quintal
+const previousPrice = cropData.previous_price
+
+let priceLevel="Moderate market price"
+
+if(price < 900)
+priceLevel="Low price – possible oversupply"
+
+else if(price < 2000)
+priceLevel="Moderate market value"
+
+else if(price < 5000)
+priceLevel="High value commodity"
+
+else
+priceLevel="Premium commodity price"
+
+ecoPrice.innerText=
+`${cropData.crop} ₹${price}/quintal
+${priceLevel}`
 
 
+/* PRICE TREND */
 
-function analyzeEconomy(price,yesterday){
+const percentChange =
+((price-previousPrice)/previousPrice)*100
 
-const change=price-yesterday
+let trend="Stable market"
+let trendScore=1
 
-let trend="Stable"
+if(percentChange>7){trend="📈 Strong Bullish";trendScore=3}
+else if(percentChange>3){trend="📈 Bullish";trendScore=2}
+else if(percentChange<-7){trend="📉 Strong Bearish";trendScore=-2}
+else if(percentChange<-3){trend="📉 Bearish";trendScore=-1}
 
-if(change>30) trend="📈 Rising"
-else if(change<-30) trend="📉 Falling"
-
-document.getElementById("priceTrend").innerText=trend
-
+priceTrend.innerText=
+`${trend}
+(${percentChange.toFixed(1)}%)`
 
 
-let advice="Market stable. Sell based on need."
+/* BEST MANDI */
 
-if(trend.includes("Rising"))
-advice="Prices rising. Waiting may increase profit."
+const mandi1=districtData.mandis[0]
+const mandi2=districtData.mandis[1]
 
-if(trend.includes("Falling"))
-advice="Prices falling. Selling soon recommended."
+const cost1=mandi1.distance_km*districtData.transport_cost_per_km
+const cost2=mandi2.distance_km*districtData.transport_cost_per_km
 
-document.getElementById("sellAdvice").innerHTML=
+const net1=price-cost1
+const net2=price-cost2
 
+const best=net1>net2?mandi1:mandi2
+const transportCost=(best.distance_km*districtData.transport_cost_per_km)
+
+bestMandi.innerText=
+`${best.name}
+${best.distance_km} km (Best return)`
+
+
+/* TRANSPORT COST IMPACT */
+
+const impactPercent=(transportCost/price)*100
+
+let impactText="Efficient transport cost"
+
+if(impactPercent>12)
+impactText="High logistics cost"
+
+else if(impactPercent>5)
+impactText="Moderate logistics cost"
+
+costImpact.innerText=
+`₹${transportCost} cost
+${impactText}`
+
+
+/* SELL DECISION */
+
+let demandScore=0
+
+if(cropData.demand_level==="High") demandScore=2
+else if(cropData.demand_level==="Medium") demandScore=1
+else demandScore=-1
+
+let storageScore=districtData.storage_available?1:0
+
+let transportPenalty=impactPercent/10
+
+let marketScore=
+trendScore + demandScore + storageScore - transportPenalty
+
+let advice=""
+
+if(marketScore>=4)
+advice="Strong market. Hold crop for higher profit."
+
+else if(marketScore>=2)
+advice="Positive market. Sell partially."
+
+else if(marketScore>=0)
+advice="Neutral market. Sell gradually."
+
+else
+advice="Weak market. Sell immediately."
+
+sellAdvice.innerHTML=
 `<span class="material-icons">lightbulb</span>
 <h3>Sell Decision</h3>
 <p>${advice}</p>`
 
 
+/* STORAGE ADVICE */
 
-let cost="Transport cost stable."
+if(!districtData.storage_available)
+storageAdvice.innerText="No storage nearby. Sell soon."
 
-if(Math.random()>0.5)
-cost="Fuel prices rising. Transport cost may increase."
+else if(percentChange>3)
+storageAdvice.innerText="Storage beneficial. Wait few days."
 
-document.getElementById("costImpact").innerText=cost
+else if(percentChange>-2)
+storageAdvice.innerText="Short storage possible."
 
-
-
-document.getElementById("storageAdvice").innerText=
-"Store crop 3–4 days if warehouse available"
-
+else
+storageAdvice.innerText="Avoid long storage."
 
 
-const farmSize=JSON.parse(localStorage.getItem("farmerProfile"))?.farmSize||1
 
-const yieldEstimate=farmSize*80
-
-const revenue=yieldEstimate*price
-
-document.getElementById("profitEstimate").innerText=
-
-`Estimated revenue ₹${revenue.toLocaleString()}`
 
 }
 
+catch(err){
 
+console.log(err)
+ecoPrice.innerText="Dataset loading error"
+
+}
+
+}
 
 loadMarket()
-
 </script>
 
 </body>

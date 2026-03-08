@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="trend.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<title>Price Trend Analysis</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+
+<span class="material-icons back" onclick="goBack()">arrow_back</span>
+
+<div>
+<h2 id="districtTitle">Price Trend Analysis</h2>
+<p>Market movement intelligence</p>
+</div>
+
+</header>
+
+
+<div class="summary">
+
+<div class="card">
+<h3>Top Rising Crop</h3>
+<p id="risingCrop">Loading...</p>
+</div>
+
+<div class="card">
+<h3>Top Falling Crop</h3>
+<p id="fallingCrop">Loading...</p>
+</div>
+
+<div class="card">
+<h3>Market Momentum</h3>
+<p id="momentum">Analyzing...</p>
+</div>
+
+</div>
+
+
+<div class="chartBox">
+
+<h3>Price Movement (Previous vs Current)</h3>
+
+<canvas id="trendChart"></canvas>
+
+</div>
+
+
+<div class="chartBox">
+
+<h3>Price Change Percentage</h3>
+
+<canvas id="changeChart"></canvas>
+
+</div>
+
+
+<div class="analysis">
+
+<h3>Market Insight</h3>
+
+<p id="trendInsight">Analyzing market trend...</p>
+
+</div>
+
+</div>
+
+
+<script>
+
+function goBack(){
+window.history.back()
+}
+
+async function loadTrend(){
+
+try{
+
+const response = await fetch("./data/maharashtra_smart_farm_economy.json")
+
+const data = await response.json()
+
+const farmer = JSON.parse(localStorage.getItem("farmerProfile")) || {}
+
+const district = farmer.district
+
+/* SAFE DISTRICT MATCH */
+
+const districtKey = Object.keys(data).find(d =>
+d.toLowerCase() === district.toLowerCase().trim()
+)
+
+if(!districtKey){
+alert("District data not found")
+return
+}
+
+const districtData = data[districtKey]
+
+document.getElementById("districtTitle").innerText =
+districtKey + " Price Trends"
+
+const crops = districtData.Crops
+
+let labels=[]
+let currentPrices=[]
+let previousPrices=[]
+let changePercent=[]
+
+let maxRise=-999
+let maxFall=999
+
+let risingCrop=""
+let fallingCrop=""
+
+crops.forEach(c=>{
+
+labels.push(c.crop)
+
+currentPrices.push(c.price_quintal)
+
+previousPrices.push(c.previous_price)
+
+let change=((c.price_quintal-c.previous_price)/c.previous_price)*100
+
+changePercent.push(change.toFixed(2))
+
+if(change>maxRise){
+maxRise=change
+risingCrop=c.crop
+}
+
+if(change<maxFall){
+maxFall=change
+fallingCrop=c.crop
+}
+
+})
+
+
+/* SUMMARY */
+
+document.getElementById("risingCrop").innerText=risingCrop
+
+document.getElementById("fallingCrop").innerText=fallingCrop
+
+
+/* MARKET MOMENTUM */
+
+let avgChange=changePercent.reduce((a,b)=>Number(a)+Number(b))/changePercent.length
+
+let momentumText="Stable Market"
+
+if(avgChange>3)
+momentumText="Bullish Market"
+
+else if(avgChange<-3)
+momentumText="Bearish Market"
+
+document.getElementById("momentum").innerText=momentumText
+
+
+/* TREND LINE CHART */
+
+new Chart(
+
+document.getElementById("trendChart"),
+
+{
+
+type:"line",
+
+data:{
+labels:labels,
+datasets:[
+
+{
+label:"Previous Price",
+data:previousPrices,
+borderColor:"#94a3b8",
+backgroundColor:"transparent",
+tension:0.4
+},
+
+{
+label:"Current Price",
+data:currentPrices,
+borderColor:"#22c55e",
+backgroundColor:"transparent",
+tension:0.4
+}
+
+]
+},
+
+options:{
+responsive:true,
+plugins:{
+legend:{position:"top"}
+}
+}
+
+})
+
+
+/* CHANGE % BAR CHART */
+
+new Chart(
+
+document.getElementById("changeChart"),
+
+{
+
+type:"bar",
+
+data:{
+labels:labels,
+datasets:[{
+label:"Price Change %",
+data:changePercent,
+backgroundColor:"#38bdf8"
+}]
+},
+
+options:{
+plugins:{
+legend:{display:false}
+}
+}
+
+})
+
+
+/* MARKET INSIGHT */
+
+let insight=""
+
+if(maxRise>5)
+insight+=`${risingCrop} shows strong upward momentum. `
+
+if(maxFall<-5)
+insight+=`${fallingCrop} is experiencing price decline. `
+
+if(avgChange>2)
+insight+=`Overall district market is trending upward.`
+
+else if(avgChange<-2)
+insight+=`Market conditions are weakening.`
+
+else
+insight+=`Market remains relatively stable.`
+
+document.getElementById("trendInsight").innerText=insight
+
+}
+
+catch(err){
+
+console.log(err)
+
+alert("Error loading trend data")
+
+}
+
+}
+
+loadTrend()
+
+</script>
+
+</body>
+</html>

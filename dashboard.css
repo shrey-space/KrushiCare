@@ -103,3 +103,22 @@ body {
   50% { box-shadow: 0 0 18px rgba(255,87,34,0.9); }
   100% { box-shadow: 0 0 0px rgba(255,87,34,0.6); }
 }
+.back-btn{
+
+position:absolute;
+left:15px;
+top:15px;
+
+background:none;
+border:none;
+
+color:white;
+cursor:pointer;
+
+font-size:28px;
+
+}
+
+.back-btn .material-icons{
+font-size:30px;
+}

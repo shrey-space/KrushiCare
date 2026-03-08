@@ -67,55 +67,127 @@ Recommended Solutions
 
 <script>
 
-const pest = JSON.parse(localStorage.getItem("pestData"));
+/* DISTRICT → PEST MAP */
 
-if (pest) {
+const pestDistrictMap = {
 
-  // Pest name
-  document.getElementById("pestName").innerText = pest.common_name;
+"Ahmednagar":"Powdery mildew",
+"Akola":"Powdery mildew",
+"Amravati":"Grease spot (Pythium blight)",
+"Aurangabad":"Powdery mildew",
+"Beed":"Grease spot (Pythium blight)",
+"Bhandara":"Grease spot (Pythium blight)",
+"Buldhana":"Powdery mildew",
+"Chandrapur":"Fungi Nuisance",
+"Dhule":"Powdery mildew",
+"Gadchiroli":"Fungi Nuisance",
+"Gondia":"Grease spot (Pythium blight)",
+"Hingoli":"Powdery mildew",
+"Jalgaon":"Powdery mildew",
+"Jalna":"Powdery mildew",
+"Kolhapur":"Mushrooms",
+"Latur":"Powdery mildew",
+"Mumbai City":"Fairy ring",
+"Mumbai Suburban":"Fairy ring",
+"Nagpur":"Powdery mildew",
+"Nanded":"Powdery mildew",
+"Nandurbar":"Powdery mildew",
+"Nashik":"Powdery mildew",
+"Osmanabad":"Powdery mildew",
+"Palghar":"Fungi Nuisance",
+"Parbhani":"Grease spot (Pythium blight)",
+"Pune":"Powdery mildew",
+"Raigad":"Fungi Nuisance",
+"Ratnagiri":"Mushrooms",
+"Sangli":"Powdery mildew",
+"Satara":"Powdery mildew",
+"Sindhudurg":"Mushrooms",
+"Solapur":"Powdery mildew",
+"Thane":"Fairy ring",
+"Wardha":"Powdery mildew",
+"Washim":"Powdery mildew",
+"Yavatmal":"Grease spot (Pythium blight)"
 
-  // Description section
-  const descContainer = document.getElementById("pestDesc");
-
-  if (Array.isArray(pest.description)) {
-
-    let text = "";
-
-    pest.description.forEach(item => {
-      text += item.subtitle + ": " + item.description + "\n\n";
-    });
-
-    descContainer.innerText = text;
-
-  } else {
-    descContainer.innerText = pest.description;
-  }
+};
 
 
-  // Solutions section
-  const list = document.getElementById("pestSolutions");
 
-  if (Array.isArray(pest.solution)) {
+/* LOAD PEST DATA */
+async function loadPestInfo(){
 
-    pest.solution.forEach(sol => {
+try{
 
-      const li = document.createElement("li");
+const profile = JSON.parse(localStorage.getItem("farmerProfile")) || {}
 
-      // Some APIs return object with description
-      if (typeof sol === "object") {
-        li.innerText = sol.description;
-      } else {
-        li.innerText = sol;
-      }
+const district = (profile.district || "").toLowerCase()
 
-      list.appendChild(li);
+/* find district key ignoring case */
 
-    });
+const districtKey = Object.keys(pestDistrictMap).find(
+d => d.toLowerCase() === district
+)
 
-  }
+if(!districtKey){
+
+document.getElementById("pestName").innerText="No pest data for this district"
+return
 
 }
 
+const pestName = pestDistrictMap[districtKey]
+
+
+/* fetch pest database */
+
+const response = await fetch("./data/krushicare_pests_database.json")
+
+const data = await response.json()
+
+const pest = data[pestName]
+
+
+document.getElementById("pestName").innerText = pestName
+
+document.getElementById("pestDesc").innerText = pest.description
+
+
+const list = document.getElementById("pestSolutions")
+
+list.innerHTML=""
+
+pest.solutions.forEach(sol=>{
+
+const li=document.createElement("li")
+
+li.innerText=sol
+
+list.appendChild(li)
+
+})
+
+}
+
+catch(err){
+
+console.log(err)
+
+document.getElementById("pestDesc").innerText="Error loading pest data"
+
+}
+
+}
+
+loadPestInfo()
+
+
+
+/* Back button */
+
+function goBack(){
+
+window.location.href="enviroment.html"
+
+}
 
 /* Back button */
 

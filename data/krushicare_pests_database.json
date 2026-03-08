@@ -1,0 +1,75 @@
+{
+    "Powdery mildew": {
+        "description": "A common fungal disease that appears as white powdery spots on leaves and stems. It spreads quickly in warm and humid conditions.",
+        "symptoms": [
+            "White powdery coating on leaves",
+            "Yellowing leaves",
+            "Leaf curling",
+            "Reduced crop growth"
+        ],
+        "solutions": [
+            "Remove infected leaves",
+            "Improve air circulation",
+            "Avoid overhead watering",
+            "Use neem oil or sulfur spray",
+            "Apply recommended fungicides if severe"
+        ]
+    },
+    "Grease spot (Pythium blight)": {
+        "description": "A fungal disease that causes greasy looking dark spots on leaves and spreads in humid and wet conditions.",
+        "symptoms": [
+            "Dark greasy spots on leaves",
+            "Leaf yellowing",
+            "Rapid spread during humid weather",
+            "Weak plant growth"
+        ],
+        "solutions": [
+            "Improve soil drainage",
+            "Avoid over irrigation",
+            "Remove infected plant parts",
+            "Use fungicide recommended for Pythium diseases"
+        ]
+    },
+    "Fungi Nuisance": {
+        "description": "Fungal growth that appears in overly moist soil. It usually indicates excess moisture and organic matter.",
+        "symptoms": [
+            "Fungal patches on soil",
+            "Mold growth around plants",
+            "Excess moisture in soil"
+        ],
+        "solutions": [
+            "Reduce watering frequency",
+            "Improve soil aeration",
+            "Remove organic waste",
+            "Use organic fungicides if needed"
+        ]
+    },
+    "Mushrooms": {
+        "description": "Mushrooms appear when soil contains high organic matter and moisture.",
+        "symptoms": [
+            "Mushrooms growing near crops",
+            "High soil moisture",
+            "Dense organic matter in soil"
+        ],
+        "solutions": [
+            "Reduce irrigation",
+            "Increase sunlight exposure",
+            "Remove mushrooms manually",
+            "Improve drainage"
+        ]
+    },
+    "Fairy ring": {
+        "description": "A fungal disease forming circular patterns due to underground fungal growth.",
+        "symptoms": [
+            "Circular ring pattern in soil",
+            "Dark green or dead patches",
+            "Mushrooms forming in ring shape"
+        ],
+        "solutions": [
+            "Deep irrigation to break fungal network",
+            "Aerate soil regularly",
+            "Remove infected soil areas",
+            "Apply fungicide if necessary"
+        ]
+    }
+}

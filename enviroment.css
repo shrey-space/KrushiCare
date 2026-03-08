@@ -120,3 +120,12 @@ display:block;
 .purple{color:#ba68c8}
 .cyan{color:#4dd0e1}
 .brown{color:#a1887f}
+
+.env-header{
+
+display:flex;
+align-items:center;
+gap:15px;
+
+}
+

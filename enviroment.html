@@ -17,8 +17,9 @@
 <body>
 
 <div class="env-container">
-
+ <span class="material-icons back-btn" onclick="goHome()">arrow_back</span>
 <header class="env-header">
+   
 <h2>🌱 Farm Environment</h2>
 <p>Weather + Market insights for farmers</p>
 </header>
@@ -83,48 +84,33 @@
 </div>
 
 
-<div class="card">
+<div class="card" onclick="openHeatPage()">
 <span class="material-icons orange">wb_sunny</span>
 <h3>Heat Stress</h3>
 <p id="sun">Analyzing...</p>
 </div>
 
-
-<div class="card">
+<div class="card" onclick="openGrowthPage()">
 <span class="material-icons purple">eco</span>
 <h3>Crop Growth</h3>
 <p id="growth">Analyzing...</p>
 </div>
 
 
-<div class="card">
+<div class="card" onclick="openSoilPage()">
 <span class="material-icons cyan">water_drop</span>
 <h3>Soil Moisture</h3>
 <p id="soilMoisture">Analyzing...</p>
 </div>
 
 
-<div class="card">
+<div class="card" onclick="openActivityPage()">
 <span class="material-icons brown">agriculture</span>
 <h3>Farm Activity</h3>
 <p id="activity">Analyzing...</p>
 </div>
 
 
-<!-- MARKET CARD -->
-
-<div class="card" onclick="openMandiPage()">
-<span class="material-icons green">currency_rupee</span>
-<h3>Market Price</h3>
-<p id="market">Loading mandi price...</p>
-</div>
-
-
-<div class="card">
-<span class="material-icons orange">trending_up</span>
-<h3>Sell Advice</h3>
-<p id="sellAdvice">Analyzing market...</p>
-</div>
 
 </div>
 
@@ -144,7 +130,9 @@ const MANDI_API=
 "https://api.data.gov.in/resource/9ef84268-d588-465a-a308-a864a43d0070?api-key=579b464db66ec23bdd00000156c8041690bd45956332eabf01fe61eb&format=json&filters[state]=Maharashtra&limit=100"
 
 
-
+function goHome(){
+window.location.href="index.html"
+}
 /* NAVIGATION */
 
 function openIrrigationPage(){
@@ -159,8 +147,20 @@ function openMandiPage(){
 window.location.href="mandi.html"
 }
 
+function openHeatPage(){
+window.location.href="heat.html"
+}
 
+function openGrowthPage(){
+window.location.href="growth.html"
+}
 
+function openSoilPage(){
+window.location.href="soil.html"
+}
+function openActivityPage(){
+window.location.href="activity.html"
+}
 /* WEATHER */
 
 function loadWeather(lat,lon){
@@ -261,67 +261,227 @@ document.getElementById("pest").innerText=pestRisk
 
 
 
-/* HEAT */
+/* SMART HEAT STRESS */
 
-let sun="Normal sunlight"
+let sun="Ideal sunlight"
 
-if(temp>34)
-sun="Heat stress possible for crops"
+const heatIndex = temp + (humidity/100)*5
 
-document.getElementById("sun").innerText=sun
+let cropLimit = 35
 
+if(crop.includes("onion")) cropLimit = 34
+if(crop.includes("tomato")) cropLimit = 36
+if(crop.includes("rice")) cropLimit = 38
+if(crop.includes("wheat")) cropLimit = 32
 
+if(heatIndex > cropLimit + 6){
+sun="🔥 Severe heat stress for "+crop+". Irrigate immediately."
+}
 
-/* GROWTH */
+else if(heatIndex > cropLimit + 3){
+sun="⚠ High heat stress for "+crop+". Provide irrigation."
+}
+
+else if(heatIndex > cropLimit){
+sun="Moderate heat stress. Monitor crop."
+}
+
+else{
+sun="Good temperature for "+crop+" growth."
+}
+
+document.getElementById("sun").innerText = sun
 
 let growth="Good growth conditions"
 
-if(temp>36)
-growth="Growth stress due to heat"
+if(crop.includes("tomato") && temp>35)
+growth="Tomato flower drop risk due to heat"
+
+else if(crop.includes("onion") && temp>34)
+growth="Onion bulb development may slow"
+
+else if(crop.includes("rice") && temp>38)
+growth="Rice grain formation affected"
+
+else if(crop.includes("wheat") && temp>32)
+growth="Wheat growth stress due to high temperature"
 
 document.getElementById("growth").innerText=growth
 
+/* SMART SOIL MOISTURE */
 
+let soilMoisture="Optimal soil moisture for crops"
 
-/* SOIL MOISTURE */
+/* rain condition */
 
-let soilMoisture="Moderate moisture"
+if(condition.includes("Rain")){
+soilMoisture="Soil moisture increasing due to rainfall"
+}
 
-if(humidity<40)
-soilMoisture="Soil drying quickly"
+/* high evaporation */
+
+else if(temp>36 && humidity<40){
+soilMoisture="Soil drying very fast. Irrigation needed today"
+}
+
+/* moderate drying */
+
+else if(temp>32 && humidity<50){
+soilMoisture="Moderate moisture loss. Light irrigation recommended"
+}
+
+/* wind evaporation */
+
+else if(wind>20){
+soilMoisture="Wind causing faster soil moisture loss"
+}
+
+/* soil type effect */
+
+if(soil.includes("black")){
+soilMoisture+=". Black soil retains water longer"
+}
+
+else if(soil.includes("red")){
+soilMoisture+=". Red soil drains water faster"
+}
+
+else if(soil.includes("laterite")){
+soilMoisture+=". Laterite soil dries quickly"
+}
+
+/* crop water demand */
+
+if(crop.includes("rice")){
+soilMoisture+=". Rice requires high water levels"
+}
+
+if(crop.includes("tomato")){
+soilMoisture+=". Tomato needs consistent moisture"
+}
+
+if(crop.includes("onion")){
+soilMoisture+=". Avoid excessive irrigation for onion"
+}
 
 document.getElementById("soilMoisture").innerText=soilMoisture
 
 
 
-/* ACTIVITY */
+/* SMART FARM ACTIVITY */
 
-let activity="General farm work recommended"
+let activity="Good day for general farm work"
 
-if(condition.includes("Rain"))
-activity="Avoid spraying today"
+/* rain condition */
 
-document.getElementById("activity").innerText=activity
-
+if(condition.includes("Rain")){
+activity="Rain expected. Avoid pesticide spraying."
 }
 
+/* high wind */
 
+else if(wind>20){
+activity="High wind. Spraying chemicals not recommended."
+}
+
+/* extreme heat */
+
+else if(temp>36){
+activity="Extreme heat. Avoid afternoon farm work."
+}
+
+/* good farming conditions */
+
+else if(temp>=24 && temp<=32 && humidity>=40 && humidity<=70){
+activity="Ideal weather for sowing and fertilizer application."
+}
+
+/* crop specific tasks */
+
+if(crop.includes("rice")){
+activity+=" Rice fields should be monitored for water level."
+}
+
+if(crop.includes("tomato")){
+activity+=" Check tomato plants for pest damage."
+}
+
+if(crop.includes("onion")){
+activity+=" Onion crops require weed control."
+}
+
+document.getElementById("activity").innerText=activity
+}
 
 /* LOAD PEST DATA */
+const pestDistrictMap = {
 
+"Ahmednagar":"Powdery mildew",
+"Akola":"Powdery mildew",
+"Amravati":"Grease spot (Pythium blight)",
+"Aurangabad":"Powdery mildew",
+"Beed":"Grease spot (Pythium blight)",
+"Bhandara":"Grease spot (Pythium blight)",
+"Buldhana":"Powdery mildew",
+"Chandrapur":"Fungi Nuisance",
+"Dhule":"Powdery mildew",
+"Gadchiroli":"Fungi Nuisance",
+"Gondia":"Grease spot (Pythium blight)",
+"Hingoli":"Powdery mildew",
+"Jalgaon":"Powdery mildew",
+"Jalna":"Powdery mildew",
+"Kolhapur":"Mushrooms",
+"Latur":"Powdery mildew",
+"Mumbai City":"Fairy ring",
+"Mumbai Suburban":"Fairy ring",
+"Nagpur":"Powdery mildew",
+"Nanded":"Powdery mildew",
+"Nandurbar":"Powdery mildew",
+"Nashik":"Powdery mildew",
+"Osmanabad":"Powdery mildew",
+"Palghar":"Fungi Nuisance",
+"Parbhani":"Grease spot (Pythium blight)",
+"Pune":"Powdery mildew",
+"Raigad":"Fungi Nuisance",
+"Ratnagiri":"Mushrooms",
+"Sangli":"Powdery mildew",
+"Satara":"Powdery mildew",
+"Sindhudurg":"Mushrooms",
+"Solapur":"Powdery mildew",
+"Thane":"Fairy ring",
+"Wardha":"Powdery mildew",
+"Washim":"Powdery mildew",
+"Yavatmal":"Grease spot (Pythium blight)"
+
+}
 async function loadPest(){
 
 try{
 
-const res=await fetch(PEST_API)
-const data=await res.json()
+const profile = JSON.parse(localStorage.getItem("farmerProfile")) || {}
+const district = profile.district
 
-const pest=data.data[0]
+const pestName = pestDistrictMap[district]
 
-localStorage.setItem("pestData",JSON.stringify(pest))
+const res = await fetch(PEST_API)
+const data = await res.json()
 
-document.getElementById("pest").innerText=
+const pest = data.data.find(p =>
+p.common_name.toLowerCase() === pestName.toLowerCase()
+)
+
+if(pest){
+
+localStorage.setItem("pestData", JSON.stringify(pest))
+
+document.getElementById("pest").innerText =
 `Possible pest: ${pest.common_name}`
+
+}else{
+
+document.getElementById("pest").innerText="No pest found"
+
+}
 
 }
 catch(err){

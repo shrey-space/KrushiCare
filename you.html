@@ -3,218 +3,263 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>KrushiCare - Farmer Profile</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="you.css">
+
 </head>
 
 <body>
 
 <div class="top-header">
-  <button class="back-btn" onclick="goHome()">←</button>
-  <h2>Farmer Profile</h2>
+<button class="back-btn" onclick="goHome()">←</button>
+<h2>Farmer Profile</h2>
 </div>
 
 <div class="you-page">
 
-  <!-- PERSONAL DETAILS -->
-  <div class="you-card">
-    <h3>👤 Personal Details</h3>
+<!-- PERSONAL DETAILS -->
+<div class="you-card">
 
-    <label>Full Name</label>
-    <input type="text" id="name" placeholder="Enter your name">
+<h3>👤 Personal Details</h3>
 
-    <label>Age</label>
-    <input type="number" id="age" placeholder="Enter age">
+<label>Full Name</label>
+<input type="text" id="name" placeholder="Enter your name">
 
-    <label>Phone Number</label>
-    <input type="tel" id="phone" placeholder="10-digit mobile number">
+<label>Age</label>
+<input type="number" id="age" placeholder="Enter age">
 
-    <label>District</label>
-    <input type="text" id="district" placeholder="e.g. Kolhapur">
+<label>Phone Number</label>
+<input type="tel" id="phone" placeholder="10-digit mobile number">
 
-    <label>Location Type</label>
-    <select id="locationType">
-      <option>Rural</option>
-      <option>Semi-Urban</option>
-    </select>
-  </div>
+<label>District</label>
+<input type="text" id="district" placeholder="e.g. Kolhapur">
 
-  <!-- FARM DETAILS -->
-  <div class="you-card">
-    <h3>🌾 Farm Details</h3>
-
-    <label>Farm Size (acres)</label>
-    <input type="number" id="farmSize">
-
-    <label>Main Crop</label>
-    <select id="crop">
-      <option>Onion</option>
-      <option>Tomato</option>
-      <option>Rice</option>
-      <option>Wheat</option>
-      <option>Soybean</option>
-      <option>Sugarcane</option>
-    </select>
-
-    <label>Soil Type</label>
-    <select id="soil">
-      <option>Black Soil</option>
-      <option>Red Soil</option>
-      <option>Alluvial Soil</option>
-      <option>Laterite Soil</option>
-    </select>
-
-    <label>Farming Experience (years)</label>
-    <input type="number" id="experience">
-
-    <label>Irrigation Type</label>
-    <select id="irrigation">
-      <option>Rain-fed</option>
-      <option>Borewell</option>
-      <option>Canal</option>
-      <option>Drip Irrigation</option>
-    </select>
-
-    <label>Water Availability</label>
-    <select id="water">
-      <option>Low</option>
-      <option>Medium</option>
-      <option>High</option>
-    </select>
-  </div>
-
-  <!-- FACILITIES -->
-  <div class="you-card">
-    <h3>🚜 Facilities & Support</h3>
-
-    <label>Storage Facility Available?</label>
-    <select id="storage">
-      <option>Yes</option>
-      <option>No</option>
-    </select>
-
-    <label>Tractor Available?</label>
-    <select id="tractor">
-      <option>Yes</option>
-      <option>No</option>
-    </select>
-
-    <label>Crop Insurance?</label>
-    <select id="insurance">
-      <option>Yes</option>
-      <option>No</option>
-    </select>
-
-    <label>Loan Taken?</label>
-    <select id="loan">
-      <option>Yes</option>
-      <option>No</option>
-    </select>
-  </div>
-
-  <!-- SELLING PREFERENCE -->
-  <div class="you-card">
-    <h3>📊 Selling Preference</h3>
-
-    <label><input type="radio" name="risk" value="Sell"> Sell Immediately</label>
-    <label><input type="radio" name="risk" value="Wait"> Wait for Higher Price</label>
-    <label><input type="radio" name="risk" value="Balanced" checked> Balanced</label>
-  </div>
-
-  <button class="save-btn" onclick="saveProfile()">Save Profile</button>
-
-  <!-- SUMMARY -->
-  <div class="you-card summary" id="profileSummary">
-    <h3>📦 Profile Summary</h3>
-    <p>No data saved yet</p>
-  </div>
+<label>Location Type</label>
+<select id="locationType">
+<option>Rural</option>
+<option>Semi-Urban</option>
+</select>
 
 </div>
+
+
+<!-- FARM DETAILS -->
+<div class="you-card">
+
+<h3>🌾 Farm Details</h3>
+
+<label>Farm Size (acres)</label>
+<input type="number" id="farmSize">
+
+<label>Main Crop</label>
+<select id="crop">
+<option>Onion</option>
+<option>Tomato</option>
+<option>Rice</option>
+<option>Wheat</option>
+<option>Soybean</option>
+<option>Sugarcane</option>
+</select>
+
+<label>Soil Type</label>
+<select id="soil">
+<option>Black Soil</option>
+<option>Red Soil</option>
+<option>Alluvial Soil</option>
+<option>Laterite Soil</option>
+</select>
+
+<label>Farming Experience (years)</label>
+<input type="number" id="experience">
+
+<label>Irrigation Type</label>
+<select id="irrigation">
+<option>Rain-fed</option>
+<option>Borewell</option>
+<option>Canal</option>
+<option>Drip Irrigation</option>
+</select>
+
+<label>Water Availability</label>
+<select id="water">
+<option>Low</option>
+<option>Medium</option>
+<option>High</option>
+</select>
+
+</div>
+
+
+<!-- FACILITIES -->
+<div class="you-card">
+
+<h3>🚜 Facilities & Support</h3>
+
+<label>Storage Facility Available?</label>
+<select id="storage">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label>Tractor Available?</label>
+<select id="tractor">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label>Crop Insurance?</label>
+<select id="insurance">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+<label>Loan Taken?</label>
+<select id="loan">
+<option>Yes</option>
+<option>No</option>
+</select>
+
+</div>
+
+
+<!-- SELLING PREFERENCE -->
+<div class="you-card">
+
+<h3>📊 Selling Preference</h3>
+
+<label>
+<input type="radio" name="risk" value="Sell"> Sell Immediately
+</label>
+
+<label>
+<input type="radio" name="risk" value="Wait"> Wait for Higher Price
+</label>
+
+<label>
+<input type="radio" name="risk" value="Balanced" checked> Balanced
+</label>
+
+</div>
+
+
+<button class="save-btn" onclick="saveProfile()">Save Profile</button>
+
+
+<!-- SUMMARY -->
+<div class="you-card summary" id="profileSummary">
+
+<h3>📦 Profile Summary</h3>
+<p>No data saved yet</p>
+
+</div>
+
+</div>
+
+
 <script type="module">
 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import { getFirestore, doc, setDoc } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-firestore.js";
 
-// Your Firebase config
+
 const firebaseConfig = {
-  apiKey: "AIzaSyAFz6Y_XweoVKKQNWMvTk6Zp__Ja-VCq7I",
-  authDomain: "krushicare-4a91b.firebaseapp.com",
-  projectId: "krushicare-4a91b",
-  storageBucket: "krushicare-4a91b.firebasestorage.app",
-  messagingSenderId: "792560987514",
-  appId: "1:792560987514:web:0e7545500423afb3eefac3",
-  measurementId: "G-JZT1WT250P"
+apiKey: "AIzaSyAFz6Y_XweoVKKQNWMvTk6Zp__Ja-VCq7I",
+authDomain: "krushicare-4a91b.firebaseapp.com",
+projectId: "krushicare-4a91b",
+storageBucket: "krushicare-4a91b.firebasestorage.app",
+messagingSenderId: "792560987514",
+appId: "1:792560987514:web:0e7545500423afb3eefac3",
+measurementId: "G-JZT1WT250P"
 };
 
-// Initialize Firebase
+
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+
 window.saveProfile = async function() {
 
-  const profile = {
-    name: document.getElementById("name").value,
-    age: document.getElementById("age").value,
-    phone: document.getElementById("phone").value,
-    district: document.getElementById("district").value,
-    locationType: document.getElementById("locationType").value,
-    farmSize: document.getElementById("farmSize").value,
-    crop: document.getElementById("crop").value,
-    soil: document.getElementById("soil").value,
-    experience: document.getElementById("experience").value,
-    irrigation: document.getElementById("irrigation").value,
-    water: document.getElementById("water").value,
-    storage: document.getElementById("storage").value,
-    tractor: document.getElementById("tractor").value,
-    insurance: document.getElementById("insurance").value,
-    loan: document.getElementById("loan").value,
-    risk: document.querySelector('input[name="risk"]:checked').value,
-    createdAt: new Date()
-  };
+const profile = {
 
-  try {
+name: document.getElementById("name").value,
+age: document.getElementById("age").value,
+phone: document.getElementById("phone").value,
+district: document.getElementById("district").value,
+locationType: document.getElementById("locationType").value,
 
-    // Save to Firestore
-    await setDoc(doc(db, "farmers", profile.phone), profile);
+farmSize: document.getElementById("farmSize").value,
+crop: document.getElementById("crop").value,
+soil: document.getElementById("soil").value,
+experience: document.getElementById("experience").value,
+irrigation: document.getElementById("irrigation").value,
+water: document.getElementById("water").value,
 
-    // Save quick flags locally
-    localStorage.setItem("profileCompleted", "true");
-    localStorage.setItem("farmerPhone", profile.phone);
+storage: document.getElementById("storage").value,
+tractor: document.getElementById("tractor").value,
+insurance: document.getElementById("insurance").value,
+loan: document.getElementById("loan").value,
 
-    // Redirect to dashboard
-    window.location.href = "dashboard.html";
+risk: document.querySelector('input[name="risk"]:checked').value,
 
-  } catch (error) {
-    alert("Error saving data");
-    console.log("Firestore error:", error);
-  }
+createdAt: new Date()
 
 };
-function showProfile() {
-  const data = JSON.parse(localStorage.getItem("farmerProfile"));
-  if (!data) return;
 
-  document.getElementById("profileSummary").innerHTML = `
-    <h3>📦 Profile Summary</h3>
-    <p><strong>Name:</strong> ${data.name}</p>
-    <p><strong>District:</strong> ${data.district}</p>
-    <p><strong>Crop:</strong> ${data.crop}</p>
-    <p><strong>Farm Size:</strong> ${data.farmSize} acres</p>
-    <p><strong>Soil:</strong> ${data.soil}</p>
-    <p><strong>Irrigation:</strong> ${data.irrigation}</p>
-    <p><strong>Water Level:</strong> ${data.water}</p>
-    <p><strong>Insurance:</strong> ${data.insurance}</p>
-    <p><strong>Loan:</strong> ${data.loan}</p>
-    <p><strong>Preference:</strong> ${data.risk}</p>
-  `;
+
+try {
+
+await setDoc(doc(db, "farmers", profile.phone), profile);
+
+localStorage.setItem("profileCompleted", "true");
+localStorage.setItem("farmerPhone", profile.phone);
+localStorage.setItem("farmerProfile", JSON.stringify(profile));
+window.location.href = "dashboard.html";
+
 }
+catch (error) {
+
+alert("Error saving data");
+console.log("Firestore error:", error);
+
+}
+
+};
+
+
+
+function showProfile() {
+
+const data = JSON.parse(localStorage.getItem("farmerProfile"));
+if (!data) return;
+
+document.getElementById("profileSummary").innerHTML = `
+<h3>📦 Profile Summary</h3>
+
+<p><strong>Name:</strong> ${data.name}</p>
+<p><strong>District:</strong> ${data.district}</p>
+<p><strong>Crop:</strong> ${data.crop}</p>
+<p><strong>Farm Size:</strong> ${data.farmSize} acres</p>
+<p><strong>Soil:</strong> ${data.soil}</p>
+<p><strong>Irrigation:</strong> ${data.irrigation}</p>
+<p><strong>Water Level:</strong> ${data.water}</p>
+<p><strong>Insurance:</strong> ${data.insurance}</p>
+<p><strong>Loan:</strong> ${data.loan}</p>
+<p><strong>Preference:</strong> ${data.risk}</p>
+`;
+
+}
+
 
 window.addEventListener("load", showProfile);
 
+
 window.goHome = function() {
-  window.location.href = "index.html";
+
+window.location.href = "index.html";
+
 };
 
 </script>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="storage.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<title>Storage Optimization</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+
+<span class="material-icons back" onclick="goBack()">arrow_back</span>
+
+<div>
+<h2>Storage Optimization</h2>
+<p>Smart crop storage recommendation</p>
+</div>
+
+</header>
+
+
+<div class="summary">
+
+<div class="card">
+<h3>Crop</h3>
+<p id="cropName">Loading...</p>
+</div>
+
+<div class="card">
+<h3>District</h3>
+<p id="districtName">Loading...</p>
+</div>
+
+<div class="card">
+<h3>Storage Facility</h3>
+<p id="storageStatus">Checking...</p>
+</div>
+
+<div class="card">
+<h3>Demand Level</h3>
+<p id="demandLevel">Analyzing...</p>
+</div>
+
+</div>
+
+
+<div class="chartBox">
+
+<h3>Profit Prediction (Storage vs Sell Now)</h3>
+
+<canvas id="profitChart"></canvas>
+
+</div>
+
+
+<div class="tableSection">
+
+<h3>Price Forecast</h3>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Scenario</th>
+<th>Price/Quintal</th>
+<th>Total Revenue</th>
+</tr>
+
+</thead>
+
+<tbody id="priceTable"></tbody>
+
+</table>
+
+</div>
+
+
+<div class="analysis">
+
+<h3>Smart Storage Recommendation</h3>
+
+<p id="recommendation">Analyzing storage strategy...</p>
+
+</div>
+
+
+</div>
+
+
+<script>
+
+function goBack(){
+window.history.back()
+}
+
+
+async function loadStorage(){
+
+const response =
+await fetch("./data/maharashtra_smart_farm_economy.json")
+
+const data = await response.json()
+
+const farmer =
+JSON.parse(localStorage.getItem("farmerProfile"))
+
+const district = farmer.district
+const crop = farmer.crop
+const farmSize = Number(farmer.farmSize || 1)
+
+
+const districtKey =
+Object.keys(data).find(d =>
+d.toLowerCase() === district.toLowerCase().trim()
+)
+
+const districtData = data[districtKey]
+
+document.getElementById("districtName").innerText = districtKey
+document.getElementById("storageStatus").innerText =
+districtData.storage_available ? "Available" : "Not Available"
+
+
+const cropData =
+districtData.Crops.find(c =>
+c.crop.toLowerCase() === crop.toLowerCase()
+)
+
+document.getElementById("cropName").innerText = cropData.crop
+document.getElementById("demandLevel").innerText = cropData.demand_level
+
+
+const price = cropData.price_quintal
+const previous = cropData.previous_price
+
+
+const yieldEstimate =
+cropData.yield_per_acre * farmSize
+
+
+/* predicted price */
+
+let predictedPrice = price
+
+if(cropData.demand_level==="High")
+predictedPrice = price * 1.12
+
+else if(cropData.demand_level==="Medium")
+predictedPrice = price * 1.06
+
+else
+predictedPrice = price * 0.98
+
+
+const revenueNow =
+price * yieldEstimate
+
+const revenueLater =
+predictedPrice * yieldEstimate
+
+
+document.getElementById("priceTable").innerHTML = `
+
+<tr>
+<td>Sell Now</td>
+<td>₹${price}</td>
+<td>₹${revenueNow.toLocaleString()}</td>
+</tr>
+
+<tr>
+<td>Store & Sell Later</td>
+<td>₹${predictedPrice.toFixed(0)}</td>
+<td>₹${revenueLater.toLocaleString()}</td>
+</tr>
+
+`
+
+
+/* chart */
+
+new Chart(
+
+document.getElementById("profitChart"),
+
+{
+
+type:"bar",
+
+data:{
+
+labels:["Sell Now","Store & Sell Later"],
+
+datasets:[{
+
+label:"Revenue",
+
+data:[revenueNow,revenueLater],
+
+backgroundColor:["#f97316","#22c55e"]
+
+}]
+
+}
+
+})
+
+
+/* recommendation */
+
+let advice=""
+
+if(!districtData.storage_available){
+
+advice =
+"Storage facility not available in this district. Selling crop soon is recommended."
+
+}
+
+else{
+
+if(revenueLater > revenueNow){
+
+advice =
+"Storage is beneficial. Market demand suggests higher prices in coming days."
+
+}
+
+else{
+
+advice =
+"Price increase probability is low. Selling soon may reduce storage risk."
+
+}
+
+}
+
+document.getElementById("recommendation").innerText = advice
+
+}
+
+loadStorage()
+
+</script>
+
+</body>
+</html>

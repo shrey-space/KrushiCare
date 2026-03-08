@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>KrushiCare - Crop Growth Analysis</title>
+
+<link rel="stylesheet" href="growth.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="growth-container">
+
+<header class="growth-header">
+
+<button class="back-btn" onclick="goBack()">←</button>
+
+<h2>🌱 Crop Growth Analysis</h2>
+
+<p>Smart insights about crop development</p>
+
+</header>
+
+
+
+<!-- GROWTH STATUS -->
+
+<div class="growth-status">
+
+<span class="material-icons plant">eco</span>
+
+<h1 id="growthLevel">Analyzing...</h1>
+
+<p id="growthAdvice">Loading growth insights...</p>
+
+</div>
+
+
+
+<!-- WEATHER IMPACT -->
+
+<div class="info-box">
+
+<h3>🌤 Weather Impact</h3>
+
+<div class="weather-grid">
+
+<div class="weather-card">
+<p>Temperature</p>
+<b id="temp">--°C</b>
+</div>
+
+<div class="weather-card">
+<p>Humidity</p>
+<b id="humidity">--%</b>
+</div>
+
+<div class="weather-card">
+<p>Condition</p>
+<b id="condition">--</b>
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- CROP ANALYSIS -->
+
+<div class="info-box">
+
+<h3>🌾 Crop Growth Analysis</h3>
+
+<p id="cropAnalysis">
+Analyzing crop response to weather...
+</p>
+
+</div>
+
+
+
+<!-- RECOMMENDATIONS -->
+
+<div class="info-box">
+
+<h3>🚜 Farmer Recommendations</h3>
+
+<ul id="recommendations">
+
+<li>Monitor soil moisture regularly</li>
+<li>Use organic mulch to retain moisture</li>
+<li>Apply irrigation in early morning or evening</li>
+<li>Avoid fertilizer application during extreme heat</li>
+
+</ul>
+
+</div>
+
+
+
+</div>
+
+
+
+<script>
+
+/* GET STORED DATA */
+
+const profile = JSON.parse(localStorage.getItem("farmerProfile")) || {}
+
+const crop = (profile.crop || "crop").toLowerCase()
+
+const temp = parseFloat(localStorage.getItem("temp")) || 30
+const humidity = parseFloat(localStorage.getItem("humidity")) || 50
+const condition = localStorage.getItem("condition") || "Clear"
+
+
+
+/* SHOW WEATHER */
+
+document.getElementById("temp").innerText=temp+"°C"
+document.getElementById("humidity").innerText=humidity+"%"
+document.getElementById("condition").innerText=condition
+
+
+
+/* GROWTH LOGIC */
+
+let growthLevel="Good Growth Conditions"
+let growthAdvice="Weather supports healthy crop development."
+
+if(temp>38){
+
+growthLevel="Severe Growth Stress"
+growthAdvice="Extreme heat may damage crops and reduce yield."
+
+}
+
+else if(temp>34){
+
+growthLevel="Moderate Growth Stress"
+growthAdvice="High temperature may slow plant development."
+
+}
+
+else if(humidity<35){
+
+growthLevel="Low Humidity Stress"
+growthAdvice="Low humidity may increase plant water loss."
+
+}
+
+else if(temp>=24 && temp<=32){
+
+growthLevel="Optimal Growth"
+growthAdvice="Weather conditions are ideal for crop growth."
+
+}
+
+document.getElementById("growthLevel").innerText=growthLevel
+document.getElementById("growthAdvice").innerText=growthAdvice
+
+
+
+/* CROP SPECIFIC ANALYSIS */
+
+let analysis="Crop growth conditions normal."
+
+if(crop.includes("tomato") && temp>35)
+analysis="Tomato plants may experience flower drop due to heat."
+
+else if(crop.includes("onion") && temp>34)
+analysis="Onion bulb formation may slow in high temperature."
+
+else if(crop.includes("rice") && temp>38)
+analysis="Rice grain formation may be affected."
+
+else if(crop.includes("wheat") && temp>32)
+analysis="Wheat grain filling may reduce due to heat."
+
+document.getElementById("cropAnalysis").innerText=analysis
+
+
+
+function goBack(){
+
+window.history.back()
+
+}
+
+</script>
+
+</body>
+
+</html>

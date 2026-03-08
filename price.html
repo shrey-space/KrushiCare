@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="price.css">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<title>District Market Prices</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<header class="header">
+
+<span class="material-icons back" onclick="goBack()">arrow_back</span>
+
+<div>
+<h2 id="districtTitle">Market Dashboard</h2>
+<p>Real-time crop price intelligence</p>
+</div>
+
+</header>
+
+
+<div class="summary">
+
+<div class="card">
+<h3>Highest Price Crop</h3>
+<p id="highestCrop">Loading...</p>
+</div>
+
+<div class="card">
+<h3>Lowest Price Crop</h3>
+<p id="lowestCrop">Loading...</p>
+</div>
+
+<div class="card">
+<h3>Strong Demand</h3>
+<p id="demandCrop">Loading...</p>
+</div>
+
+</div>
+
+
+<div class="chartBox">
+
+<h3>District Crop Price Comparison</h3>
+
+<canvas id="priceChart"></canvas>
+
+</div>
+
+
+<div class="tableSection">
+
+<h3>All Crop Prices</h3>
+
+<table id="priceTable">
+
+<thead>
+
+<tr>
+<th>Crop</th>
+<th>Price</th>
+<th>Previous</th>
+<th>Change</th>
+<th>Demand</th>
+</tr>
+
+</thead>
+
+<tbody></tbody>
+
+</table>
+
+</div>
+
+
+<div class="analysis">
+
+<h3>Market Intelligence</h3>
+
+<p id="marketInsight">Analyzing district market...</p>
+
+</div>
+
+
+</div>
+
+
+
+<script>
+
+function goBack(){
+window.history.back()
+}
+
+async function loadPrices(){
+
+try{
+
+const response = await fetch("./data/maharashtra_smart_farm_economy.json")
+const data = await response.json()
+
+const farmer = JSON.parse(localStorage.getItem("farmerProfile")) || {}
+
+const district = farmer.district
+
+/* MATCH DISTRICT SAFELY */
+
+const districtKey = Object.keys(data).find(d =>
+d.toLowerCase() === district.toLowerCase().trim()
+)
+
+if(!districtKey){
+alert("District data not found")
+return
+}
+
+const districtData = data[districtKey]
+
+districtTitle.innerText = districtKey + " Market Prices"
+
+const crops = districtData.Crops
+
+let labels=[]
+let prices=[]
+let tableHTML=""
+
+/* ANALYSIS VARIABLES */
+
+let highest=crops[0]
+let lowest=crops[0]
+let strongDemandCrop=null
+
+crops.forEach(c=>{
+
+labels.push(c.crop)
+prices.push(c.price_quintal)
+
+/* highest price */
+
+if(c.price_quintal > highest.price_quintal)
+highest=c
+
+/* lowest price */
+
+if(c.price_quintal < lowest.price_quintal)
+lowest=c
+
+/* strong demand crop */
+
+if(c.demand_level==="High" && !strongDemandCrop)
+strongDemandCrop=c
+
+/* price change */
+
+let change=c.price_quintal-c.previous_price
+let percent=((change/c.previous_price)*100).toFixed(1)
+
+let arrow="→"
+
+if(change>0) arrow="▲"
+if(change<0) arrow="▼"
+
+tableHTML+=`
+
+<tr>
+
+<td>${c.crop}</td>
+
+<td>₹${c.price_quintal}</td>
+
+<td>₹${c.previous_price}</td>
+
+<td>${arrow} ${change} (${percent}%)</td>
+
+<td>${c.demand_level}</td>
+
+</tr>
+
+`
+
+})
+
+document.querySelector("#priceTable tbody").innerHTML=tableHTML
+
+
+/* SUMMARY */
+
+document.getElementById("highestCrop").innerText =
+`${highest.crop} ₹${highest.price_quintal}`
+
+document.getElementById("lowestCrop").innerText =
+`${lowest.crop} ₹${lowest.price_quintal}`
+
+document.getElementById("demandCrop").innerText =
+strongDemandCrop ? strongDemandCrop.crop : "Multiple crops"
+
+
+/* GRAPH */
+
+new Chart(document.getElementById("priceChart"),{
+
+type:"bar",
+
+data:{
+labels:labels,
+datasets:[{
+label:"Price per quintal",
+data:prices,
+backgroundColor:"#10b981"
+}]
+},
+
+options:{
+responsive:true,
+plugins:{
+legend:{display:false}
+},
+scales:{
+y:{
+beginAtZero:false
+}
+}
+}
+
+})
+
+
+/* MARKET ANALYSIS */
+
+let avgPrice = prices.reduce((a,b)=>a+b)/prices.length
+
+let insight=""
+
+/* strongest crop */
+
+if(highest.price_quintal > avgPrice*1.4)
+insight += `${highest.crop} is dominating the ${districtKey} market with significantly higher price. `
+
+/* weak crop */
+
+if(lowest.price_quintal < avgPrice*0.6)
+insight += `${lowest.crop} price is relatively weak compared to other crops. `
+
+/* demand insight */
+
+if(strongDemandCrop)
+insight += `High buyer demand currently observed for ${strongDemandCrop.crop}. `
+
+/* stability */
+
+if(Math.abs(highest.price_quintal-lowest.price_quintal)<avgPrice*0.4)
+insight += `Overall district market is stable.`
+
+document.getElementById("marketInsight").innerText = insight
+
+}
+
+catch(err){
+
+console.error(err)
+alert("Error loading market data")
+
+}
+
+}
+
+loadPrices()
+
+</script>
+
+</body>
+</html>
