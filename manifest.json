@@ -8,12 +8,12 @@
   "orientation": "portrait",
   "icons": [
     {
-      "src": "/icons/farmer_icon.png",
+      "src": "/icons/app_logo.png",
       "sizes": "192x192",
       "type": "image/png"
     },
     {
-      "src": "/icons/farmer_icon.png",
+      "src": "/icons/app_logo.png",
       "sizes": "512x512",
       "type": "image/png"
     }
