@@ -1,4 +1,4 @@
-```markdown
+
 <h1 align="center">🌾 KrushiCare</h1>
 
 <p align="center">
@@ -69,20 +69,6 @@ tablets, and mobile devices.
   <li>📱 Responsive user interface</li>
   <li>⚡ Fast and lightweight web application</li>
 </ul>
-
-<hr>
-
-<h2 align="center">📸 Application Preview</h2>
-
-<p align="center">
-  <img src="screenshots/home.png" width="250" alt="Home Page"/>
-  <img src="screenshots/weather.png" width="250" alt="Weather Page"/>
-  <img src="screenshots/crops.png" width="250" alt="Crop Recommendation"/>
-</p>
-
-<p align="center">
-  <i>Home Dashboard, Weather Information and Crop Recommendation Screens</i>
-</p>
 
 <hr>
 
